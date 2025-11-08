@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cc0uhelxrw4e0"
-path="res://.godot/imported/base_idle_strip9.png-feb633038e7fd81bba3192e496ec9e58.ctex"
+uid="uid://d3a45o2jv4v0p"
+path="res://.godot/imported/spr_tileset_sunnysideworld_forest_32px.png-6c77a8cb0e95545111b5e5d0b35d8fed.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/characters/base_idle_strip9.png"
-dest_files=["res://.godot/imported/base_idle_strip9.png-feb633038e7fd81bba3192e496ec9e58.ctex"]
+source_file="res://assests/tileset/spr_tileset_sunnysideworld_forest_32px.png"
+dest_files=["res://.godot/imported/spr_tileset_sunnysideworld_forest_32px.png-6c77a8cb0e95545111b5e5d0b35d8fed.ctex"]
 
 [params]
 
