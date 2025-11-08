@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dfdewpopcqnn7"]
+
+[node name="david" type="Node2D"]
+
+[node name="david_sheet" type="AnimatedSprite2D" parent="."]
+
+[node name="Area" type="Area2D" parent="."]
+
+[node name="Collision" type="CollisionShape2D" parent="Area"]
