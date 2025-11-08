@@ -1,9 +1,12 @@
-[gd_scene format=3 uid="uid://dfdewpopcqnn7"]
+[gd_scene load_steps=2 format=3 uid="uid://dfdewpopcqnn7"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_18dod"]
 
 [node name="david" type="Node2D"]
 
 [node name="david_sheet" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_18dod")
 
-[node name="Area" type="Area2D" parent="."]
+[node name="area" type="Area2D" parent="."]
 
-[node name="Collision" type="CollisionShape2D" parent="Area"]
+[node name="Collision" type="CollisionShape2D" parent="area"]
