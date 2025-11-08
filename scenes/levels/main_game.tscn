@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bpvkjkn2a15is"]
+[gd_scene load_steps=7 format=3 uid="uid://bpvkjkn2a15is"]
 
 [ext_resource type="Texture2D" uid="uid://dj7uugrja4dqq" path="res://assests/tileset/spr_tileset_sunnysideworld_16px.png" id="1_valbi"]
+[ext_resource type="PackedScene" uid="uid://of0cy65lonem" path="res://scenes/characters/skeleton.tscn" id="1_viahy"]
 [ext_resource type="PackedScene" uid="uid://c5f38ojmtakna" path="res://scenes/characters/player.tscn" id="2_viahy"]
+[ext_resource type="PackedScene" uid="uid://lfyu1yg8d32c" path="res://scenes/characters/Goblin.tscn" id="4_3bnjd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3bnjd"]
 texture = ExtResource("1_valbi")
@@ -1765,3 +1767,9 @@ position = Vector2(0, -15)
 scale = Vector2(3, 3)
 position_smoothing_enabled = true
 position_smoothing_speed = 4.0
+
+[node name="Skeleton" parent="." instance=ExtResource("1_viahy")]
+position = Vector2(-17, 456)
+
+[node name="Goblin" parent="." instance=ExtResource("4_3bnjd")]
+position = Vector2(836, 590)
