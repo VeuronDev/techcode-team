@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://of0cy65lonem"]
+[gd_scene load_steps=0 format=3 uid="uid://of0cy65lonem"]
 
 [node name="skeleton" type="Node2D"]
 
