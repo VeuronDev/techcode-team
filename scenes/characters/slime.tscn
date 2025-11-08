@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://of0cy65lonem"]
+
+[node name="slime" type="Node2D"]
+
+[node name="slime_sheet" type="AnimatedSprite2D" parent="."]
+
+[node name="area" type="Area2D" parent="."]
+
+[node name="collision" type="CollisionShape2D" parent="area"]

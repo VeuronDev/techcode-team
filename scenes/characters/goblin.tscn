@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://biprgqbvg75mf"]
+
+[node name="goblin" type="Node2D"]
+
+[node name="goblin_sheet" type="AnimatedSprite2D" parent="."]
+
+[node name="area" type="Area2D" parent="."]
+
+[node name="collision" type="CollisionShape2D" parent="area"]
