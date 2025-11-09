@@ -2,16 +2,26 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< Updated upstream:assests/Weapons/wand.png.import
 uid="uid://bdirohefc0c5t"
 path="res://.godot/imported/wand.png-493085ab31a331830cf333f577793e51.ctex"
+=======
+uid="uid://boq2wcrl4mx8s"
+path="res://.godot/imported/goblin_idle.png-7378d82b48dd8bc5b1bcb896e74c5e3f.ctex"
+>>>>>>> Stashed changes:assests/characters/goblin/goblin_idle.png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
+<<<<<<< Updated upstream:assests/Weapons/wand.png.import
 source_file="res://assests/Weapons/wand.png"
 dest_files=["res://.godot/imported/wand.png-493085ab31a331830cf333f577793e51.ctex"]
+=======
+source_file="res://assests/characters/Goblin/goblin_idle.png"
+dest_files=["res://.godot/imported/goblin_idle.png-7378d82b48dd8bc5b1bcb896e74c5e3f.ctex"]
+>>>>>>> Stashed changes:assests/characters/goblin/goblin_idle.png.import
 
 [params]
 

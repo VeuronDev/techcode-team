@@ -2,16 +2,26 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< Updated upstream:assests/Weapons/magic_bullet.png.import
 uid="uid://b12eg0auwxdfv"
 path="res://.godot/imported/magic_bullet.png-3a35c18ad78b3743a4da235549155b21.ctex"
+=======
+uid="uid://cuh3ylkov1ugw"
+path="res://.godot/imported/goblin_hurt.png-88542191e7f11620e091fe8b84369f4f.ctex"
+>>>>>>> Stashed changes:assests/characters/goblin/goblin_hurt.png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
+<<<<<<< Updated upstream:assests/Weapons/magic_bullet.png.import
 source_file="res://assests/Weapons/magic_bullet.png"
 dest_files=["res://.godot/imported/magic_bullet.png-3a35c18ad78b3743a4da235549155b21.ctex"]
+=======
+source_file="res://assests/characters/Goblin/goblin_hurt.png"
+dest_files=["res://.godot/imported/goblin_hurt.png-88542191e7f11620e091fe8b84369f4f.ctex"]
+>>>>>>> Stashed changes:assests/characters/goblin/goblin_hurt.png.import
 
 [params]
 
