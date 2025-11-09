@@ -14,9 +14,7 @@ func shake():
 	if trauma <= 0:
 		return
 	
-	var amount = pow(trauma, trauma_power)
-	await get_tree().create_timer(0.1).timeout
-	
+	var amount = pow(trauma, trauma_power)	
 	rotation = deg_to_rad(max_roll) * amount * randf_range(-1, 1)
 	offset = Vector2(
 		max_offset.x * amount * randf_range(-1, 1),
