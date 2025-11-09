@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cm47ktgqmga6k"
-path="res://.godot/imported/sunnyside_world_chatacter_anim_v0.png-0b0e81f6be75497cb0872e2465719ec8.ctex"
+uid="uid://bpxdhoq4c4t2s"
+path="res://.godot/imported/goblin_attack.png-88750628af27947c5277cb062d14be89.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assests/characters/sunnyside_world_chatacter_anim_v0.png"
-dest_files=["res://.godot/imported/sunnyside_world_chatacter_anim_v0.png-0b0e81f6be75497cb0872e2465719ec8.ctex"]
+source_file="res://assests/characters/goblin/goblin_attack.png"
+dest_files=["res://.godot/imported/goblin_attack.png-88750628af27947c5277cb062d14be89.ctex"]
 
 [params]
 
