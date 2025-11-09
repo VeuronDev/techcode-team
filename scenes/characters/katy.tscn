@@ -2,8 +2,8 @@
 
 [node name="katy" type="Node2D"]
 
-[node name="Area" type="Area2D" parent="."]
-
 [node name="katy_sheet" type="AnimatedSprite2D" parent="."]
 
-[node name="Collision" type="CollisionShape2D" parent="katy_sheet"]
+[node name="area" type="Area2D" parent="."]
+
+[node name="Collision" type="CollisionShape2D" parent="area"]
