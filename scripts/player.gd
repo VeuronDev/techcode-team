@@ -12,7 +12,6 @@ var direction = Vector2.ZERO
 var is_rolling = false
 var roll_timer = 0.0
 var can_roll = true
-var attack_active = false
 
 func _physics_process(delta):
 	input_handle()
@@ -21,15 +20,14 @@ func _physics_process(delta):
 
 func input_handle():
 	direction = Input.get_vector("move_left","move_right","move_up","move_down")
-	if Input.is_action_just_pressed("dodge") and can_roll and not attack_active:
+	if Input.is_action_just_pressed("dodge") and can_roll and not GlobalVar.attack_active:
 		start_roll()
-	if Input.is_action_just_pressed("attack") and not attack_active:
-		attack_active = true
+	if Input.is_action_just_pressed("attack") and not GlobalVar.attack_active:
+		GlobalVar.attack_active = true
 		player_sheet.play("attack_sword")
 		cam.add_trauma(0.2)
-		# tunggu animasi attack selesai (misal 0.5 detik)
-		await get_tree().create_timer(0.5).timeout
-		attack_active = false
+		await get_tree().create_timer(0.4).timeout
+		GlobalVar.attack_active = false
 
 func roll_hanlde(delta):
 	if is_rolling:
@@ -60,7 +58,7 @@ func sprite_flip():
 		player_sheet.flip_h = false
 
 func update_animation():
-	if attack_active:
+	if GlobalVar.attack_active:
 		return
 	if is_rolling:
 		player_sheet.play("roll")
