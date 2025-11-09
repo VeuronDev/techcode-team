@@ -1,5 +1,6 @@
 [gd_scene load_steps=45 format=3 uid="uid://of0cy65lonem"]
 
+<<<<<<< Updated upstream
 [ext_resource type="Texture2D" uid="uid://c3p84pe3saqu" path="res://assests/characters/skeleton/skeleton_attack.png" id="1_e51g4"]
 [ext_resource type="Texture2D" uid="uid://cacyvddipp5he" path="res://assests/characters/skeleton/skeleton_death.png" id="2_11w7t"]
 [ext_resource type="Texture2D" uid="uid://o21sqttq31in" path="res://assests/characters/skeleton/skeleton_hurt_.png" id="3_bhsuw"]
@@ -13,6 +14,14 @@ region = Rect2(0, 0, 96, 64)
 [sub_resource type="AtlasTexture" id="AtlasTexture_7tan2"]
 atlas = ExtResource("1_e51g4")
 region = Rect2(96, 0, 96, 64)
+=======
+[ext_resource type="Script" path="res://scripts/skeleton.gd" id="1_11w7t"]
+[ext_resource type="Texture2D" uid="uid://dwch4gtgyi65v" path="res://assests/characters/Skeleton/skeleton_attack_strip7.png" id="2_bhsuw"]
+[ext_resource type="Texture2D" uid="uid://b4wyejx2oift4" path="res://assests/characters/Skeleton/skeleton_death_strip10.png" id="3_7y8xs"]
+[ext_resource type="Texture2D" uid="uid://na6jg2uct4rf" path="res://assests/characters/Skeleton/skeleton_hurt_strip7.png" id="4_ohjdn"]
+[ext_resource type="Texture2D" uid="uid://cfu750thunaap" path="res://assests/characters/Skeleton/skeleton_idle_strip6.png" id="5_1lx0f"]
+[ext_resource type="Texture2D" uid="uid://b0e5fmtvnwemc" path="res://assests/characters/Skeleton/skeleton_walk_strip8.png" id="6_7tan2"]
+>>>>>>> Stashed changes
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rmro7"]
 atlas = ExtResource("1_e51g4")
