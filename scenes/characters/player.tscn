@@ -457,8 +457,10 @@ script = ExtResource("1_yewv4")
 position = Vector2(-8, 27)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_rpnd8")
-animation = &"idle"
+animation = &"attack_sword"
 autoplay = "idle"
+frame = 9
+frame_progress = 0.74129456
 
 [node name="player_body" type="CollisionShape2D" parent="."]
 position = Vector2(0, -7)

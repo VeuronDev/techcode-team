@@ -343,9 +343,9 @@ script = ExtResource("1_v8e32")
 position = Vector2(0, -24)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_dksay")
-animation = &"run"
+animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.17645575
+frame_progress = 0.916657
 
 [node name="Body" type="CollisionShape2D" parent="."]
 position = Vector2(1, -33)
@@ -356,6 +356,3 @@ shape = SubResource("CircleShape2D_11w7t")
 [node name="Area" type="CollisionShape2D" parent="AreaEnemy"]
 position = Vector2(2, -40)
 shape = SubResource("CircleShape2D_v8e32")
-
-[connection signal="body_entered" from="AreaEnemy" to="." method="_on_area_enemy_body_entered"]
-[connection signal="body_exited" from="AreaEnemy" to="." method="_on_area_enemy_body_exited"]

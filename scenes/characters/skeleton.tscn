@@ -1,11 +1,11 @@
-[gd_scene load_steps=47 format=3 uid="uid://of0cy65lonem"]
+[gd_scene load_steps=48 format=3 uid="uid://of0cy65lonem"]
 
 [ext_resource type="Script" uid="uid://dgydff65w3c4o" path="res://scripts/skeleton.gd" id="1_11w7t"]
-[ext_resource type="Texture2D" uid="uid://dwch4gtgyi65v" path="res://assests/characters/Skeleton/skeleton_attack_strip7.png" id="2_bhsuw"]
-[ext_resource type="Texture2D" uid="uid://b4wyejx2oift4" path="res://assests/characters/Skeleton/skeleton_death_strip10.png" id="3_7y8xs"]
-[ext_resource type="Texture2D" uid="uid://cow6ijxjeamal" path="res://assests/characters/Skeleton/skeleton_hurt_strip7.png" id="4_ohjdn"]
-[ext_resource type="Texture2D" uid="uid://b2f2k2fax1bnw" path="res://assests/characters/Skeleton/skeleton_idle_strip6.png" id="5_1lx0f"]
-[ext_resource type="Texture2D" uid="uid://b0e5fmtvnwemc" path="res://assests/characters/Skeleton/skeleton_walk_strip8.png" id="6_7tan2"]
+[ext_resource type="Texture2D" uid="uid://dwch4gtgyi65v" path="res://assests/characters/skeleton/skeleton_attack_strip7.png" id="2_bhsuw"]
+[ext_resource type="Texture2D" uid="uid://b4wyejx2oift4" path="res://assests/characters/skeleton/skeleton_death_strip10.png" id="3_7y8xs"]
+[ext_resource type="Texture2D" uid="uid://na6jg2uct4rf" path="res://assests/characters/Skeleton/skeleton_hurt_strip7.png" id="4_ohjdn"]
+[ext_resource type="Texture2D" uid="uid://cfu750thunaap" path="res://assests/characters/Skeleton/skeleton_idle_strip6.png" id="5_1lx0f"]
+[ext_resource type="Texture2D" uid="uid://b0e5fmtvnwemc" path="res://assests/characters/skeleton/skeleton_walk_strip8.png" id="6_7tan2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rmro7"]
 atlas = ExtResource("2_bhsuw")
@@ -304,17 +304,29 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_11w7t"]
 radius = 13.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_bhsuw"]
+radius = 121.0
+
 [node name="Skeleton" type="CharacterBody2D"]
 platform_floor_layers = 4294967040
 script = ExtResource("1_11w7t")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="Sheet" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -24)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_dksay")
-animation = &"walk"
-autoplay = "walk"
+animation = &"idle"
+autoplay = "idle"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="Body" type="CollisionShape2D" parent="."]
 position = Vector2(0, -5)
 shape = SubResource("CircleShape2D_11w7t")
+
+[node name="AreaEnemy" type="Area2D" parent="."]
+
+[node name="Area" type="CollisionShape2D" parent="AreaEnemy"]
+position = Vector2(3, -14)
+shape = SubResource("CircleShape2D_bhsuw")
+
+[connection signal="body_entered" from="AreaEnemy" to="." method="_on_area_enemy_body_entered"]
+[connection signal="body_exited" from="AreaEnemy" to="." method="_on_area_enemy_body_exited"]
