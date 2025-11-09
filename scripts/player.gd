@@ -25,7 +25,7 @@ func input_handle():
 	if Input.is_action_just_pressed("attack") and not GlobalVar.attack_active:
 		GlobalVar.attack_active = true
 		player_sheet.play("attack_sword")
-		cam.add_trauma(0.2)
+		cam.add_trauma(0.3)
 		await get_tree().create_timer(0.4).timeout
 		GlobalVar.attack_active = false
 

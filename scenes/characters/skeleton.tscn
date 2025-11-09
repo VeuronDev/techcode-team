@@ -7,10 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://cfu750thunaap" path="res://assests/characters/Skeleton/skeleton_idle_strip6.png" id="5_1lx0f"]
 [ext_resource type="Texture2D" uid="uid://b0e5fmtvnwemc" path="res://assests/characters/skeleton/skeleton_walk_strip8.png" id="6_7tan2"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_11w7t"]
-radius = 17.333334
-height = 34.666668
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_rmro7"]
 atlas = ExtResource("2_bhsuw")
 region = Rect2(0, 0, 96, 64)
@@ -224,7 +220,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"death",
-"speed": 12.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -250,7 +246,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"hit",
-"speed": 12.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -305,6 +301,10 @@ animations = [{
 "speed": 12.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_11w7t"]
+radius = 17.333334
+height = 34.666668
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_11w7t"]
 radius = 25.317978
 
@@ -315,19 +315,20 @@ radius = 121.0
 platform_floor_layers = 4294967040
 script = ExtResource("1_11w7t")
 
+[node name="Sheet" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -24)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_dksay")
+animation = &"death"
+autoplay = "idle"
+frame_progress = 0.99553156
+
 [node name="AreaSword" type="Area2D" parent="."]
 position = Vector2(0, -24)
 scale = Vector2(3, 3)
 
 [node name="AreaHitted" type="CollisionShape2D" parent="AreaSword"]
 shape = SubResource("CapsuleShape2D_11w7t")
-
-[node name="Sheet" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -24)
-scale = Vector2(3, 3)
-sprite_frames = SubResource("SpriteFrames_dksay")
-animation = &"idle"
-autoplay = "idle"
 
 [node name="Body" type="CollisionShape2D" parent="."]
 visible = false
@@ -340,6 +341,12 @@ visible = false
 [node name="Area" type="CollisionShape2D" parent="AreaEnemy"]
 position = Vector2(0, -25)
 shape = SubResource("CircleShape2D_bhsuw")
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+offset_left = -37.0
+offset_top = -89.0
+offset_right = 40.0
+offset_bottom = -62.0
 
 [connection signal="body_entered" from="AreaSword" to="." method="_on_area_sword_body_entered"]
 [connection signal="body_exited" from="AreaSword" to="." method="_on_area_sword_body_exited"]
