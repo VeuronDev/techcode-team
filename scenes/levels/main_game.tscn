@@ -1829,5 +1829,25 @@ offset_top = 695.0
 offset_right = 41.0
 offset_bottom = 718.0
 
-[node name="health" parent="Health" instance=ExtResource("7_q4tu8")]
+[node name="health2" parent="Health" instance=ExtResource("7_q4tu8")]
+position = Vector2(1010.00006, 38)
+rotation = 0.0018021679
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="health3" parent="Health" instance=ExtResource("7_q4tu8")]
+position = Vector2(1454.9999, 568)
+rotation = 0.0018021679
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="health4" parent="Health" instance=ExtResource("7_q4tu8")]
+position = Vector2(536.00024, 685)
+rotation = 0.0018021679
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="health5" parent="Health" instance=ExtResource("7_q4tu8")]
+position = Vector2(1907.9999, -256.99997)
+rotation = 0.0018021679
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="health1" parent="Health" instance=ExtResource("7_q4tu8")]
 position = Vector2(255, 95)

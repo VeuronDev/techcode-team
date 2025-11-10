@@ -9,6 +9,8 @@ const BASEDROLLCOOLDOWN = 1.0
 @onready var cam = $Camera2D
 @onready var coin_player = $Coin
 @onready var health_bar = $HealthPlayer
+@onready var notifications = $notification
+@onready var take_notif = $notification/take
 
 var direction = Vector2.ZERO
 var is_rolling = false
@@ -17,6 +19,8 @@ var can_roll = true
 
 func _physics_process(delta):
 	health_bar.value = GlobalVar.healthPlayer
+	if GlobalVar.apple_taken or GlobalVar.health_taken:
+		notif_item()
 	if GlobalVar.hurt_active:
 		handle_hurt_status()
 	input_handle()
@@ -86,3 +90,11 @@ func update_animation():
 		player_sheet.play("run")
 	else:
 		player_sheet.play("idle")
+		
+func notif_item() -> void:
+	if GlobalVar.apple_taken:
+		notifications.text = "+1 Apple"
+		take_notif.play("notif_taken")
+	elif GlobalVar.health_taken:
+		notifications.text = "+30 Health"
+		take_notif.play("notif_taken")

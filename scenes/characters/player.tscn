@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=3 uid="uid://c5f38ojmtakna"]
+[gd_scene load_steps=67 format=3 uid="uid://c5f38ojmtakna"]
 
 [ext_resource type="Texture2D" uid="uid://cm47ktgqmga6k" path="res://assests/characters/sunnyside_world_chatacter_anim_v0.png" id="1_rp718"]
 [ext_resource type="Script" uid="uid://ddcy8h7quthk" path="res://scripts/player.gd" id="1_yewv4"]
@@ -451,6 +451,66 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_3uc7m"]
 radius = 31.575306
 
+[sub_resource type="Animation" id="Animation_76oj4"]
+resource_name = "notif_taken"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.46666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-32, -22.51), Vector2(-32, -61.32)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.099999994, 0.33333334, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [false, true, true, false]
+}
+
+[sub_resource type="Animation" id="Animation_dyp2m"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-32, -24)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_atpat"]
+_data = {
+&"RESET": SubResource("Animation_dyp2m"),
+&"notif_taken": SubResource("Animation_76oj4")
+}
+
 [node name="Player" type="CharacterBody2D"]
 z_index = 5
 script = ExtResource("1_yewv4")
@@ -474,6 +534,18 @@ offset_top = -111.0
 offset_right = 19.0
 offset_bottom = -88.0
 text = "Apple : "
+
+[node name="notification" type="Label" parent="."]
+offset_left = -32.0
+offset_top = -24.0
+offset_right = 35.0
+offset_bottom = -1.0
+theme_override_font_sizes/font_size = 13
+
+[node name="take" type="AnimationPlayer" parent="notification"]
+libraries = {
+&"": SubResource("AnimationLibrary_atpat")
+}
 
 [node name="HealthPlayer" type="ProgressBar" parent="."]
 offset_left = -39.0

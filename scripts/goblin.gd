@@ -99,12 +99,10 @@ func play_attack():
 	animated_sprite_2d.play("attack")
 
 	await get_tree().create_timer(0.6).timeout 
-	var attack_chance = randf()
-	if attack_chance < 0.7:
-		var damage_to_player = randi_range(5, 10)
-		GlobalVar.healthPlayer -= damage_to_player
-		GlobalVar.hurt_active = true
-		print("Player terkena damage: ", damage_to_player)
+	var damage_to_player = randi_range(1, 5)
+	GlobalVar.hurt_active = true
+	print("Player terkena damage: ", damage_to_player)
+	GlobalVar.healthPlayer -= damage_to_player
 	is_attacking = false
 	
 func init_apple_position(count: int):
