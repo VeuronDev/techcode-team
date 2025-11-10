@@ -1,18 +1,22 @@
 extends CharacterBody2D
 
-const BASE_SPEED = 200
+const BASE_SPEED = 300
 const MAX_HEALTH = 100
-const apple = preload("res://apple.tscn")
+const apple = preload("res://scenes/item/apple.tscn")
+const potion = preload("res://scenes/item/potion.tscn")
 
 @onready var animated_sprite_2d = $Sheet
 @onready var health_bar = $HealthBar
+const ATTACK_COOLDOWN = 1.5
 
 var player_post
 var target: CharacterBody2D
 var in_sword_area = false
 var is_hit = false
 var is_dead = false
+var is_attacking = false
 var health = MAX_HEALTH
+var attack_timer = 0.0
 
 func _ready():
 	player_post = get_node("/root/mainGame/Player")
@@ -21,11 +25,14 @@ func _ready():
 
 func _physics_process(delta):
 	randomize()
+	if attack_timer > 0:
+		attack_timer -= delta
 	if is_dead:
 		velocity = Vector2.ZERO
 		return
-	
-	if is_hit:
+	if in_sword_area and not is_hit and not is_dead and attack_timer <= 0:
+		play_attack()
+	if is_hit or is_attacking:
 		velocity = Vector2.ZERO
 	else:
 		if target:
@@ -39,17 +46,19 @@ func _physics_process(delta):
 		animated_sprite_2d.play("death")
 	elif is_hit:
 		animated_sprite_2d.play("hit")
+	elif is_attacking:
+		animated_sprite_2d.play("attack")
 	elif velocity.length() > 0:
-		animated_sprite_2d.play("walk")
+		animated_sprite_2d.play("walka")
 	else:
 		animated_sprite_2d.play("idle")
 
 	move_and_slide()
-	animated_sprite_2d.flip_h = velocity.x < 0
-
-	# Cek serangan player
+	if target:
+		animated_sprite_2d.flip_h = player_post.global_position.x < global_position.x
 	if in_sword_area and GlobalVar.attack_active and not is_hit and not is_dead:
 		take_damage(randi_range(10, 15))
+
 
 func _on_area_enemy_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
@@ -72,7 +81,6 @@ func take_damage(amount: int):
 	velocity = Vector2.ZERO
 	health -= amount
 	health_bar.value = health
-	print("Enemy HP:", health)
 
 	if health <= 0:
 		die()
@@ -80,16 +88,31 @@ func take_damage(amount: int):
 		animated_sprite_2d.play("hit")
 		await get_tree().create_timer(0.6).timeout
 		is_hit = false
+		
+func play_attack():
+	if is_dead or is_hit or is_attacking:
+		return
+	attack_timer = ATTACK_COOLDOWN	
+	is_attacking = true	
+	velocity = Vector2.ZERO
+	animated_sprite_2d.play("attack")
 
+	await get_tree().create_timer(0.6).timeout 
+	var attack_chance = randf()
+	if attack_chance < 0.7:
+		var damage_to_player = randi_range(5, 10)
+		GlobalVar.healthPlayer -= damage_to_player
+		GlobalVar.hurt_active = true
+		print("Player terkena damage: ", damage_to_player)
+	is_attacking = false
+	
 func init_apple_position(count: int):
-	print("Drop item count :", count)
 	for i in count:
-		var apple_instance = apple.instantiate()	
-		var offset_x = randf_range(-20.0, 20.0)
-		var offset_y = randf_range(-20.0, 20.0) 
-		var random_offset = Vector2(offset_x, offset_y)	
-		print("Offset :", random_offset)
-		apple_instance.global_position = global_position + random_offset
+		var apple_instance = apple.instantiate()
+		var offset_x = randf_range(-50.0, 50.0) 
+		var offset_y = randf_range(-50.0, 50.0)
+		var random_offset = Vector2(offset_x, offset_y)		
+		apple_instance.global_position = global_position + random_offset	
 		get_parent().add_child(apple_instance)
 
 func die():
@@ -99,4 +122,4 @@ func die():
 	animated_sprite_2d.play("death")
 	await get_tree().create_timer(1).timeout
 	queue_free()
-	init_apple_position(randf_range(2, 4))
+	init_apple_position(int(randf_range(1, 3)))

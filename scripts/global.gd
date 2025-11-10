@@ -1,7 +1,9 @@
 extends Node
 
 var attack_active = false
-var coin = 0
+var hurt_active = true
+var healthPlayer = 100
+var apple = 0
 
 #drop item count
 func dropped_item_count(enemy_level : int, Item : int) -> int:

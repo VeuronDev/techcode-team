@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://dgydff65w3c4o" path="res://scripts/skeleton.gd" id="1_11w7t"]
 [ext_resource type="Texture2D" uid="uid://dwch4gtgyi65v" path="res://assests/characters/skeleton/skeleton_attack_strip7.png" id="2_bhsuw"]
 [ext_resource type="Texture2D" uid="uid://b4wyejx2oift4" path="res://assests/characters/skeleton/skeleton_death_strip10.png" id="3_7y8xs"]
-[ext_resource type="Texture2D" uid="uid://na6jg2uct4rf" path="res://assests/characters/Skeleton/skeleton_hurt_strip7.png" id="4_ohjdn"]
-[ext_resource type="Texture2D" uid="uid://cfu750thunaap" path="res://assests/characters/Skeleton/skeleton_idle_strip6.png" id="5_1lx0f"]
+[ext_resource type="Texture2D" uid="uid://na6jg2uct4rf" path="res://assests/characters/skeleton/skeleton_hurt_strip7.png" id="4_ohjdn"]
+[ext_resource type="Texture2D" uid="uid://cfu750thunaap" path="res://assests/characters/skeleton/skeleton_idle_strip6.png" id="5_1lx0f"]
 [ext_resource type="Texture2D" uid="uid://b0e5fmtvnwemc" path="res://assests/characters/skeleton/skeleton_walk_strip8.png" id="6_7tan2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rmro7"]
@@ -347,6 +347,13 @@ offset_left = -37.0
 offset_top = -89.0
 offset_right = 40.0
 offset_bottom = -62.0
+
+[node name="Name" type="Label" parent="."]
+offset_left = -52.0
+offset_top = -114.0
+offset_right = 51.0
+offset_bottom = -91.0
+text = "Skeleton Lv.2"
 
 [connection signal="body_entered" from="AreaSword" to="." method="_on_area_sword_body_entered"]
 [connection signal="body_exited" from="AreaSword" to="." method="_on_area_sword_body_exited"]

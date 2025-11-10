@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://cieyfbo7ts8l8"]
+
+[ext_resource type="Script" uid="uid://dfkuta1k48vd6" path="res://scripts/apple.gd" id="1_174ht"]
+[ext_resource type="Texture2D" uid="uid://k8n48lpq0qrt" path="res://icon.svg" id="2_8parx"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_n78qv"]
+radius = 31.016125
+
+[node name="potion" type="Area2D"]
+script = ExtResource("1_174ht")
+
+[node name="potion_image" type="Sprite2D" parent="."]
+scale = Vector2(0.32714844, 0.32714844)
+texture = ExtResource("2_8parx")
+
+[node name="collect" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("CircleShape2D_n78qv")
+
+[node name="name" type="Label" parent="."]
+offset_left = -25.0
+offset_top = -44.0
+offset_right = 26.0
+offset_bottom = -21.0
+text = "potion"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

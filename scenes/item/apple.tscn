@@ -17,4 +17,11 @@ texture = ExtResource("1_3ed3y")
 visible = false
 shape = SubResource("CircleShape2D_n78qv")
 
+[node name="name" type="Label" parent="."]
+offset_left = -22.0
+offset_top = -45.0
+offset_right = 18.0
+offset_bottom = -22.0
+text = "apple"
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
