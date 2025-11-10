@@ -70,7 +70,6 @@ func take_damage(amount: int):
 	velocity = Vector2.ZERO
 	health -= amount
 	health_bar.value = health
-	print("Enemy HP:", health)
 
 	if health <= 0:
 		die()
@@ -84,5 +83,6 @@ func die():
 	is_hit = false
 	velocity = Vector2.ZERO
 	animated_sprite_2d.play("death")
+	GlobalVar.coin += 1
 	await get_tree().create_timer(1).timeout
 	queue_free()

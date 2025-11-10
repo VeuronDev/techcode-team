@@ -7,6 +7,7 @@ const BASEDROLLCOOLDOWN = 1.0
 
 @onready var player_sheet = $player_sheet
 @onready var cam = $Camera2D
+@onready var coin_player = $Coin
 
 var direction = Vector2.ZERO
 var is_rolling = false
@@ -17,6 +18,7 @@ func _physics_process(delta):
 	input_handle()
 	roll_hanlde(delta)
 	update_animation()
+	update_coin_status(GlobalVar.coin)
 
 func input_handle():
 	direction = Input.get_vector("move_left","move_right","move_up","move_down")
@@ -57,6 +59,9 @@ func sprite_flip():
 		player_sheet.flip_h = true
 	elif velocity.x > 0:
 		player_sheet.flip_h = false
+
+func update_coin_status(coin : int):
+	coin_player.text = "Coin : %d" % coin
 
 func update_animation():
 	if GlobalVar.attack_active:
