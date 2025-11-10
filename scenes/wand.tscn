@@ -1,12 +1,19 @@
 [gd_scene load_steps=3 format=3 uid="uid://d050m3id42t7u"]
 
 [ext_resource type="Script" uid="uid://bv8wmowiu54m5" path="res://scripts/wand.gd" id="1_ran2g"]
-[ext_resource type="Texture2D" uid="uid://bdirohefc0c5t" path="res://assests/Weapons/wand.png" id="2_bsfy4"]
+[ext_resource type="Texture2D" uid="uid://bdirohefc0c5t" path="res://assests/Weapons/wand.png" id="2_ran2g"]
 
 [node name="Wand" type="Node2D"]
+scale = Vector2(3, 3)
 script = ExtResource("1_ran2g")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-1, -24)
-scale = Vector2(3, 3)
-texture = ExtResource("2_bsfy4")
+[node name="wand_pivot" type="Marker2D" parent="."]
+position = Vector2(0, -4.3333335)
+
+[node name="Sprite2D" type="Sprite2D" parent="wand_pivot"]
+position = Vector2(9, 0)
+texture = ExtResource("2_ran2g")
+
+[node name="CastingPoint" type="Marker2D" parent="wand_pivot/Sprite2D"]
+unique_name_in_owner = true
+position = Vector2(0, -6)

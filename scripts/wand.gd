@@ -1,6 +1,6 @@
 extends Node2D
 
-const FIREBALL = preload("uid://bv7cvtecypf6m")
+
 
 const BASEFIRERATE = 0.2
 const BASEBULLETSPEED = 600
@@ -13,10 +13,11 @@ func _process(delta):
 		look_at(get_global_mouse_position())
 
 func cast():
+	const FIREBALL = preload("res://scenes/filreball.tscn")
 	can_cast = false
 	var bullet = FIREBALL.instantiate()
 	get_tree().current_scene.add_child(bullet)
-	bullet.global_position = global_position
+	bullet.global_position = %CastingPoint.global_position
 	bullet.rotation = rotation
 	bullet.direction = Vector2.RIGHT.rotated(rotation)
 	

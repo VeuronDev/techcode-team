@@ -1,6 +1,6 @@
 [gd_scene load_steps=63 format=3 uid="uid://c5f38ojmtakna"]
 
-[ext_resource type="Texture2D" uid="uid://cm47ktgqmga6k" path="res://assests/characters/player/player_character.png" id="1_rp718"]
+[ext_resource type="Texture2D" uid="uid://dy7anisy5edkf" path="res://assests/characters/player/sunnyside_world_chatacter_anim_v0.png" id="1_rp718"]
 [ext_resource type="Script" uid="uid://ddcy8h7quthk" path="res://scripts/player.gd" id="1_yewv4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rp718"]
@@ -448,22 +448,20 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3uc7m"]
-radius = 23.0
 
 [node name="Player" type="CharacterBody2D"]
 z_index = 5
-collision_layer = 2
-collision_mask = 2
 script = ExtResource("1_yewv4")
 
 [node name="player_sheet" type="AnimatedSprite2D" parent="."]
 position = Vector2(-8, 27)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_rpnd8")
-animation = &"idle"
+animation = &"attack_sword"
 autoplay = "idle"
-frame_progress = 0.15829809
+frame = 9
+frame_progress = 0.74129456
 
 [node name="player_body" type="CollisionShape2D" parent="."]
-position = Vector2(-1, -23)
+position = Vector2(0, -7)
 shape = SubResource("CircleShape2D_3uc7m")

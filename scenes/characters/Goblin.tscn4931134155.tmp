@@ -1,11 +1,11 @@
-[gd_scene load_steps=53 format=3 uid="uid://biprgqbvg75mf"]
+[gd_scene load_steps=52 format=3 uid="uid://biprgqbvg75mf"]
 
 [ext_resource type="Script" uid="uid://r8lsr2j8jo30" path="res://scripts/goblin.gd" id="1_v8e32"]
 [ext_resource type="Texture2D" uid="uid://1875rvcapl8k" path="res://assests/characters/Goblin/spr_attack_strip10.png" id="2_qod07"]
 [ext_resource type="Texture2D" uid="uid://cpbhiug7n4cfp" path="res://assests/characters/Goblin/spr_death_strip13.png" id="3_lxi4k"]
 [ext_resource type="Texture2D" uid="uid://b5qwltmwiynor" path="res://assests/characters/Goblin/spr_hurt_strip8.png" id="4_a4r6r"]
 [ext_resource type="Texture2D" uid="uid://x8pu5dyhip5a" path="res://assests/characters/Goblin/spr_run_strip8.png" id="5_2p7dg"]
-[ext_resource type="Texture2D" uid="uid://no4bwhumcevq" path="res://assests/characters/Goblin/spr_idle_strip9.png" id="5_qod07"]
+[ext_resource type="Texture2D" uid="uid://no4bwhumcevq" path="res://assests/characters/goblin/spr_idle_strip9.png" id="5_qod07"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bg15l"]
 atlas = ExtResource("2_qod07")
@@ -239,7 +239,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"death",
-"speed": 6.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -268,7 +268,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"hit",
-"speed": 8.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -329,10 +329,6 @@ animations = [{
 "speed": 12.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qod07"]
-radius = 50.0
-height = 104.0
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_11w7t"]
 radius = 24.0
 
@@ -347,16 +343,9 @@ script = ExtResource("1_v8e32")
 position = Vector2(0, -24)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_dksay")
-animation = &"hit"
+animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.25127238
-
-[node name="AreaSword" type="Area2D" parent="."]
-visible = false
-
-[node name="AreaHitted" type="CollisionShape2D" parent="AreaSword"]
-position = Vector2(1, -31)
-shape = SubResource("CapsuleShape2D_qod07")
+frame_progress = 0.916657
 
 [node name="Body" type="CollisionShape2D" parent="."]
 position = Vector2(1, -33)
@@ -365,17 +354,5 @@ shape = SubResource("CircleShape2D_11w7t")
 [node name="AreaEnemy" type="Area2D" parent="."]
 
 [node name="Area" type="CollisionShape2D" parent="AreaEnemy"]
-visible = false
 position = Vector2(2, -40)
 shape = SubResource("CircleShape2D_v8e32")
-
-[node name="HealthBar" type="ProgressBar" parent="."]
-offset_left = -34.0
-offset_top = -89.0
-offset_right = 39.0
-offset_bottom = -62.0
-
-[connection signal="body_entered" from="AreaSword" to="." method="_on_area_sword_body_entered"]
-[connection signal="body_exited" from="AreaSword" to="." method="_on_area_sword_body_exited"]
-[connection signal="body_entered" from="AreaEnemy" to="." method="_on_area_enemy_body_entered"]
-[connection signal="body_exited" from="AreaEnemy" to="." method="_on_area_enemy_body_exited"]

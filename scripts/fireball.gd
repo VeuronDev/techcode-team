@@ -12,5 +12,6 @@ func _ready():
 func _physics_process(delta):
 	global_position += direction * FLYSPEED * delta
 	
+
 func _on_body_entered(body):
-	queue_free()
+	queue_free() 
