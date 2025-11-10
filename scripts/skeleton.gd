@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 const BASE_SPEED = 200
 const MAX_HEALTH = 100
+const apple = preload("res://apple.tscn")
 
 @onready var animated_sprite_2d = $Sheet
 @onready var health_bar = $HealthBar
@@ -19,6 +20,7 @@ func _ready():
 	health_bar.value = health
 
 func _physics_process(delta):
+	randomize()
 	if is_dead:
 		velocity = Vector2.ZERO
 		return
@@ -79,6 +81,17 @@ func take_damage(amount: int):
 		await get_tree().create_timer(0.6).timeout
 		is_hit = false
 
+func init_apple_position(count: int):
+	print("Drop item count :", count)
+	for i in count:
+		var apple_instance = apple.instantiate()	
+		var offset_x = randf_range(-20.0, 20.0)
+		var offset_y = randf_range(-20.0, 20.0) 
+		var random_offset = Vector2(offset_x, offset_y)	
+		print("Offset :", random_offset)
+		apple_instance.global_position = global_position + random_offset
+		get_parent().add_child(apple_instance)
+
 func die():
 	is_dead = true
 	is_hit = false
@@ -86,3 +99,4 @@ func die():
 	animated_sprite_2d.play("death")
 	await get_tree().create_timer(1).timeout
 	queue_free()
+	init_apple_position(randf_range(2, 4))
