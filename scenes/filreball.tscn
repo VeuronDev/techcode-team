@@ -1,7 +1,14 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=11 format=3 uid="uid://di87qugnir8ro"]
 
 [ext_resource type="Texture2D" uid="uid://b12eg0auwxdfv" path="res://assests/Weapons/magic_bullet.png" id="1_aq3xx"]
 [ext_resource type="Script" uid="uid://dxeh6jyn8ibdt" path="res://scripts/fireball.gd" id="1_rwjlc"]
+=======
+[gd_scene load_steps=11 format=3 uid="uid://caj4hjvtlgjel"]
+
+[ext_resource type="Texture2D" path="res://assests/Weapons/magic_bullet.png" id="1_aq3xx"]
+[ext_resource type="Script" path="res://scripts/fireball.gd" id="1_rwjlc"]
+>>>>>>> Stashed changes
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rwjlc"]
 atlas = ExtResource("1_aq3xx")
