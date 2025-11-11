@@ -23,6 +23,7 @@ func _physics_process(delta):
 		notif_item()
 	if GlobalVar.hurt_active:
 		handle_hurt_status()
+		
 	input_handle()
 	roll_hanlde(delta)
 	update_animation()

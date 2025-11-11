@@ -49,7 +49,7 @@ func _physics_process(delta):
 	elif is_attacking:
 		animated_sprite_2d.play("attack")
 	elif velocity.length() > 0:
-		animated_sprite_2d.play("walka")
+		animated_sprite_2d.play("walk")
 	else:
 		animated_sprite_2d.play("idle")
 
