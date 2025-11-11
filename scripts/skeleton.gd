@@ -168,6 +168,7 @@ func die():
 	is_dead = true
 	is_hit = false
 	velocity = Vector2.ZERO
+	GlobalVar.add_kill()
 	animated_sprite_2d.play("death")
 	await get_tree().create_timer(1).timeout
 	queue_free()

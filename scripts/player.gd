@@ -17,6 +17,16 @@ var is_rolling = false
 var roll_timer = 0.0
 var can_roll = true
 
+func _ready():
+	GlobalVar.connect("show_kill_message", Callable(self, "_on_kill_message"))
+
+func _on_kill_message(text):
+	$KillMessage.text = text
+	$KillMessage.show()
+	$KillMessage.modulate.a = 1
+	$KillMessage.scale = Vector2(1.2, 1.2)
+	$KillMessage.create_tween().tween_property($KillMessage, "modulate:a", 0, 1.5)
+
 func _physics_process(delta):
 	health_bar.value = GlobalVar.healthPlayer
 	if GlobalVar.apple_taken or GlobalVar.health_taken:
