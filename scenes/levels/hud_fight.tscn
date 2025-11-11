@@ -1,0 +1,76 @@
+[gd_scene load_steps=2 format=3 uid="uid://deec6mcbmvuyv"]
+
+[ext_resource type="Script" uid="uid://pfrs13k4k3yi" path="res://scripts/hud_fight.gd" id="1_obyjr"]
+
+[node name="HUD_Fight" type="CanvasLayer"]
+script = ExtResource("1_obyjr")
+
+[node name="log_player" type="Label" parent="."]
+offset_left = 10.0
+offset_top = 593.0
+offset_right = 252.0
+offset_bottom = 712.0
+
+[node name="log_input" type="Label" parent="."]
+offset_left = 1193.0
+offset_top = 689.0
+offset_right = 1272.0
+offset_bottom = 715.0
+
+[node name="HealthPlayer" type="ProgressBar" parent="."]
+offset_left = 120.0
+offset_top = 17.0
+offset_right = 401.0
+offset_bottom = 60.0
+
+[node name="item_apple" type="Button" parent="."]
+anchors_preset = -1
+anchor_left = 0.384
+anchor_top = 0.91800004
+anchor_right = 0.384
+anchor_bottom = 0.91800004
+offset_left = -49.52002
+offset_top = -46.960022
+offset_right = 48.47998
+offset_bottom = 47.039978
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+
+[node name="item_health" type="Button" parent="."]
+anchors_preset = -1
+anchor_left = 0.48700002
+anchor_top = 0.91800004
+anchor_right = 0.49400002
+anchor_bottom = 0.91800004
+offset_left = -49.360046
+offset_top = -46.960022
+offset_right = 39.679993
+offset_bottom = 47.039978
+size_flags_horizontal = 4
+size_flags_vertical = 8
+
+[node name="backpack" type="Button" parent="."]
+anchors_preset = -1
+anchor_left = 0.591
+anchor_top = 0.91800004
+anchor_right = 0.591
+anchor_bottom = 0.91800004
+offset_left = -48.48004
+offset_top = -46.960022
+offset_right = 49.51996
+offset_bottom = 47.039978
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="profile" type="Button" parent="."]
+offset_left = 17.0
+offset_top = 12.0
+offset_right = 108.0
+offset_bottom = 112.0
+
+[node name="profile2" type="Button" parent="."]
+offset_left = 1183.0
+offset_top = 6.0
+offset_right = 1274.0
+offset_bottom = 47.0

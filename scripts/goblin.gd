@@ -4,9 +4,9 @@ const BASE_SPEED = 300
 const MAX_HEALTH = 100
 const apple = preload("res://scenes/item/apple.tscn")
 const potion = preload("res://scenes/item/potion.tscn")
+const skull = preload("res://scenes/item/skull.tscn")
 const ATTACK_COOLDOWN = 1.5
 
-# 🔹 Parameter untuk gerak acak (patrol)
 const WANDER_RADIUS = 120.0
 const WANDER_WAIT = 1.5
 
@@ -22,7 +22,6 @@ var is_attacking = false
 var health = MAX_HEALTH
 var attack_timer = 0.0
 
-# 🔹 Variabel patrol
 var origin_position: Vector2
 var wander_target: Vector2
 var wander_wait_timer: float = 0.0
@@ -51,11 +50,9 @@ func _physics_process(delta):
 		velocity = Vector2.ZERO
 	else:
 		if target:
-			# 🔹 Kejar player
 			var direction = global_position.direction_to(player_post.global_position)
 			velocity = direction * BASE_SPEED
 		else:
-			# 🔹 Bergerak acak di sekitar area spawn
 			_wander_behavior(delta)
 
 	# 🔹 Animasi
@@ -87,7 +84,7 @@ func _physics_process(delta):
 		take_damage(randi_range(10, 15))
 
 
-# === 🧠 GERAK ACAK DI SEKITAR ===
+# === GERAK ACAK DI SEKITAR ===
 func _wander_behavior(delta):
 	if wander_wait_timer > 0:
 		wander_wait_timer -= delta
@@ -106,7 +103,7 @@ func _set_new_wander_target():
 	wander_target = origin_position + offset
 
 
-# === ⚔️ COLLISION ===
+# === COLLISION ===
 func _on_area_enemy_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
 		target = body
@@ -124,9 +121,10 @@ func _on_area_sword_body_exited(body: Node2D) -> void:
 		in_sword_area = false
 
 
-# === ❤️ DAMAGE & ATTACK ===
+# === DAMAGE & ATTACK ===
 func take_damage(amount: int):
 	is_hit = true
+	$Audio_Manager/hurt.play()
 	velocity = Vector2.ZERO
 	health -= amount
 	health_bar.value = health
@@ -150,19 +148,26 @@ func play_attack():
 	var damage_to_player = randi_range(1, 5)
 	GlobalVar.hurt_active = true
 	GlobalVar.healthPlayer -= damage_to_player
-	print("Player terkena damage:", damage_to_player)
 	is_attacking = false
 
 
-# === 🍎 DROP ITEM ===
-func init_apple_position(count: int):
-	for i in count:
-		var apple_instance = apple.instantiate()
+# === DROP ITEM ===
+func init_dropped_items(count: int):
+	for i in range(count):
+		var rand_drop = randf()
+		var drop_scene
+		if rand_drop < 0.6:
+			drop_scene = apple
+		elif rand_drop < 0.9:
+			drop_scene = potion
+		else:
+			drop_scene = skull
+		var drop_instance = drop_scene.instantiate()	
 		var offset_x = randf_range(-50.0, 50.0)
 		var offset_y = randf_range(-50.0, 50.0)
-		var random_offset = Vector2(offset_x, offset_y)
-		apple_instance.position = position + random_offset
-		get_parent().add_child(apple_instance)
+		var random_offset = Vector2(offset_x, offset_y)		
+		drop_instance.global_position = position + random_offset
+		get_parent().add_child(drop_instance)
 
 func die():
 	is_dead = true
@@ -172,4 +177,4 @@ func die():
 	animated_sprite_2d.play("death")
 	await get_tree().create_timer(1).timeout
 	queue_free()
-	init_apple_position(int(randf_range(1, 3)))
+	init_dropped_items(int(randf_range(1, 3)))

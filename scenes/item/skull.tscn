@@ -10,7 +10,7 @@ radius = 31.016125
 script = ExtResource("1_2htaa")
 
 [node name="skull_image" type="Sprite2D" parent="."]
-position = Vector2(-2, 0)
+position = Vector2(5.9604645e-08, 6)
 scale = Vector2(2.5, 2.493)
 texture = ExtResource("2_4oy3r")
 

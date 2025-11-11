@@ -4,13 +4,12 @@ extends Area2D
 
 func _ready() -> void:
 	animate.play("apple_spawn")
-
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
 		GlobalVar.apple_taken = true
+		$collect_item.play()
 		GlobalVar.apple += 1
 		animate.play("apple_taken")
-		
 func _on_animation_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "apple_taken":
 		GlobalVar.apple_taken = false
