@@ -6,3 +6,5 @@ var healthPlayer = 100
 var apple = 0
 var apple_taken = false
 var health_taken= false
+var current_waves = 1
+var waves_active = false

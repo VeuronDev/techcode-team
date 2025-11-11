@@ -1,8 +1,9 @@
-[gd_scene load_steps=67 format=3 uid="uid://c5f38ojmtakna"]
+[gd_scene load_steps=68 format=3 uid="uid://c5f38ojmtakna"]
 
 [ext_resource type="Texture2D" uid="uid://cm47ktgqmga6k" path="res://assests/characters/sunnyside_world_chatacter_anim_v0.png" id="1_rp718"]
 [ext_resource type="Script" uid="uid://ddcy8h7quthk" path="res://scripts/player.gd" id="1_yewv4"]
 [ext_resource type="Texture2D" uid="uid://t12o5x5vibqs" path="res://assests/shadow.png" id="3_76oj4"]
+[ext_resource type="Script" uid="uid://tswprrvwji6f" path="res://scripts/camera.gd" id="4_dyp2m"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rp718"]
 atlas = ExtResource("1_rp718")
@@ -558,3 +559,10 @@ modulate = Color(1, 1, 1, 0.6)
 position = Vector2(-0.99999976, -26)
 scale = Vector2(0.017541667, 0.026848981)
 texture = ExtResource("3_76oj4")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -15)
+scale = Vector2(3, 3)
+position_smoothing_enabled = true
+position_smoothing_speed = 4.0
+script = ExtResource("4_dyp2m")
