@@ -8,6 +8,9 @@ const BASEDROLLCOOLDOWN = 1.0
 @onready var player_sheet = $player_sheet
 @onready var cam = $Camera2D
 @onready var coin_player = $Coin
+@onready var health_bar = $HealthPlayer
+@onready var notifications = $notification
+@onready var take_notif = $notification/take
 
 var direction = Vector2.ZERO
 var is_rolling = false
@@ -15,10 +18,15 @@ var roll_timer = 0.0
 var can_roll = true
 
 func _physics_process(delta):
+	health_bar.value = GlobalVar.healthPlayer
+	if GlobalVar.apple_taken or GlobalVar.health_taken:
+		notif_item()
+	if GlobalVar.hurt_active:
+		handle_hurt_status()
 	input_handle()
 	roll_hanlde(delta)
 	update_animation()
-	update_coin_status(GlobalVar.coin)
+	update_item_status()
 
 func input_handle():
 	direction = Input.get_vector("move_left","move_right","move_up","move_down")
@@ -60,16 +68,33 @@ func sprite_flip():
 	elif velocity.x > 0:
 		player_sheet.flip_h = false
 
-func update_coin_status(coin : int):
-	coin_player.text = "Coin : %d" % coin
+func handle_hurt_status():
+	if GlobalVar.hurt_active:
+		await get_tree().create_timer(0.4).timeout
+		GlobalVar.hurt_active = false
+
+func update_item_status():
+	coin_player.text = "Apple : %d" % GlobalVar.apple
 
 func update_animation():
+	sprite_flip()
 	if GlobalVar.attack_active:
+		return
+	if GlobalVar.hurt_active:
+		player_sheet.play("hit")
 		return
 	if is_rolling:
 		player_sheet.play("roll")
+		return
 	elif velocity.length() > 0.0:
 		player_sheet.play("run")
 	else:
 		player_sheet.play("idle")
-	sprite_flip()
+		
+func notif_item() -> void:
+	if GlobalVar.apple_taken:
+		notifications.text = "+1 Apple"
+		take_notif.play("notif_taken")
+	elif GlobalVar.health_taken:
+		notifications.text = "+30 Health"
+		take_notif.play("notif_taken")

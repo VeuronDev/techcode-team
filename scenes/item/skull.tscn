@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://c0ggpegwhs2sc"]
+
+[ext_resource type="Script" uid="uid://cfmh6d1lmt852" path="res://scripts/skull.gd" id="1_2htaa"]
+[ext_resource type="Texture2D" uid="uid://n4hi6useqkvt" path="res://assests/characters/item/skull.png" id="2_4oy3r"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_n78qv"]
+radius = 31.016125
+
+[node name="skull" type="Area2D"]
+script = ExtResource("1_2htaa")
+
+[node name="skull_image" type="Sprite2D" parent="."]
+position = Vector2(-2, 0)
+scale = Vector2(2.5, 2.493)
+texture = ExtResource("2_4oy3r")
+
+[node name="collect" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("CircleShape2D_n78qv")
+
+[node name="skull_shadow" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 0.21176471)
+position = Vector2(-2, 17.472)
+scale = Vector2(2.5, 0.30900002)
+texture = ExtResource("2_4oy3r")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://kmvshx28vaic"]
+[gd_scene load_steps=9 format=4 uid="uid://kmvshx28vaic"]
 
 [ext_resource type="Texture2D" uid="uid://dj7uugrja4dqq" path="res://assests/tileset/spr_tileset_sunnysideworld_16px.png" id="1_valbi"]
 [ext_resource type="PackedScene" uid="uid://of0cy65lonem" path="res://scenes/characters/skeleton.tscn" id="1_viahy"]
@@ -6,7 +6,6 @@
 [ext_resource type="Script" uid="uid://tswprrvwji6f" path="res://scripts/camera.gd" id="3_p85sk"]
 [ext_resource type="PackedScene" uid="uid://biprgqbvg75mf" path="res://scenes/characters/Goblin.tscn" id="4_3bnjd"]
 [ext_resource type="PackedScene" uid="uid://cvfb6efgoeka3" path="res://scenes/item/apple.tscn" id="6_8rh4k"]
-[ext_resource type="PackedScene" uid="uid://cieyfbo7ts8l8" path="res://scenes/item/potion.tscn" id="7_q4tu8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3bnjd"]
 texture = ExtResource("1_valbi")
@@ -1762,7 +1761,7 @@ tile_map_data = PackedByteArray("AAD5//7/AAALAB4AAAD5////AAALAB4AAAD5/wAAAAALAB4
 tile_set = SubResource("TileSet_p85sk")
 
 [node name="Player" parent="." instance=ExtResource("2_viahy")]
-position = Vector2(452, 742)
+position = Vector2(1198, 775)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(0, -15)
@@ -1798,10 +1797,10 @@ position = Vector2(-26, 614)
 position = Vector2(451, 181)
 
 [node name="Skeleton3" parent="Skeleton" instance=ExtResource("1_viahy")]
-position = Vector2(-221, 1202)
+position = Vector2(274, 1218)
 
 [node name="Skeleton4" parent="Skeleton" instance=ExtResource("1_viahy")]
-position = Vector2(1786, 1467)
+position = Vector2(1077, 1372)
 
 [node name="Apple" type="Label" parent="."]
 offset_left = 296.0
@@ -1822,32 +1821,3 @@ position = Vector2(1410, 257)
 
 [node name="Apple5" parent="Apple" instance=ExtResource("6_8rh4k")]
 position = Vector2(593, 609)
-
-[node name="Health" type="Label" parent="."]
-offset_left = 1.0
-offset_top = 695.0
-offset_right = 41.0
-offset_bottom = 718.0
-
-[node name="health2" parent="Health" instance=ExtResource("7_q4tu8")]
-position = Vector2(1010.00006, 38)
-rotation = 0.0018021679
-scale = Vector2(0.99999994, 0.99999994)
-
-[node name="health3" parent="Health" instance=ExtResource("7_q4tu8")]
-position = Vector2(1454.9999, 568)
-rotation = 0.0018021679
-scale = Vector2(0.99999994, 0.99999994)
-
-[node name="health4" parent="Health" instance=ExtResource("7_q4tu8")]
-position = Vector2(536.00024, 685)
-rotation = 0.0018021679
-scale = Vector2(0.99999994, 0.99999994)
-
-[node name="health5" parent="Health" instance=ExtResource("7_q4tu8")]
-position = Vector2(1907.9999, -256.99997)
-rotation = 0.0018021679
-scale = Vector2(0.99999994, 0.99999994)
-
-[node name="health1" parent="Health" instance=ExtResource("7_q4tu8")]
-position = Vector2(255, 95)
