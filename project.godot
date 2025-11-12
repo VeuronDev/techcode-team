@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Sunny Day Invations"
-run/main_scene="uid://b4pavxhcdhhj"
+run/main_scene="uid://c8lpa8smshruy"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
 

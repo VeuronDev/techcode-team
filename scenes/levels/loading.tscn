@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://c8lpa8smshruy"]
+
+[ext_resource type="Texture2D" uid="uid://ct25qbglpwqsu" path="res://assests/tileset/bg.jpg" id="1_nawi3"]
+[ext_resource type="Script" uid="uid://bao2hfv04lp8i" path="res://scripts/loading.gd" id="1_ojxmv"]
+[ext_resource type="Texture2D" uid="uid://ctx32w2mkv55a" path="res://assests/tileset/menu game.png" id="2_ojxmv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_01c53"]
+atlas = ExtResource("1_nawi3")
+region = Rect2(781.21875, 0, 468.78125, 271)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mvrcu"]
+atlas = ExtResource("2_ojxmv")
+region = Rect2(0, 454.83917, 264.9129, 164.79382)
+
+[node name="Loading" type="Node2D"]
+script = ExtResource("1_ojxmv")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(701.9999, 385.99997)
+scale = Vector2(3.6025643, 3.667897)
+texture = SubResource("AtlasTexture_01c53")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(623, 360)
+scale = Vector2(3.530303, 4.1585364)
+texture = SubResource("AtlasTexture_mvrcu")
