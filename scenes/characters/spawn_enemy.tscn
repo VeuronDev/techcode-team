@@ -6,31 +6,31 @@
 script = ExtResource("1_uvqeg")
 
 [node name="spawn_point1" type="Marker2D" parent="."]
-position = Vector2(-76, -124)
+position = Vector2(448, 216)
 
 [node name="spawn_point2" type="Marker2D" parent="."]
-position = Vector2(128, -113)
+position = Vector2(-666, 52)
 
 [node name="spawn_point3" type="Marker2D" parent="."]
-position = Vector2(136, 70)
+position = Vector2(113, 109)
 
 [node name="spawn_point4" type="Marker2D" parent="."]
-position = Vector2(-142, 65)
+position = Vector2(-68, 172)
 
 [node name="spawn_point5" type="Marker2D" parent="."]
-position = Vector2(326, -65)
+position = Vector2(230, 2)
 
 [node name="spawn_point6" type="Marker2D" parent="."]
-position = Vector2(-350, -109)
+position = Vector2(-229, 209)
 
 [node name="spawn_point7" type="Marker2D" parent="."]
-position = Vector2(25, -327)
+position = Vector2(-461, 178)
 
 [node name="spawn_point8" type="Marker2D" parent="."]
-position = Vector2(4, 225)
+position = Vector2(0, -1)
 
 [node name="spawn_point9" type="Marker2D" parent="."]
-position = Vector2(-201, -246)
+position = Vector2(-198, 5)
 
 [node name="spawn_point10" type="Marker2D" parent="."]
-position = Vector2(211, -268)
+position = Vector2(-163, -164)
