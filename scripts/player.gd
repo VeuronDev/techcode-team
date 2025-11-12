@@ -21,7 +21,8 @@ func _ready():
 	input_handle()
 	GlobalVar.spawn_wave_enemies(global_position)
 	GlobalVar.connect("show_kill_message", Callable(self, "_on_kill_message"))
-
+	GlobalVar.healthPlayer = 200
+	
 func _on_kill_message(text):
 	$Audio_Manager/notif_kill.play()
 	kill_message.text = text
