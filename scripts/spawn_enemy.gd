@@ -1,7 +1,7 @@
 extends Node2D
 
 @onready var skeleton_scene = preload("res://scenes/characters/skeleton.tscn")
-@onready var goblin_scene = preload("res://scenes/characters/Goblin.tscn")
+@onready var goblin_scene = preload("res://scenes/characters/goblin.tscn")
 
 func _ready():
 	spawn_random_enemies(GlobalVar.current_waves * 2)
