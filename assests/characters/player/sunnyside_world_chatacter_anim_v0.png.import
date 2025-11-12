@@ -2,26 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<< Updated upstream:assests/characters/player/sunnyside_world_chatacter_anim_v0.png.import
 uid="uid://dy7anisy5edkf"
 path="res://.godot/imported/sunnyside_world_chatacter_anim_v0.png-2e13dc6e46e02bb2bcc0e8fc02301b54.ctex"
-=======
-uid="uid://ccv27u421sgqr"
-path="res://.godot/imported/player_character.png-4554231185af49d0137312a2a3a897ae.ctex"
->>>>>>> Stashed changes:assests/characters/player/player_character.png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-<<<<<<< Updated upstream:assests/characters/player/sunnyside_world_chatacter_anim_v0.png.import
 source_file="res://assests/characters/player/sunnyside_world_chatacter_anim_v0.png"
 dest_files=["res://.godot/imported/sunnyside_world_chatacter_anim_v0.png-2e13dc6e46e02bb2bcc0e8fc02301b54.ctex"]
-=======
-source_file="res://assests/characters/player/player_character.png"
-dest_files=["res://.godot/imported/player_character.png-4554231185af49d0137312a2a3a897ae.ctex"]
->>>>>>> Stashed changes:assests/characters/player/player_character.png.import
 
 [params]
 

@@ -1,5 +1,4 @@
 extends Node2D
-<<<<<<< Updated upstream
 
 
 
@@ -24,5 +23,3 @@ func cast():
 	
 	await get_tree().create_timer(BASEFIRERATE).timeout
 	can_cast = true
-=======
->>>>>>> Stashed changes

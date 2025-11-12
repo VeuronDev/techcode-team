@@ -1,12 +1,6 @@
-<<<<<<< Updated upstream
 [gd_scene load_steps=2 format=3 uid="uid://daevoo0vws8q6"]
 
 [ext_resource type="Script" uid="uid://giqopojw3k3" path="res://scripts/spawn_enemy.gd" id="1_uvqeg"]
-=======
-[gd_scene load_steps=2 format=3 uid="uid://dbpnwrw6i0eh6"]
-
-[ext_resource type="Script" path="res://scripts/spawn_enemy.gd" id="1_uvqeg"]
->>>>>>> Stashed changes
 
 [node name="spawn_enemy" type="Node2D"]
 script = ExtResource("1_uvqeg")
