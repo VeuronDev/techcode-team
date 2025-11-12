@@ -10,7 +10,7 @@ const BASEDROLLCOOLDOWN = 1.0
 @onready var notifications = $notification
 @onready var take_notif = $notification/take
 @onready var kill_message = $KillMessage
-@onready var animation_player = $AnimationPlayer
+
 
 var direction = Vector2.ZERO
 var is_rolling = false
