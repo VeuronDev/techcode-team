@@ -122,7 +122,7 @@ func reroll_wave():
 					var offset_y = randf_range(10.0, 30.0)
 					var random_offset = Vector2(offset_x, offset_y)        
 					boss.position = Vector2(650, 395) + random_offset
-					get_node("/root/dungeons/").add_child(boss)
+					get_node("/root/dungeon/").add_child(boss)
 					boss.name = "spawn_enemy_boss"
 					print("Spawn enemy boss on:", boss.position)	
 		
