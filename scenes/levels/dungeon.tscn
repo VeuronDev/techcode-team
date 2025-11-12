@@ -1,8 +1,9 @@
-[gd_scene load_steps=27 format=4 uid="uid://dbrfxyhpu4w1e"]
+[gd_scene load_steps=28 format=4 uid="uid://bfgxfu600s0cv"]
 
 [ext_resource type="Texture2D" uid="uid://dk4co5h086gx5" path="res://assests/tileset/spr_tileset_sunnysideworld_16px.png" id="2_qu0b2"]
 [ext_resource type="PackedScene" uid="uid://c5f38ojmtakna" path="res://scenes/characters/player.tscn" id="2_s5a2w"]
-[ext_resource type="Texture2D" uid="uid://b4wyejx2oift4" path="res://assests/characters/Skeleton/skeleton_death_strip10.png" id="3_noicg"]
+[ext_resource type="Texture2D" uid="uid://b4wyejx2oift4" path="res://assests/characters/skeleton/skeleton_death_strip10.png" id="3_noicg"]
+[ext_resource type="PackedScene" uid="uid://deec6mcbmvuyv" path="res://scenes/levels/hud_fight.tscn" id="4_yc5ro"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qu0b2"]
 texture = ExtResource("2_qu0b2")
@@ -19426,3 +19427,5 @@ tile_set = SubResource("TileSet_7wc3a")
 
 [node name="Player" parent="." instance=ExtResource("2_s5a2w")]
 position = Vector2(4515, 2994)
+
+[node name="HUD_Fight" parent="." instance=ExtResource("4_yc5ro")]

@@ -67,7 +67,7 @@ func spawn_wave_enemies(player_pos: Vector2):
 		var offset_y = randf_range(10.0, 30.0)
 		var random_offset = Vector2(offset_x, offset_y)		
 		spawn_point_enemy.global_position = player_pos + random_offset
-		get_parent().add_child.call_deferred(spawn_point_enemy)
+		get_node("/root/dungeon/").add_child.call_deferred(spawn_point_enemy)
 		spawn_point_enemy.name = "spawn_enemy_" + str(i + 1)		
 		print("Spawn enemy on:", spawn_point_enemy.global_position)	
 	start_wave(current_waves)
@@ -122,7 +122,7 @@ func reroll_wave():
 					var offset_y = randf_range(10.0, 30.0)
 					var random_offset = Vector2(offset_x, offset_y)        
 					boss.position = Vector2(650, 395) + random_offset
-					get_node("/root/mainGame/").add_child(boss)
+					get_node("/root/dungeons/").add_child(boss)
 					boss.name = "spawn_enemy_boss"
 					print("Spawn enemy boss on:", boss.position)	
 		
