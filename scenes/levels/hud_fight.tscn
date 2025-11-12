@@ -65,10 +65,11 @@ grow_vertical = 2
 size_flags_horizontal = 4
 
 [node name="menu" type="Button" parent="."]
-offset_left = 1183.0
-offset_top = 6.0
-offset_right = 1274.0
-offset_bottom = 47.0
+offset_left = 1188.0
+offset_top = 4.0
+offset_right = 1276.0
+offset_bottom = 40.0
+text = "Back"
 
 [node name="enemy_count" type="Label" parent="."]
 offset_left = 585.0
@@ -195,3 +196,5 @@ texture = ExtResource("4_x2h8g")
 position = Vector2(740, 678)
 scale = Vector2(4.5, 4.5)
 texture = ExtResource("3_x2h8g")
+
+[connection signal="pressed" from="menu" to="." method="_on_menu_pressed"]

@@ -8,6 +8,7 @@ var hurt_active = true
 var healthPlayer = 200
 var apple = 0
 var skull = 0
+var health_count = 0
 var apple_taken = false
 var health_taken = false
 var skull_taken = false
