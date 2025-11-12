@@ -130,4 +130,5 @@ func healing():
 		take_notif.play("notif_taken")
 
 func die():
+	GlobalVar.current_waves = 1
 	get_tree().change_scene_to_file("res://scenes/levels/main_game.tscn")

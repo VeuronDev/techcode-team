@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://boq2wcrl4mx8s"
-path="res://.godot/imported/goblin_idle.png-7378d82b48dd8bc5b1bcb896e74c5e3f.ctex"
+path="res://.godot/imported/goblin_idle.png-11a42d4b1518f4b9b3afaabfb3405f15.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assests/characters/Goblin/goblin_idle.png"
-dest_files=["res://.godot/imported/goblin_idle.png-7378d82b48dd8bc5b1bcb896e74c5e3f.ctex"]
+source_file="res://assests/characters/goblin/goblin_idle.png"
+dest_files=["res://.godot/imported/goblin_idle.png-11a42d4b1518f4b9b3afaabfb3405f15.ctex"]
 
 [params]
 

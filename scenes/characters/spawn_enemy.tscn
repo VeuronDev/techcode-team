@@ -6,7 +6,7 @@
 script = ExtResource("1_uvqeg")
 
 [node name="spawn_point1" type="Marker2D" parent="."]
-position = Vector2(448, 216)
+position = Vector2(417, 209)
 
 [node name="spawn_point2" type="Marker2D" parent="."]
 position = Vector2(-666, 52)
