@@ -7,7 +7,6 @@ const BASEDROLLCOOLDOWN = 1.0
 
 @onready var player_sheet = $player_sheet
 @onready var cam = $Camera2D
-@onready var coin_player = $Coin
 @onready var notifications = $notification
 @onready var take_notif = $notification/take
 @onready var kill_message = $KillMessage
@@ -19,7 +18,8 @@ var can_roll = true
 
 func _ready():
 	input_handle()
-	GlobalVar.spawn_wave_enemies(direction)
+	print("Posisi player x,y :", global_position)
+	GlobalVar.spawn_wave_enemies(global_position)
 	GlobalVar.connect("show_kill_message", Callable(self, "_on_kill_message"))
 
 func _on_kill_message(text):
@@ -38,7 +38,6 @@ func _physics_process(delta):
 	input_handle()
 	roll_hanlde(delta)
 	update_animation()
-	update_item_status()
 
 func input_handle():
 	direction = Input.get_vector("move_left","move_right","move_up","move_down")
@@ -85,9 +84,6 @@ func handle_hurt_status():
 	if GlobalVar.hurt_active:
 		await get_tree().create_timer(0.4).timeout
 		GlobalVar.hurt_active = false
-
-func update_item_status():
-	coin_player.text = "Apple : %d" % GlobalVar.apple
 
 func update_animation():
 	sprite_flip()

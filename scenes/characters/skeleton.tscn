@@ -333,12 +333,10 @@ scale = Vector2(3, 3)
 shape = SubResource("CapsuleShape2D_11w7t")
 
 [node name="Body" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(3, -25)
 shape = SubResource("CircleShape2D_11w7t")
 
 [node name="AreaEnemy" type="Area2D" parent="."]
-visible = false
 
 [node name="Area" type="CollisionShape2D" parent="AreaEnemy"]
 position = Vector2(0, -25)
