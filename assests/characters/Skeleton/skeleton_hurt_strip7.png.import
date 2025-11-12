@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://na6jg2uct4rf"
-path="res://.godot/imported/skeleton_hurt_strip7.png-696e7f090f6a2b133ec5777432280b94.ctex"
+uid="uid://1shr3ka0a4fx"
+path="res://.godot/imported/skeleton_hurt_strip7.png-513e603fdfd25f5e04d53ae5d3d2fadb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assests/characters/Skeleton/skeleton_hurt_strip7.png"
-dest_files=["res://.godot/imported/skeleton_hurt_strip7.png-696e7f090f6a2b133ec5777432280b94.ctex"]
+source_file="res://assests/characters/skeleton/skeleton_hurt_strip7.png"
+dest_files=["res://.godot/imported/skeleton_hurt_strip7.png-513e603fdfd25f5e04d53ae5d3d2fadb.ctex"]
 
 [params]
 

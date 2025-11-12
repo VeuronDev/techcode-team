@@ -1,9 +1,18 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=5 format=3 uid="uid://deec6mcbmvuyv"]
 
 [ext_resource type="Script" uid="uid://pfrs13k4k3yi" path="res://scripts/hud_fight.gd" id="1_obyjr"]
 [ext_resource type="FontFile" uid="uid://cpjhfhv4bnnns" path="res://assests/MedodicaRegular.otf" id="3_17f16"]
 [ext_resource type="Texture2D" uid="uid://n4hi6useqkvt" path="res://assests/characters/item/skull.png" id="3_x2h8g"]
 [ext_resource type="Texture2D" uid="uid://cc7p6fqw50ikr" path="res://assests/characters/item/health.png" id="4_x2h8g"]
+=======
+[gd_scene load_steps=5 format=3 uid="uid://4lvnbf2ep4hc"]
+
+[ext_resource type="Script" path="res://scripts/hud_fight.gd" id="1_obyjr"]
+[ext_resource type="FontFile" path="res://assests/MedodicaRegular.otf" id="3_17f16"]
+[ext_resource type="Texture2D" path="res://assests/characters/item/skull.png" id="3_x2h8g"]
+[ext_resource type="Texture2D" path="res://assests/characters/item/health.png" id="4_x2h8g"]
+>>>>>>> Stashed changes
 
 [node name="HUD_Fight" type="CanvasLayer"]
 script = ExtResource("1_obyjr")

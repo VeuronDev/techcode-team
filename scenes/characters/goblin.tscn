@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=57 format=3 uid="uid://biprgqbvg75mf"]
+=======
+[gd_scene load_steps=58 format=3 uid="uid://gyl4q6at5roq"]
+>>>>>>> Stashed changes
 
 [ext_resource type="Script" uid="uid://r8lsr2j8jo30" path="res://scripts/goblin.gd" id="1_v8e32"]
 [ext_resource type="Texture2D" uid="uid://1875rvcapl8k" path="res://assests/characters/Goblin/spr_attack_strip10.png" id="2_qod07"]
