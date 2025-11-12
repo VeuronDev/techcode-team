@@ -52,6 +52,8 @@ func input_handle():
 		cam.add_trauma(0.3)
 		await get_tree().create_timer(0.4).timeout
 		GlobalVar.attack_active = false
+	if Input.is_action_just_pressed("use_item"):
+		healing()
 
 func roll_hanlde(delta):
 	if is_rolling:
@@ -111,3 +113,9 @@ func notif_item() -> void:
 	elif GlobalVar.skull_taken:
 		notifications.text = "+1 Skull"
 		take_notif.play("notif_taken")
+
+func healing():
+	if GlobalVar.apple > 0:
+		GlobalVar.healthPlayer += 50
+		GlobalVar.apple -= 1
+		
