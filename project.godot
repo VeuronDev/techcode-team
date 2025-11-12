@@ -24,9 +24,9 @@ GlobalVar="*res://scripts/global.gd"
 window/size/viewport_width=1280
 window/size/viewport_height=720
 
-[global_group]
+[gui]
 
-Player=""
+theme/custom_font="uid://cpjhfhv4bnnns"
 
 [input]
 

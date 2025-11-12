@@ -10,6 +10,7 @@ func _on_body_entered(body: Node2D) -> void:
 		GlobalVar.health_taken = true
 		GlobalVar.healthPlayer += 30
 		$collect_item.play()
+		GlobalVar.logPlayer("➕ Recovering player 30+ Health.")
 		animate.play("health_taken")
 		
 func _on_animation_animation_finished(anim_name: StringName) -> void:
