@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bpxdhoq4c4t2s"
-path="res://.godot/imported/goblin_attack.png-88750628af27947c5277cb062d14be89.ctex"
+uid="uid://ct25qbglpwqsu"
+path="res://.godot/imported/bg.jpg-4d3e3caa285330bdeac3bf70beb1693e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assests/characters/goblin/goblin_attack.png"
-dest_files=["res://.godot/imported/goblin_attack.png-88750628af27947c5277cb062d14be89.ctex"]
+source_file="res://assests/tileset/bg.jpg"
+dest_files=["res://.godot/imported/bg.jpg-4d3e3caa285330bdeac3bf70beb1693e.ctex"]
 
 [params]
 

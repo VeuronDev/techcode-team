@@ -5,6 +5,8 @@ extends CanvasLayer
 @onready var waves_info = $waves_info
 @onready var countdown_label = $CountDown
 @onready var apple = $apple
+@onready var skull = $skull
+@onready var health = $health
 @onready var log_player = $log_player
 @onready var log_input = $log_input
 
@@ -17,6 +19,8 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	HealthPlayer.value = GlobalVar.healthPlayer
 	apple.text = "%d"%GlobalVar.apple
+	health.text = "%d"%GlobalVar.health_count
+	skull.text = "%d"%GlobalVar.skull
 	if GlobalVar.current_waves > 5:
 		waves_info.text = "Wave Ended!"
 		enemy_left.text = "No Enemy remains!"
@@ -62,3 +66,6 @@ func _on_log_added(text: String):
 				if is_instance_valid(oldest):
 					oldest.queue_free()
 			)
+
+func _on_menu_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/levels/main_game.tscn")
