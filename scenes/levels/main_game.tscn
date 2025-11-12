@@ -1773,4 +1773,4 @@ position = Vector2(640, 376)
 [node name="HUD_Fight" parent="." instance=ExtResource("7_q4tu8")]
 
 [node name="GiantGoblin" parent="." instance=ExtResource("4_3bnjd")]
-position = Vector2(372, 357)
+position = Vector2(139, 373)

@@ -16,7 +16,7 @@
 [ext_resource type="Script" uid="uid://iupkjxbarbco" path="res://scripts/chase.gd" id="11_tftqj"]
 [ext_resource type="Script" uid="uid://bm7newmen3yty" path="res://scripts/death.gd" id="14_jn7js"]
 [ext_resource type="Script" uid="uid://bgams7jj4q6ki" path="res://scripts/spawn_minion.gd" id="15_g66t2"]
-[ext_resource type="PackedScene" uid="uid://bb4u58wyfp6ep" path="res://scenes/characters/Goblin.tscn" id="16_jn7js"]
+[ext_resource type="PackedScene" uid="uid://biprgqbvg75mf" path="res://scenes/characters/Goblin.tscn" id="16_jn7js"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_waptb"]
 atlas = ExtResource("1_xha5n")
@@ -844,7 +844,7 @@ radius = 24.0
 height = 80.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0v2ou"]
-radius = 551.24
+radius = 402.0796
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1xbtb"]
 radius = 75.0
@@ -883,7 +883,7 @@ shape = SubResource("CircleShape2D_0v2ou")
 [node name="AttackHitbox" type="Area2D" parent="."]
 unique_name_in_owner = true
 collision_layer = 0
-collision_mask = 2
+collision_mask = 3
 monitoring = false
 script = ExtResource("9_etokx")
 
@@ -896,18 +896,11 @@ shape = SubResource("CapsuleShape2D_1xbtb")
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="ProgressBar" type="ProgressBar" parent="UI"]
-visible = false
 custom_minimum_size = Vector2(500, 0)
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -250.0
-offset_top = -27.0
-offset_right = 250.0
-grow_horizontal = 2
-grow_vertical = 0
+offset_left = 14.0
+offset_top = 39.0
+offset_right = 514.0
+offset_bottom = 66.0
 size_flags_horizontal = 8
 size_flags_vertical = 8
 max_value = 1000.0

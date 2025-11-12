@@ -12,7 +12,7 @@ func chase():
 	owner.speed = 230
 	
 func  transition():
-	if can_transition and owner.direction.length() < 200:
+	if can_transition and owner.direction.length() < 150:
 		get_parent().change_state("Follow")
 		can_transition = false
 		owner.speed = 80

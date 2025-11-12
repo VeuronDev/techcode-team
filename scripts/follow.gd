@@ -20,7 +20,7 @@ func exit():
 func transition():
 	if owner.direction.length() < 80:
 		get_parent().change_state("Attack")
-	if owner.direction.length() > 400:
+	if owner.direction.length() > 300:
 		var chance = randi() % 100
 		if chance > 80:
 			get_parent().change_state("SpawnMinion")
