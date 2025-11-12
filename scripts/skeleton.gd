@@ -124,13 +124,13 @@ func take_damage(amount: int):
 	is_hit = true
 	$Audio_Manager/hurt.play()
 	velocity = Vector2.ZERO
-	health -= amount
 	health_bar.value = health
 	if health <= 0:
 		die()
 	else:
 		animated_sprite_2d.play("hit")
 		await get_tree().create_timer(0.6).timeout
+		health -= amount
 		is_hit = false
 
 func play_attack():
@@ -171,6 +171,7 @@ func die():
 	is_hit = false
 	velocity = Vector2.ZERO
 	GlobalVar.add_kill()
+	GlobalVar.enemy_died()
 	animated_sprite_2d.play("death")
 	await get_tree().create_timer(1).timeout
 	queue_free()

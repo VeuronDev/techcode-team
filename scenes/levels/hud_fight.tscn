@@ -1,9 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://deec6mcbmvuyv"]
-
-[ext_resource type="Script" uid="uid://pfrs13k4k3yi" path="res://scripts/hud_fight.gd" id="1_obyjr"]
+[gd_scene format=3 uid="uid://deec6mcbmvuyv"]
 
 [node name="HUD_Fight" type="CanvasLayer"]
-script = ExtResource("1_obyjr")
 
 [node name="log_player" type="Label" parent="."]
 offset_left = 10.0
@@ -69,8 +66,22 @@ offset_top = 12.0
 offset_right = 108.0
 offset_bottom = 112.0
 
-[node name="profile2" type="Button" parent="."]
+[node name="menu" type="Button" parent="."]
 offset_left = 1183.0
 offset_top = 6.0
 offset_right = 1274.0
 offset_bottom = 47.0
+
+[node name="waves_info" type="Label" parent="."]
+offset_left = 515.0
+offset_top = 14.0
+offset_right = 639.0
+offset_bottom = 56.0
+theme_override_font_sizes/font_size = 30
+
+[node name="enemy_count" type="Label" parent="."]
+offset_left = 530.0
+offset_top = 573.0
+offset_right = 655.0
+offset_bottom = 604.0
+theme_override_font_sizes/font_size = 22
