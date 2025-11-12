@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://biprgqbvg75mf"]
+[gd_scene load_steps=55 format=3 uid="uid://bb4u58wyfp6ep"]
 
 [ext_resource type="Script" uid="uid://r8lsr2j8jo30" path="res://scripts/goblin.gd" id="1_v8e32"]
 [ext_resource type="Texture2D" uid="uid://1875rvcapl8k" path="res://assests/characters/Goblin/spr_attack_strip10.png" id="2_qod07"]
@@ -364,10 +364,8 @@ position = Vector2(1, -33)
 shape = SubResource("CircleShape2D_11w7t")
 
 [node name="AreaEnemy" type="Area2D" parent="."]
-visible = false
 
 [node name="Area" type="CollisionShape2D" parent="AreaEnemy"]
-visible = false
 position = Vector2(2, -40)
 shape = SubResource("CircleShape2D_v8e32")
 

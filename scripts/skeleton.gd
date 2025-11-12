@@ -27,7 +27,7 @@ var wander_target: Vector2
 var wander_wait_timer: float = 0.0
 
 func _ready():
-	player_post = get_node("/root/mainGame/Player")
+	player_post = get_tree().get_first_node_in_group("Player")
 	health_bar.max_value = MAX_HEALTH
 	health_bar.value = health
 	origin_position = global_position

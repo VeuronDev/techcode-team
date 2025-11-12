@@ -1,6 +1,6 @@
 [gd_scene load_steps=71 format=3 uid="uid://c5f38ojmtakna"]
 
-[ext_resource type="Texture2D" uid="uid://cm47ktgqmga6k" path="res://assests/characters/sunnyside_world_chatacter_anim_v0.png" id="1_rp718"]
+[ext_resource type="Texture2D" uid="uid://dy7anisy5edkf" path="res://assests/characters/player/sunnyside_world_chatacter_anim_v0.png" id="1_rp718"]
 [ext_resource type="Script" uid="uid://ddcy8h7quthk" path="res://scripts/player.gd" id="1_yewv4"]
 [ext_resource type="Texture2D" uid="uid://t12o5x5vibqs" path="res://assests/shadow.png" id="3_76oj4"]
 [ext_resource type="Script" uid="uid://tswprrvwji6f" path="res://scripts/camera.gd" id="4_dyp2m"]
@@ -515,8 +515,9 @@ _data = {
 &"notif_taken": SubResource("Animation_76oj4")
 }
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
 z_index = 5
+collision_mask = 3
 script = ExtResource("1_yewv4")
 
 [node name="player_sheet" type="AnimatedSprite2D" parent="."]

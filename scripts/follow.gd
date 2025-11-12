@@ -5,9 +5,12 @@ func _enter_tree():
 
 func enter():
 	super.enter()
-	owner.set_physics_process(true)
-	animation_player.play("walk")
-	owner.attack_hitbox.monitoring = false
+	if owner.direction.length() > 700:
+		get_parent().change_state("Idle")
+	else :
+		owner.set_physics_process(true)
+		animation_player.play("walk")
+		owner.attack_hitbox.monitoring = false
 	
 func exit():
 	super.exit()
@@ -19,7 +22,7 @@ func transition():
 		get_parent().change_state("Attack")
 	if owner.direction.length() > 400:
 		var chance = randi() % 100
-		if chance > 50:
+		if chance > 80:
 			get_parent().change_state("SpawnMinion")
 			owner.attack_hitbox.monitoring = false
 		else :

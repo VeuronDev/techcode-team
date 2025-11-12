@@ -9,7 +9,7 @@ func enter():
 	
 func chase():
 	owner.set_physics_process(true)
-	owner.speed += 100
+	owner.speed = 230
 	
 func  transition():
 	if can_transition and owner.direction.length() < 200:
