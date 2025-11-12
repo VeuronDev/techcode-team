@@ -1,9 +1,8 @@
-[gd_scene load_steps=8 format=4 uid="uid://kmvshx28vaic"]
+[gd_scene load_steps=7 format=4 uid="uid://v8vywb4ir764"]
 
 [ext_resource type="Texture2D" uid="uid://dj7uugrja4dqq" path="res://assests/tileset/spr_tileset_sunnysideworld_16px.png" id="1_valbi"]
 [ext_resource type="PackedScene" uid="uid://c5f38ojmtakna" path="res://scenes/characters/player.tscn" id="2_viahy"]
-[ext_resource type="PackedScene" uid="uid://ck6ko63f447e1" path="res://scenes/giant_goblin.tscn" id="4_3bnjd"]
-[ext_resource type="PackedScene" uid="uid://deec6mcbmvuyv" path="res://scenes/levels/hud_fight.tscn" id="7_q4tu8"]
+[ext_resource type="PackedScene" uid="uid://c7el33kmca47j" path="res://scenes/levels/hud_fight.tscn" id="7_q4tu8"]
 
 [sub_resource type="GDScript" id="GDScript_viahy"]
 script/source = "extends Node2D
@@ -1771,6 +1770,3 @@ tile_set = SubResource("TileSet_p85sk")
 position = Vector2(640, 376)
 
 [node name="HUD_Fight" parent="." instance=ExtResource("7_q4tu8")]
-
-[node name="GiantGoblin" parent="." instance=ExtResource("4_3bnjd")]
-position = Vector2(139, 373)

@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 @onready var player = get_parent().find_child("Player")
+
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var progress_bar = $UI/ProgressBar
 @onready var attack_hitbox = $AttackHitbox
@@ -31,22 +32,33 @@ var health = 1000:
 
 
 func _ready():
-	set_physics_process(false)
+	# Ini mungkin hanya nilai awal jika Anda belum mengaktifkan _physics_process
+	direction = Vector2(650, 395) 
+	set_physics_process(false) # Musuh ini belum aktif/bergerak di awal
 	attack_hitbox.monitoring = false
 	hit_area.monitoring = true
 	
 func _process(_delta):
-	direction = player.position - position
-	if in_sword_area and GlobalVar.attack_active and not is_hit:
-		is_hit = true
-		await get_tree().create_timer(immune_time).timeout
-		take_damage()
-		is_hit = false
+	# PERBAIKAN KRUSIAL: Pengecekan validitas node pemain sebelum diakses
+	if is_instance_valid(player):
+		# Player ada, hitung arahnya
+		direction = player.position - position
 		
-	if direction.x < 0:
-		animated_sprite.flip_h = true
+		if in_sword_area and GlobalVar.attack_active and not is_hit:
+			is_hit = true
+			# Pastikan Anda punya 'take_damage()'
+			take_damage() 
+			await get_tree().create_timer(immune_time).timeout
+			is_hit = false
+			
+		if direction.x < 0:
+			animated_sprite.flip_h = true
+		else:
+			animated_sprite.flip_h = false
 	else:
-		animated_sprite.flip_h = false
+		# Jika pemain tidak valid, hentikan pergerakan atau tracking
+		direction = Vector2.ZERO
+		# set_physics_process(false) # Opsional: jika ingin berhenti total
 
 func _physics_process(delta):
 	velocity = direction.normalized() * speed 
@@ -54,4 +66,3 @@ func _physics_process(delta):
 	
 func take_damage():
 	health -= randi_range(6, 10)
-	

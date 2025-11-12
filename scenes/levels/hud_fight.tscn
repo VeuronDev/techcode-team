@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://deec6mcbmvuyv"]
+[gd_scene load_steps=5 format=3 uid="uid://c7el33kmca47j"]
 
 [ext_resource type="Script" uid="uid://pfrs13k4k3yi" path="res://scripts/hud_fight.gd" id="1_obyjr"]
 [ext_resource type="FontFile" uid="uid://cpjhfhv4bnnns" path="res://assests/MedodicaRegular.otf" id="3_17f16"]
@@ -81,23 +81,23 @@ theme_override_font_sizes/font_size = 34
 
 [node name="apple" type="Label" parent="."]
 offset_left = 547.0
-offset_top = 680.0
+offset_top = 692.0
 offset_right = 557.0
-offset_bottom = 703.0
+offset_bottom = 715.0
 text = "0"
 
 [node name="skull" type="Label" parent="."]
-offset_left = 665.0
-offset_top = 682.0
-offset_right = 675.0
-offset_bottom = 705.0
+offset_left = 664.0
+offset_top = 693.0
+offset_right = 674.0
+offset_bottom = 716.0
 text = "0"
 
 [node name="health" type="Label" parent="."]
 offset_left = 768.0
-offset_top = 682.0
+offset_top = 694.0
 offset_right = 778.0
-offset_bottom = 705.0
+offset_bottom = 717.0
 text = "0"
 
 [node name="log_player" type="Label" parent="."]
