@@ -18,7 +18,6 @@ var can_roll = true
 
 func _ready():
 	input_handle()
-	print("Posisi player x,y :", global_position)
 	GlobalVar.spawn_wave_enemies(global_position)
 	GlobalVar.connect("show_kill_message", Callable(self, "_on_kill_message"))
 

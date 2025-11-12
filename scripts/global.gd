@@ -92,44 +92,43 @@ func enemy_died():
 func reroll_wave():
 	waves_active = false
 	current_waves += 1
-	if current_waves >= 1:
-		var boss = spawn_boss.instantiate()
-		var offset_x = randf_range(10.0, 30.0)
-		var offset_y = randf_range(10.0, 30.0)
-		var random_offset = Vector2(offset_x, offset_y)        
-		boss.position = Vector2(650, 395) + random_offset
-		get_parent().add_child.call_deferred(boss)
-		boss.name = "spawn_enemy_boss"
-		print("Spawn enemy boss on:", boss.position)	
-	else:
-		emit_signal("wave_updated")
-		print("Wave %d selesai! Memulai Wave %d..." % [current_waves - 1, current_waves])
-		GlobalVar.logPlayer("⏭️ Next wave to %d ..." % GlobalVar.current_waves)
-		# set timer countdown
-		TIMER_CHANGE_WAVES = 3
-		var countdown_timer = Timer.new()
-		countdown_timer.wait_time = 1.0
-		countdown_timer.one_shot = false
-		countdown_timer.name = "WaveCountdownTimer"
-		add_child(countdown_timer)
-		countdown_timer.start()
+	emit_signal("wave_updated")
+	print("Wave %d selesai! Memulai Wave %d..." % [current_waves - 1, current_waves])
+	GlobalVar.logPlayer("⏭️ Next wave to %d ..." % GlobalVar.current_waves)
+	# set timer countdown
+	TIMER_CHANGE_WAVES = 3
+	var countdown_timer = Timer.new()
+	countdown_timer.wait_time = 1.0
+	countdown_timer.one_shot = false
+	countdown_timer.name = "WaveCountdownTimer"
+	add_child(countdown_timer)
+	countdown_timer.start()
 
-		countdown_timer.timeout.connect(func():
-			TIMER_CHANGE_WAVES -= 1
-			if TIMER_CHANGE_WAVES <= 0:
-				countdown_timer.stop()
-				countdown_timer.queue_free()
+	countdown_timer.timeout.connect(func():
+		TIMER_CHANGE_WAVES -= 1
+		if TIMER_CHANGE_WAVES <= 0:
+			countdown_timer.stop()
+			countdown_timer.queue_free()
 
-				var next_enemy_count = ENEMIES_PER_WAVE + (current_waves - 1) * 2
-				var spawn_manager = get_tree().get_first_node_in_group("spawn_manager_group")
-
-				if is_instance_valid(spawn_manager):
-					spawn_manager.spawn_random_enemies(next_enemy_count)
-					waves_active = true
-					print("Wave %d dimulai!" % current_waves)
-				else:
-					print("ERROR: Spawn Manager not found!")
-		)
+			var next_enemy_count = ENEMIES_PER_WAVE + (current_waves - 1) * 2
+			var spawn_manager = get_tree().get_first_node_in_group("spawn_manager_group")
+			if is_instance_valid(spawn_manager):
+				spawn_manager.spawn_random_enemies(next_enemy_count)
+				waves_active = true
+				print("Wave %d dimulai!" % current_waves)
+				if current_waves == 5:
+					var boss = spawn_boss.instantiate()
+					var offset_x = randf_range(10.0, 30.0)
+					var offset_y = randf_range(10.0, 30.0)
+					var random_offset = Vector2(offset_x, offset_y)        
+					boss.position = Vector2(650, 395) + random_offset
+					get_node("/root/mainGame/").add_child(boss)
+					boss.name = "spawn_enemy_boss"
+					print("Spawn enemy boss on:", boss.position)	
+		
+			else:
+				print("ERROR: Spawn Manager not found!")
+	)
 # ==========================
 # === KILL COMBO SYSTEM ====
 # ==========================

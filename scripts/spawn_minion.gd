@@ -11,6 +11,7 @@ func enter():
 	can_transition = true
 	
 func spawn():
+	GlobalVar.enemies_alive += 1
 	var minion = minion_node.instantiate()
 	minion.position = owner.position + Vector2(80, -80)
 	get_tree().current_scene.add_child(minion)
