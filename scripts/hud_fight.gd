@@ -7,15 +7,9 @@ extends CanvasLayer
 func _ready() -> void:
 	HealthPlayer.value = GlobalVar.healthPlayer
 	waves_info.text = "Wave: %d" % GlobalVar.current_waves
-	enemy_left.text = "Enemies: %d" % GlobalVar.enemies_alive
-	GlobalVar.connect("wave_updated", Callable(self, "_on_wave_updated"))
-	GlobalVar.connect("enemy_updated", Callable(self, "_on_enemy_updated"))
+	enemy_left.text = "Enemies : %d" % GlobalVar.enemies_alive
 
 func _process(delta: float) -> void:
 	HealthPlayer.value = GlobalVar.healthPlayer
-
-func _on_wave_updated():
 	waves_info.text = "Wave: %d" % GlobalVar.current_waves
-
-func _on_enemy_updated():
-	enemy_left.text = "Enemies: %d" % GlobalVar.enemies_alive
+	enemy_left.text = "Enemies : %d" % GlobalVar.enemies_alive

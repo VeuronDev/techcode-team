@@ -1,6 +1,9 @@
-[gd_scene format=3 uid="uid://deec6mcbmvuyv"]
+[gd_scene load_steps=2 format=3 uid="uid://deec6mcbmvuyv"]
+
+[ext_resource type="Script" uid="uid://pfrs13k4k3yi" path="res://scripts/hud_fight.gd" id="1_obyjr"]
 
 [node name="HUD_Fight" type="CanvasLayer"]
+script = ExtResource("1_obyjr")
 
 [node name="log_player" type="Label" parent="."]
 offset_left = 10.0

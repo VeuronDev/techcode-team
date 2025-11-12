@@ -5,7 +5,7 @@ extends Node2D
 
 func _ready() -> void:
 	randomize()
-	spawn_random_enemies(5)
+	spawn_random_enemies(4)
 
 func spawn_random_enemies(count: int) -> void:
 	var spawn_points: Array = []

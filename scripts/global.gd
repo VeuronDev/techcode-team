@@ -15,7 +15,7 @@ var skull_taken = false
 # ==========================
 # === WAVE SYSTEM ==========
 # ==========================
-var current_waves = 1
+var current_waves = 0
 var waves_active = false
 var enemies_alive = 0
 signal wave_updated
@@ -44,8 +44,8 @@ func _ready():
 # ==========================
 # === MAIN WAVE SYSTEM =====
 # ==========================
-func spawn_wave_enemies(player_pos: Vector2, waves: int):
-	for i in waves:
+func spawn_wave_enemies(player_pos: Vector2):
+	for i in current_waves:
 		var spawn_point_enemy = spawn_point_scene.instantiate()
 		var offset_x = randf_range(100.0 , 200.0)
 		var offset_y = randf_range(100.0 , 200.0)
@@ -54,7 +54,7 @@ func spawn_wave_enemies(player_pos: Vector2, waves: int):
 		get_parent().add_child.call_deferred(spawn_point_enemy)
 		spawn_point_enemy.name = "spawn_enemy_" + str(i + 1)
 		print("spawn enemy on :", spawn_point_enemy.global_position)
-	start_wave(waves)
+	start_wave(current_waves)
 
 func start_wave(enemy_count: int):
 	current_waves += 1
