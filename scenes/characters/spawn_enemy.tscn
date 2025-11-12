@@ -1,0 +1,36 @@
+[gd_scene load_steps=2 format=3 uid="uid://daevoo0vws8q6"]
+
+[ext_resource type="Script" uid="uid://giqopojw3k3" path="res://scripts/spawn_enemy.gd" id="1_uvqeg"]
+
+[node name="spawn_enemy" type="Node2D"]
+script = ExtResource("1_uvqeg")
+
+[node name="spawn_point1" type="Marker2D" parent="."]
+position = Vector2(-76, -124)
+
+[node name="spawn_point2" type="Marker2D" parent="."]
+position = Vector2(128, -113)
+
+[node name="spawn_point3" type="Marker2D" parent="."]
+position = Vector2(136, 70)
+
+[node name="spawn_point4" type="Marker2D" parent="."]
+position = Vector2(-142, 65)
+
+[node name="spawn_point5" type="Marker2D" parent="."]
+position = Vector2(326, -65)
+
+[node name="spawn_point6" type="Marker2D" parent="."]
+position = Vector2(-350, -109)
+
+[node name="spawn_point7" type="Marker2D" parent="."]
+position = Vector2(25, -327)
+
+[node name="spawn_point8" type="Marker2D" parent="."]
+position = Vector2(4, 225)
+
+[node name="spawn_point9" type="Marker2D" parent="."]
+position = Vector2(-201, -246)
+
+[node name="spawn_point10" type="Marker2D" parent="."]
+position = Vector2(211, -268)

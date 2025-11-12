@@ -2,9 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://dj7uugrja4dqq" path="res://assests/tileset/spr_tileset_sunnysideworld_16px.png" id="1_valbi"]
 [ext_resource type="PackedScene" uid="uid://c5f38ojmtakna" path="res://scenes/characters/player.tscn" id="2_viahy"]
-[ext_resource type="PackedScene" uid="uid://deec6mcbmvuyv" path="res://scenes/levels/hud_fight.tscn" id="7_q4tu8"]
-
-[sub_resource type="GDScript" id="GDScript_viahy"]
+[ext_resource type="PackedScene" uid="uid://daevoo0vws8q6" path="res://scenes/characters/spawn_enemy.tscn" id="3_viahy"]
+[ext_resource type="PackedScene" uid="uid://cvfb6efgoeka3" path="res://scenes/item/apple.tscn" id="6_8rh4k"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3bnjd"]
 texture = ExtResource("1_valbi")
@@ -1753,7 +1752,6 @@ texture = ExtResource("1_valbi")
 sources/0 = SubResource("TileSetAtlasSource_3bnjd")
 
 [node name="mainGame" type="Node2D"]
-script = SubResource("GDScript_viahy")
 
 [node name="mapGame" type="TileMapLayer" parent="."]
 scale = Vector2(3, 3)
@@ -1763,4 +1761,11 @@ tile_set = SubResource("TileSet_p85sk")
 [node name="Player" parent="." instance=ExtResource("2_viahy")]
 position = Vector2(968, 704)
 
-[node name="HUD_Fight" parent="." instance=ExtResource("7_q4tu8")]
+[node name="Apple" parent="." instance=ExtResource("6_8rh4k")]
+position = Vector2(0, 1)
+
+[node name="spawn_enemy" parent="." instance=ExtResource("3_viahy")]
+position = Vector2(1631, 1164)
+
+[node name="spawn_enemy2" parent="." instance=ExtResource("3_viahy")]
+position = Vector2(378, 1080)

@@ -1,9 +1,12 @@
-[gd_scene load_steps=68 format=3 uid="uid://c5f38ojmtakna"]
+[gd_scene load_steps=71 format=3 uid="uid://c5f38ojmtakna"]
 
-[ext_resource type="Texture2D" uid="uid://dy7anisy5edkf" path="res://assests/characters/player/sunnyside_world_chatacter_anim_v0.png" id="1_rp718"]
+[ext_resource type="Texture2D" uid="uid://cm47ktgqmga6k" path="res://assests/characters/sunnyside_world_chatacter_anim_v0.png" id="1_rp718"]
 [ext_resource type="Script" uid="uid://ddcy8h7quthk" path="res://scripts/player.gd" id="1_yewv4"]
-[ext_resource type="Script" uid="uid://tswprrvwji6f" path="res://scripts/camera.gd" id="2_dyp2m"]
 [ext_resource type="Texture2D" uid="uid://t12o5x5vibqs" path="res://assests/shadow.png" id="3_76oj4"]
+[ext_resource type="Script" uid="uid://tswprrvwji6f" path="res://scripts/camera.gd" id="4_dyp2m"]
+[ext_resource type="AudioStream" uid="uid://t5wm8wk10or1" path="res://assests/music/Hit/Hit_1.wav" id="5_atpat"]
+[ext_resource type="AudioStream" uid="uid://c63ssstplvvo6" path="res://assests/music/Nontification kill/NotifKill_1.wav" id="6_kqtwu"]
+[ext_resource type="AudioStream" uid="uid://bk4bv1ftka6xq" path="res://assests/music/Backsound game/BacksoundGame_1.mp3" id="7_6eyoc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rp718"]
 atlas = ExtResource("1_rp718")
@@ -512,17 +515,9 @@ _data = {
 &"notif_taken": SubResource("Animation_76oj4")
 }
 
-[node name="Player" type="CharacterBody2D" groups=["Player"]]
+[node name="Player" type="CharacterBody2D"]
 z_index = 5
-collision_layer = 2
 script = ExtResource("1_yewv4")
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(0, -15)
-scale = Vector2(3, 3)
-position_smoothing_enabled = true
-position_smoothing_speed = 4.0
-script = ExtResource("2_dyp2m")
 
 [node name="player_sheet" type="AnimatedSprite2D" parent="."]
 position = Vector2(-8, 27)
@@ -538,10 +533,10 @@ position = Vector2(-4, -27)
 shape = SubResource("CircleShape2D_3uc7m")
 
 [node name="Coin" type="Label" parent="."]
-offset_left = -38.0
-offset_top = -111.0
-offset_right = 19.0
-offset_bottom = -88.0
+offset_left = -41.0
+offset_top = -114.0
+offset_right = 16.0
+offset_bottom = -91.0
 text = "Apple : "
 
 [node name="notification" type="Label" parent="."]
@@ -556,14 +551,40 @@ libraries = {
 &"": SubResource("AnimationLibrary_atpat")
 }
 
-[node name="HealthPlayer" type="ProgressBar" parent="."]
-offset_left = -39.0
-offset_top = -88.0
-offset_right = 37.0
-offset_bottom = -61.0
-
 [node name="shadow" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.6)
 position = Vector2(-0.99999976, -26)
 scale = Vector2(0.017541667, 0.026848981)
 texture = ExtResource("3_76oj4")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -15)
+scale = Vector2(3, 3)
+position_smoothing_enabled = true
+position_smoothing_speed = 4.0
+script = ExtResource("4_dyp2m")
+
+[node name="music_fight" type="AudioStreamPlayer2D" parent="Camera2D"]
+position = Vector2(0, 5)
+scale = Vector2(0.33333334, 0.33333334)
+stream = ExtResource("7_6eyoc")
+volume_db = 0.5
+autoplay = true
+parameters/looping = true
+
+[node name="KillMessage" type="Label" parent="."]
+offset_left = -54.0
+offset_top = -140.0
+offset_right = -1.0
+offset_bottom = -112.0
+theme_override_font_sizes/font_size = 16
+horizontal_alignment = 1
+
+[node name="Audio_Manager" type="Node" parent="."]
+
+[node name="hit" type="AudioStreamPlayer2D" parent="Audio_Manager"]
+stream = ExtResource("5_atpat")
+volume_db = 11.45
+
+[node name="notif_kill" type="AudioStreamPlayer2D" parent="Audio_Manager"]
+stream = ExtResource("6_kqtwu")

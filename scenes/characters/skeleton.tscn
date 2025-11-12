@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://of0cy65lonem"]
+[gd_scene load_steps=51 format=3 uid="uid://of0cy65lonem"]
 
 [ext_resource type="Script" uid="uid://dgydff65w3c4o" path="res://scripts/skeleton.gd" id="1_11w7t"]
 [ext_resource type="Texture2D" uid="uid://dwch4gtgyi65v" path="res://assests/characters/skeleton/skeleton_attack_strip7.png" id="2_bhsuw"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cfu750thunaap" path="res://assests/characters/skeleton/skeleton_idle_strip6.png" id="5_1lx0f"]
 [ext_resource type="Texture2D" uid="uid://b0e5fmtvnwemc" path="res://assests/characters/skeleton/skeleton_walk_strip8.png" id="6_7tan2"]
 [ext_resource type="Texture2D" uid="uid://t12o5x5vibqs" path="res://assests/shadow.png" id="7_bhsuw"]
+[ext_resource type="AudioStream" uid="uid://bgl03xadkwb18" path="res://assests/music/Skeleton/Skeleton_1.mp3" id="8_7y8xs"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rmro7"]
 atlas = ExtResource("2_bhsuw")
@@ -361,6 +362,11 @@ modulate = Color(1, 1, 1, 0.6)
 position = Vector2(0.9999995, -26)
 scale = Vector2(0.017541667, 0.026848981)
 texture = ExtResource("7_bhsuw")
+
+[node name="Audio_Manager" type="Node" parent="."]
+
+[node name="hurt" type="AudioStreamPlayer2D" parent="Audio_Manager"]
+stream = ExtResource("8_7y8xs")
 
 [connection signal="body_entered" from="AreaSword" to="." method="_on_area_sword_body_entered"]
 [connection signal="body_exited" from="AreaSword" to="." method="_on_area_sword_body_exited"]

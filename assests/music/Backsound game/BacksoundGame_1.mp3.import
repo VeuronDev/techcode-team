@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bk4bv1ftka6xq"
+path="res://.godot/imported/BacksoundGame_1.mp3-72a91f1d727ac898328f019ec9780fdf.mp3str"
+
+[deps]
+
+source_file="res://assests/music/Backsound game/BacksoundGame_1.mp3"
+dest_files=["res://.godot/imported/BacksoundGame_1.mp3-72a91f1d727ac898328f019ec9780fdf.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -8,18 +8,30 @@ const BASEDROLLCOOLDOWN = 1.0
 @onready var player_sheet = $player_sheet
 @onready var cam = $Camera2D
 @onready var coin_player = $Coin
-@onready var health_bar = $HealthPlayer
 @onready var notifications = $notification
 @onready var take_notif = $notification/take
+@onready var kill_message = $KillMessage
 
 var direction = Vector2.ZERO
 var is_rolling = false
 var roll_timer = 0.0
 var can_roll = true
 
+func _ready():
+	input_handle()
+	GlobalVar.spawn_wave_enemies(direction, 3)
+	GlobalVar.connect("show_kill_message", Callable(self, "_on_kill_message"))
+
+func _on_kill_message(text):
+	$Audio_Manager/notif_kill.play()
+	kill_message.text = text
+	kill_message.show()
+	kill_message.modulate.a = 1
+	kill_message.scale = Vector2(1.2, 1.2)
+	kill_message.create_tween().tween_property($KillMessage, "modulate:a", 0, 1.5)
+
 func _physics_process(delta):
-	health_bar.value = GlobalVar.healthPlayer
-	if GlobalVar.apple_taken or GlobalVar.health_taken:
+	if GlobalVar.apple_taken or GlobalVar.health_taken or GlobalVar.skull_taken:
 		notif_item()
 	if GlobalVar.hurt_active:
 		handle_hurt_status()
@@ -37,6 +49,7 @@ func input_handle():
 		GlobalVar.attack_active = true
 		player_sheet.play("attack_sword")
 		await get_tree().create_timer(0.3).timeout
+		$Audio_Manager/hit.play()
 		cam.add_trauma(0.3)
 		await get_tree().create_timer(0.4).timeout
 		GlobalVar.attack_active = false
@@ -98,4 +111,7 @@ func notif_item() -> void:
 		take_notif.play("notif_taken")
 	elif GlobalVar.health_taken:
 		notifications.text = "+30 Health"
+		take_notif.play("notif_taken")
+	elif GlobalVar.skull_taken:
+		notifications.text = "+1 Skull"
 		take_notif.play("notif_taken")
