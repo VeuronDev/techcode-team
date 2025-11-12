@@ -10,6 +10,7 @@ const BASEDROLLCOOLDOWN = 1.0
 @onready var notifications = $notification
 @onready var take_notif = $notification/take
 @onready var kill_message = $KillMessage
+@onready var animation_player = $AnimationPlayer
 
 var direction = Vector2.ZERO
 var is_rolling = false
@@ -40,7 +41,7 @@ func _physics_process(delta):
 	update_animation()
 	if GlobalVar.healthPlayer > 200:
 		GlobalVar.healthPlayer = 200
-	
+		
 func input_handle():
 	direction = Input.get_vector("move_left","move_right","move_up","move_down")
 	if Input.is_action_just_pressed("dodge") and can_roll and not GlobalVar.attack_active:
@@ -56,6 +57,7 @@ func input_handle():
 	if Input.is_action_just_pressed("use_item"):
 		healing()
 
+		
 func roll_hanlde(delta):
 	if is_rolling:
 		velocity = direction * ROLLSPEED
@@ -88,6 +90,8 @@ func handle_hurt_status():
 	if GlobalVar.hurt_active:
 		await get_tree().create_timer(0.4).timeout
 		GlobalVar.hurt_active = false
+	if GlobalVar.healthPlayer <= 0:
+		die()
 
 func update_animation():
 	sprite_flip()
@@ -123,3 +127,6 @@ func healing():
 		take_notif.play("notif_taken")
 		notifications.text = "-1 Apple"
 		take_notif.play("notif_taken")
+
+func die():
+	get_tree().change_scene_to_file("res://scenes/levels/main_game.tscn")

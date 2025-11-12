@@ -149,3 +149,4 @@ func add_kill():
 
 func _on_combo_timeout():
 	kill_count = 0
+	
