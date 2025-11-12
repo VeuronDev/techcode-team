@@ -31,6 +31,19 @@ var combo_timer: Timer
 var combo_duration = 5.0
 signal show_kill_message(text: String)
 
+
+# ==========================
+# === LOG PLAYER DOING =====
+# ==========================
+signal log_added(text: String)
+var logs: Array = []
+
+func logPlayer(text: String):
+	logs.append(text)
+	if logs.size() > 5:
+		logs.pop_front()
+	emit_signal("log_added", text)
+
 # ==========================
 # === SPAWN SYSTEM =========
 # ==========================
@@ -78,13 +91,12 @@ func enemy_died():
 func reroll_wave():
 	waves_active = false
 	current_waves += 1
-
 	if current_waves > 5:
 		emit_signal("wave_updated")
 	else:
 		emit_signal("wave_updated")
 		print("Wave %d selesai! Memulai Wave %d..." % [current_waves - 1, current_waves])
-
+		GlobalVar.logPlayer("⏭️ Next wave to %d ..." % GlobalVar.current_waves)
 		# set timer countdown
 		TIMER_CHANGE_WAVES = 3
 		var countdown_timer = Timer.new()

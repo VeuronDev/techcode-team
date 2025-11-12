@@ -9,6 +9,7 @@ func _on_body_entered(body: Node2D) -> void:
 		GlobalVar.apple_taken = true
 		$collect_item.play()
 		GlobalVar.apple += 1
+		GlobalVar.logPlayer("➕ Added item apple 1+ to backpack.")
 		animate.play("apple_taken")
 func _on_animation_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "apple_taken":

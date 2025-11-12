@@ -5,6 +5,11 @@
 [ext_resource type="PackedScene" uid="uid://deec6mcbmvuyv" path="res://scenes/levels/hud_fight.tscn" id="7_q4tu8"]
 
 [sub_resource type="GDScript" id="GDScript_viahy"]
+script/source = "extends Node2D
+
+func _ready() -> void:
+	pass
+"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3bnjd"]
 texture = ExtResource("1_valbi")

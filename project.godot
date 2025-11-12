@@ -24,6 +24,10 @@ GlobalVar="*res://scripts/global.gd"
 window/size/viewport_width=1280
 window/size/viewport_height=720
 
+[gui]
+
+theme/custom_font="uid://cpjhfhv4bnnns"
+
 [input]
 
 move_up={

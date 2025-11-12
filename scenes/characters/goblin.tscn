@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://biprgqbvg75mf"]
+[gd_scene load_steps=57 format=3 uid="uid://biprgqbvg75mf"]
 
 [ext_resource type="Script" uid="uid://r8lsr2j8jo30" path="res://scripts/goblin.gd" id="1_v8e32"]
 [ext_resource type="Texture2D" uid="uid://1875rvcapl8k" path="res://assests/characters/goblin/spr_attack_strip10.png" id="2_qod07"]
@@ -6,8 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://b5qwltmwiynor" path="res://assests/characters/goblin/spr_hurt_strip8.png" id="4_a4r6r"]
 [ext_resource type="Texture2D" uid="uid://x8pu5dyhip5a" path="res://assests/characters/goblin/spr_run_strip8.png" id="5_2p7dg"]
 [ext_resource type="Texture2D" uid="uid://no4bwhumcevq" path="res://assests/characters/goblin/spr_idle_strip9.png" id="5_qod07"]
+[ext_resource type="FontFile" uid="uid://cpjhfhv4bnnns" path="res://assests/MedodicaRegular.otf" id="7_bg15l"]
 [ext_resource type="Texture2D" uid="uid://t12o5x5vibqs" path="res://assests/shadow.png" id="7_lxi4k"]
 [ext_resource type="AudioStream" uid="uid://dj6g7v7yjde02" path="res://assests/music/Goblin/Goblin_1.mp3" id="8_a4r6r"]
+[ext_resource type="Texture2D" uid="uid://n4hi6useqkvt" path="res://assests/characters/item/skull.png" id="10_feqsl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bg15l"]
 atlas = ExtResource("2_qod07")
@@ -373,17 +375,22 @@ position = Vector2(2, -40)
 shape = SubResource("CircleShape2D_v8e32")
 
 [node name="HealthBar" type="ProgressBar" parent="."]
-offset_left = -34.0
-offset_top = -89.0
-offset_right = 39.0
-offset_bottom = -62.0
+offset_left = -42.0
+offset_top = -81.0
+offset_right = 56.0
+offset_bottom = -60.0
+theme_override_font_sizes/font_size = 12
 
 [node name="Label" type="Label" parent="."]
-offset_left = -72.0
-offset_top = -111.0
-offset_right = 74.0
-offset_bottom = -88.0
-text = "Manusia Hijau Lv.3"
+offset_left = -60.0
+offset_top = -106.0
+offset_right = 71.0
+offset_bottom = -82.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.75686276)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_bg15l")
+theme_override_font_sizes/font_size = 24
+text = "Manusia Hijau "
 
 [node name="shadow" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.6)
@@ -396,6 +403,88 @@ texture = ExtResource("7_lxi4k")
 [node name="hurt" type="AudioStreamPlayer2D" parent="Audio_Manager"]
 stream = ExtResource("8_a4r6r")
 pitch_scale = 1.7
+
+[node name="Skull" type="Sprite2D" parent="."]
+position = Vector2(-39, -71)
+scale = Vector2(2.25, 2.25)
+texture = ExtResource("10_feqsl")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -28.0
+offset_top = -81.0
+offset_right = 54.0
+offset_bottom = -79.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_left = 54.0
+offset_top = -79.0
+offset_right = 56.0
+offset_bottom = -77.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect7" type="ColorRect" parent="."]
+offset_left = 53.0
+offset_top = -80.0
+offset_right = 55.0
+offset_bottom = -78.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect8" type="ColorRect" parent="."]
+offset_left = 54.0
+offset_top = -63.0
+offset_right = 56.0
+offset_bottom = -61.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect11" type="ColorRect" parent="."]
+offset_left = 54.0
+offset_top = -63.0
+offset_right = 56.0
+offset_bottom = -61.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect10" type="ColorRect" parent="."]
+offset_left = 55.0
+offset_top = -64.0
+offset_right = 57.0
+offset_bottom = -62.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect9" type="ColorRect" parent="."]
+offset_left = 53.0
+offset_top = -62.0
+offset_right = 55.0
+offset_bottom = -60.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect14" type="ColorRect" parent="."]
+offset_left = 52.0
+offset_top = -61.0
+offset_right = 54.0
+offset_bottom = -59.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect12" type="ColorRect" parent="."]
+offset_left = 55.0
+offset_top = -78.0
+offset_right = 57.0
+offset_bottom = -76.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect13" type="ColorRect" parent="."]
+offset_left = -28.0
+offset_top = -61.0
+offset_right = 52.0
+offset_bottom = -59.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect6" type="ColorRect" parent="."]
+offset_left = 55.0
+offset_top = -77.0
+offset_right = 57.0
+offset_bottom = -63.0
+color = Color(0, 0, 0, 1)
 
 [connection signal="body_entered" from="AreaSword" to="." method="_on_area_sword_body_entered"]
 [connection signal="body_exited" from="AreaSword" to="." method="_on_area_sword_body_exited"]

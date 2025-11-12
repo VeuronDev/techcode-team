@@ -172,6 +172,7 @@ func die():
 	velocity = Vector2.ZERO
 	GlobalVar.add_kill()
 	GlobalVar.enemy_died()
+	GlobalVar.logPlayer("💀 You killed the Tengkorak Enemy.")
 	animated_sprite_2d.play("death")
 	await get_tree().create_timer(1).timeout
 	queue_free()
