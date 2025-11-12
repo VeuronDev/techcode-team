@@ -6,3 +6,4 @@ func enter():
 	
 func boss_defeated():
 	animation_player.play("boss_defeated")
+	GlobalVar.Is_boss_alive = false

@@ -22,7 +22,7 @@ var enemies_alive = 0
 signal wave_updated
 signal enemy_updated
 var TIMER_CHANGE_WAVES = 3.0
-
+var Is_boss_alive:bool = false
 # ==========================
 # === KILL COMBO SYSTEM ====
 # ==========================
@@ -86,10 +86,11 @@ func enemy_died():
 	enemies_alive -= 1
 	add_kill()
 	emit_signal("enemy_updated")
-	if enemies_alive <= 0:
+	if enemies_alive <= 0 and not Is_boss_alive:
 		reroll_wave()
 
 func reroll_wave():
+	
 	waves_active = false
 	current_waves += 1
 	emit_signal("wave_updated")
@@ -117,6 +118,7 @@ func reroll_wave():
 				waves_active = true
 				print("Wave %d dimulai!" % current_waves)
 				if current_waves == 5:
+					Is_boss_alive = true
 					var boss = spawn_boss.instantiate()
 					var offset_x = randf_range(10.0, 30.0)
 					var offset_y = randf_range(10.0, 30.0)
@@ -124,8 +126,7 @@ func reroll_wave():
 					boss.position = Vector2(650, 395) + random_offset
 					get_node("/root/dungeon/").add_child(boss)
 					boss.name = "spawn_enemy_boss"
-					print("Spawn enemy boss on:", boss.position)	
-		
+					print("Spawn enemy boss on:", boss.position)
 			else:
 				print("ERROR: Spawn Manager not found!")
 	)

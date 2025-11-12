@@ -70,4 +70,4 @@ func _physics_process(delta):
 	move_and_collide(velocity * delta)
 	
 func take_damage():
-	health -= randi_range(6, 10)
+	health -= randi_range(10, 30)

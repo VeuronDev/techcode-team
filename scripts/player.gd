@@ -115,6 +115,6 @@ func notif_item() -> void:
 
 func healing():
 	if GlobalVar.apple > 0:
-		GlobalVar.healthPlayer += 50
+		GlobalVar.healthPlayer += 15
 		GlobalVar.apple -= 1
 		

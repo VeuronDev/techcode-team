@@ -16,7 +16,7 @@
 [ext_resource type="Script" uid="uid://iupkjxbarbco" path="res://scripts/chase.gd" id="11_tftqj"]
 [ext_resource type="Script" uid="uid://bm7newmen3yty" path="res://scripts/death.gd" id="14_jn7js"]
 [ext_resource type="Script" uid="uid://bgams7jj4q6ki" path="res://scripts/spawn_minion.gd" id="15_g66t2"]
-[ext_resource type="PackedScene" uid="uid://biprgqbvg75mf" path="res://scenes/characters/Goblin.tscn" id="16_jn7js"]
+[ext_resource type="PackedScene" uid="uid://biprgqbvg75mf" path="res://scenes/characters/goblin.tscn" id="16_jn7js"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_waptb"]
 atlas = ExtResource("1_xha5n")
@@ -854,6 +854,7 @@ height = 262.0
 radius = 87.0919
 
 [node name="GiantGoblin" type="CharacterBody2D"]
+z_index = 11
 script = ExtResource("1_waptb")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
