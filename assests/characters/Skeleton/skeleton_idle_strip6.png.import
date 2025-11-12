@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cfu750thunaap"
-path="res://.godot/imported/skeleton_idle_strip6.png-95f7a0701b48efdb48f72dba67aabc01.ctex"
+path="res://.godot/imported/skeleton_idle_strip6.png-af758e8ba87b7c6dbf57ad1b1676cbaf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assests/characters/Skeleton/skeleton_idle_strip6.png"
-dest_files=["res://.godot/imported/skeleton_idle_strip6.png-95f7a0701b48efdb48f72dba67aabc01.ctex"]
+source_file="res://assests/characters/skeleton/skeleton_idle_strip6.png"
+dest_files=["res://.godot/imported/skeleton_idle_strip6.png-af758e8ba87b7c6dbf57ad1b1676cbaf.ctex"]
 
 [params]
 
