@@ -19,7 +19,7 @@ var can_roll = true
 
 func _ready():
 	input_handle()
-	GlobalVar.spawn_wave_enemies(direction, 3)
+	GlobalVar.spawn_wave_enemies(direction, 2)
 	GlobalVar.connect("show_kill_message", Callable(self, "_on_kill_message"))
 
 func _on_kill_message(text):
