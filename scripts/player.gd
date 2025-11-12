@@ -38,7 +38,9 @@ func _physics_process(delta):
 	input_handle()
 	roll_hanlde(delta)
 	update_animation()
-
+	if GlobalVar.healthPlayer > 200:
+		GlobalVar.healthPlayer = 200
+	
 func input_handle():
 	direction = Input.get_vector("move_left","move_right","move_up","move_down")
 	if Input.is_action_just_pressed("dodge") and can_roll and not GlobalVar.attack_active:
@@ -114,7 +116,10 @@ func notif_item() -> void:
 		take_notif.play("notif_taken")
 
 func healing():
-	if GlobalVar.apple > 0:
+	if GlobalVar.apple > 0 and GlobalVar.healthPlayer < 200:
 		GlobalVar.healthPlayer += 15
 		GlobalVar.apple -= 1
-		
+		notifications.text = "+15 HP!"
+		take_notif.play("notif_taken")
+		notifications.text = "-1 Apple"
+		take_notif.play("notif_taken")

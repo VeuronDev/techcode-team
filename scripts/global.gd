@@ -5,7 +5,7 @@ extends Node
 # ==========================
 var attack_active = false
 var hurt_active = true
-var healthPlayer = 100
+var healthPlayer = 200
 var apple = 0
 var skull = 0
 var apple_taken = false
