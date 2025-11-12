@@ -26,8 +26,8 @@ func _process(_delta: float) -> void:
 		enemy_left.text = "No Enemy remains!"
 		countdown_label.text = ""
 	else:
-		waves_info.text = "Wave: %d" % GlobalVar.current_waves
-		enemy_left.text = "Enemies : %d" % GlobalVar.enemies_alive
+		waves_info.text = "Wave : %d" % GlobalVar.current_waves
+		enemy_left.text = "Kill Enemy : %d" % GlobalVar.enemies_alive
 		if GlobalVar.enemies_alive <= 0 and GlobalVar.TIMER_CHANGE_WAVES > 0:
 			countdown_label.text = "Next wave in %d..." % GlobalVar.TIMER_CHANGE_WAVES
 		else:

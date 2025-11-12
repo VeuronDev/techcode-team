@@ -91,7 +91,6 @@ func enemy_died():
 		reroll_wave()
 
 func reroll_wave():
-	
 	waves_active = false
 	current_waves += 1
 	emit_signal("wave_updated")

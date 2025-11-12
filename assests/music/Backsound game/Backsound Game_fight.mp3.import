@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bmi7ja4asekq2"
+path="res://.godot/imported/Backsound Game_fight.mp3-eaf0b55b022f421035f3b4e459bc2a35.mp3str"
+
+[deps]
+
+source_file="res://assests/music/Backsound game/Backsound Game_fight.mp3"
+dest_files=["res://.godot/imported/Backsound Game_fight.mp3-eaf0b55b022f421035f3b4e459bc2a35.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
