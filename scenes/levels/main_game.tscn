@@ -1,21 +1,9 @@
 [gd_scene load_steps=12 format=4 uid="uid://b4pavxhcdhhj"]
 
+[ext_resource type="Script" uid="uid://b57lphxxlwf0t" path="res://scenes/levels/main_game.gd" id="1_3bnjd"]
 [ext_resource type="Texture2D" uid="uid://ct25qbglpwqsu" path="res://assests/tileset/bg.jpg" id="1_valbi"]
 [ext_resource type="Texture2D" uid="uid://ctx32w2mkv55a" path="res://assests/tileset/menu game.png" id="3_3bnjd"]
 [ext_resource type="AudioStream" uid="uid://bk4bv1ftka6xq" path="res://assests/music/Backsound game/BacksoundGame_1.mp3" id="3_viahy"]
-
-[sub_resource type="GDScript" id="GDScript_viahy"]
-script/source = "extends Node2D
-
-func _on_play_pressed() -> void:
-	$music_bg.stop()
-	get_tree().change_scene_to_file(\"res://scenes/levels/dungeon.tscn\")
-	
-
-func _on_exit_pressed() -> void:
-	$music_bg.stop()
-	get_tree().quit()
-"
 
 [sub_resource type="Animation" id="Animation_3bnjd"]
 length = 0.001
@@ -2709,7 +2697,7 @@ sources/0 = SubResource("TileSetAtlasSource_p85sk")
 
 [node name="mainGame" type="Node2D"]
 position = Vector2(636, 374)
-script = SubResource("GDScript_viahy")
+script = ExtResource("1_3bnjd")
 
 [node name="music_bg" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_viahy")

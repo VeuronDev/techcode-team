@@ -1,4 +1,4 @@
-[gd_scene load_steps=71 format=3 uid="uid://c5f38ojmtakna"]
+[gd_scene load_steps=70 format=3 uid="uid://c5f38ojmtakna"]
 
 [ext_resource type="Texture2D" uid="uid://dy7anisy5edkf" path="res://assests/characters/player/sunnyside_world_chatacter_anim_v0.png" id="1_rp718"]
 [ext_resource type="Script" uid="uid://ddcy8h7quthk" path="res://scripts/player.gd" id="1_yewv4"]
@@ -6,7 +6,6 @@
 [ext_resource type="Script" uid="uid://tswprrvwji6f" path="res://scripts/camera.gd" id="4_dyp2m"]
 [ext_resource type="AudioStream" uid="uid://t5wm8wk10or1" path="res://assests/music/Hit/Hit_1.wav" id="5_atpat"]
 [ext_resource type="AudioStream" uid="uid://c63ssstplvvo6" path="res://assests/music/Nontification kill/NotifKill_1.wav" id="6_kqtwu"]
-[ext_resource type="AudioStream" uid="uid://bk4bv1ftka6xq" path="res://assests/music/Backsound game/BacksoundGame_1.mp3" id="7_6eyoc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rp718"]
 atlas = ExtResource("1_rp718")
@@ -555,14 +554,6 @@ scale = Vector2(3, 3)
 position_smoothing_enabled = true
 position_smoothing_speed = 4.0
 script = ExtResource("4_dyp2m")
-
-[node name="music_fight" type="AudioStreamPlayer2D" parent="Camera2D"]
-position = Vector2(0, 5)
-scale = Vector2(0.33333334, 0.33333334)
-stream = ExtResource("7_6eyoc")
-volume_db = 0.5
-autoplay = true
-parameters/looping = true
 
 [node name="KillMessage" type="Label" parent="."]
 offset_left = -54.0
