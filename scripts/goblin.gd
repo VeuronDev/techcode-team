@@ -1,19 +1,18 @@
 extends CharacterBody2D
 
-const BASE_SPEED = 300
-const MAX_HEALTH = 100
 const apple = preload("res://scenes/item/apple.tscn")
 const potion = preload("res://scenes/item/potion.tscn")
 const skull = preload("res://scenes/item/skull.tscn")
-const ATTACK_COOLDOWN = 1.5
-
-const WANDER_RADIUS = 120.0
-const WANDER_WAIT = 1.5
 
 @onready var animated_sprite_2d = $Sheet
 @onready var health_bar = $HealthBar
+@onready var hurt = $Audio_Manager/hurt
 
-var player_post
+const ATTACK_COOLDOWN = 1.5
+const BASE_SPEED = 300
+const MAX_HEALTH = 100
+const WANDER_RADIUS = 120.0
+const WANDER_WAIT = 1.5
 var target: CharacterBody2D
 var in_sword_area = false
 var is_hit = false
@@ -21,10 +20,10 @@ var is_dead = false
 var is_attacking = false
 var health = MAX_HEALTH
 var attack_timer = 0.0
-
 var origin_position: Vector2
 var wander_target: Vector2
 var wander_wait_timer: float = 0.0
+var player_post
 
 func _ready():
 	player_post = get_tree().get_first_node_in_group("Player")
@@ -33,17 +32,13 @@ func _ready():
 	origin_position = global_position
 	_set_new_wander_target()
 
-
 func _physics_process(delta):
 	randomize()
-	
 	if attack_timer > 0:
 		attack_timer -= delta
-	
 	if is_dead:
 		velocity = Vector2.ZERO
 		return
-
 	if in_sword_area and not is_hit and not is_dead and attack_timer <= 0:
 		play_attack()
 	elif is_hit or is_attacking:
@@ -54,8 +49,6 @@ func _physics_process(delta):
 			velocity = direction * BASE_SPEED
 		else:
 			_wander_behavior(delta)
-
-	# 🔹 Animasi
 	if is_dead:
 		animated_sprite_2d.play("death")
 	elif is_hit:
@@ -66,7 +59,6 @@ func _physics_process(delta):
 		animated_sprite_2d.play("run")
 	else:
 		animated_sprite_2d.play("idle")
-
 	move_and_slide()
 	for i in range(get_slide_collision_count()):
 		var collision = get_slide_collision(i)
@@ -79,21 +71,16 @@ func _physics_process(delta):
 		animated_sprite_2d.flip_h = player_post.global_position.x < global_position.x
 	elif velocity.length() > 0:
 		animated_sprite_2d.flip_h = velocity.x < 0
-
 	if in_sword_area and GlobalVar.attack_active and not is_hit and not is_dead:
 		take_damage(randi_range(10, 15))
 
-
-# === GERAK ACAK DI SEKITAR ===
 func _wander_behavior(delta):
 	if wander_wait_timer > 0:
 		wander_wait_timer -= delta
 		velocity = Vector2.ZERO
 		return
-	
 	var direction = global_position.direction_to(wander_target)
 	velocity = direction * (BASE_SPEED * 0.4) # lebih lambat dari kejar player
-
 	if global_position.distance_to(wander_target) < 10:
 		wander_wait_timer = WANDER_WAIT
 		_set_new_wander_target()
@@ -102,8 +89,6 @@ func _set_new_wander_target():
 	var offset = Vector2(randf_range(-WANDER_RADIUS, WANDER_RADIUS), randf_range(-WANDER_RADIUS, WANDER_RADIUS))
 	wander_target = origin_position + offset
 
-
-# === COLLISION ===
 func _on_area_enemy_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
 		target = body
@@ -120,15 +105,12 @@ func _on_area_sword_body_exited(body: Node2D) -> void:
 	if body.name == "Player":
 		in_sword_area = false
 
-
-# === DAMAGE & ATTACK ===
 func take_damage(amount: int):
 	is_hit = true
-	$Audio_Manager/hurt.play()
+	$hurt.play()
 	velocity = Vector2.ZERO
 	health -= amount
 	health_bar.value = health
-
 	if health <= 0:
 		die()
 	else:
@@ -143,15 +125,12 @@ func play_attack():
 	is_attacking = true	
 	velocity = Vector2.ZERO
 	animated_sprite_2d.play("attack")
-
 	await get_tree().create_timer(0.6).timeout 
 	var damage_to_player = randi_range(1, 5)
 	GlobalVar.hurt_active = true
 	GlobalVar.healthPlayer -= damage_to_player
 	is_attacking = false
 
-
-# === DROP ITEM ===
 func init_dropped_items(count: int):
 	for i in range(count):
 		var rand_drop = randf()

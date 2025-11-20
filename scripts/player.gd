@@ -1,17 +1,15 @@
 extends CharacterBody2D
 
-const BASESPEED = 450
-const ROLLSPEED = 750
-const BASEROLLDURATION = 0.5
-const BASEDROLLCOOLDOWN = 1.0
-
 @onready var player_sheet = $player_sheet
 @onready var cam = $Camera2D
 @onready var notifications = $notification
 @onready var take_notif = $notification/take
 @onready var kill_message = $KillMessage
 
-
+const BASESPEED = 450
+const ROLLSPEED = 750
+const BASEROLLDURATION = 0.5
+const BASEDROLLCOOLDOWN = 1.0
 var direction = Vector2.ZERO
 var is_rolling = false
 var roll_timer = 0.0
@@ -22,7 +20,7 @@ func _ready():
 	GlobalVar.spawn_wave_enemies(global_position)
 	GlobalVar.connect("show_kill_message", Callable(self, "_on_kill_message"))
 	GlobalVar.healthPlayer = 200
-	
+
 func _on_kill_message(text):
 	$Audio_Manager/notif_kill.play()
 	kill_message.text = text
@@ -35,14 +33,13 @@ func _physics_process(delta):
 	if GlobalVar.apple_taken or GlobalVar.health_taken or GlobalVar.skull_taken:
 		notif_item()
 	if GlobalVar.hurt_active:
-		handle_hurt_status()
-		
+		handle_hurt_status()	
 	input_handle()
 	roll_hanlde(delta)
 	update_animation()
 	if GlobalVar.healthPlayer > 200:
 		GlobalVar.healthPlayer = 200
-		
+
 func input_handle():
 	direction = Input.get_vector("move_left","move_right","move_up","move_down")
 	if Input.is_action_just_pressed("dodge") and can_roll and not GlobalVar.attack_active:
@@ -58,7 +55,6 @@ func input_handle():
 	if Input.is_action_just_pressed("use_item"):
 		healing()
 
-		
 func roll_hanlde(delta):
 	if is_rolling:
 		velocity = direction * ROLLSPEED
@@ -67,14 +63,12 @@ func roll_hanlde(delta):
 			stop_rolling()
 	else:
 		velocity = direction * BASESPEED
-
 	move_and_slide()
 
 func start_roll():
 	is_rolling = true
 	can_roll = false
 	roll_timer = BASEROLLDURATION
-
 	await get_tree().create_timer(BASEDROLLCOOLDOWN).timeout
 	can_roll = true
 
@@ -108,7 +102,7 @@ func update_animation():
 		player_sheet.play("run")
 	else:
 		player_sheet.play("idle")
-		
+
 func notif_item() -> void:
 	if GlobalVar.apple_taken:
 		notifications.text = "+1 Apple"

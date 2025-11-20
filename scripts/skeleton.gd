@@ -1,18 +1,18 @@
 extends CharacterBody2D
 
-const BASE_SPEED = 300
-const MAX_HEALTH = 100
-const ATTACK_COOLDOWN = 1.5
 const apple = preload("res://scenes/item/apple.tscn")
 const potion = preload("res://scenes/item/potion.tscn")
 const skull = preload("res://scenes/item/skull.tscn")
 
-const WANDER_RADIUS = 120.0
-const WANDER_WAIT = 1.5
-
 @onready var animated_sprite_2d = $Sheet
 @onready var health_bar = $HealthBar
+@onready var hurt  = $Audio_Manager/hurt
 
+const BASE_SPEED = 300
+const MAX_HEALTH = 100
+const ATTACK_COOLDOWN = 1.5
+const WANDER_RADIUS = 120.0
+const WANDER_WAIT = 1.5
 var player_post
 var target: CharacterBody2D
 var in_sword_area = false
@@ -21,7 +21,6 @@ var is_dead = false
 var is_attacking = false
 var health = MAX_HEALTH
 var attack_timer = 0.0
-
 var origin_position: Vector2
 var wander_target: Vector2
 var wander_wait_timer: float = 0.0
@@ -32,7 +31,6 @@ func _ready():
 	health_bar.value = health
 	origin_position = global_position
 	_set_new_wander_target()
-
 
 func _physics_process(delta):
 	randomize()
@@ -64,7 +62,6 @@ func _physics_process(delta):
 		animated_sprite_2d.play("walk")
 	else:
 		animated_sprite_2d.play("idle")
-
 	move_and_slide()
 	for i in range(get_slide_collision_count()):
 		var collision = get_slide_collision(i)
@@ -77,21 +74,16 @@ func _physics_process(delta):
 		animated_sprite_2d.flip_h = player_post.global_position.x < global_position.x
 	elif velocity.length() > 0:
 		animated_sprite_2d.flip_h = velocity.x < 0
-
 	if in_sword_area and GlobalVar.attack_active and not is_hit and not is_dead:
 		take_damage(randi_range(10, 15))
 
-
-# === GERAK ACAK DI SEKITAR ===
 func _wander_behavior(delta):
 	if wander_wait_timer > 0:
 		wander_wait_timer -= delta
 		velocity = Vector2.ZERO
-		return
-	
+		return	
 	var direction = global_position.direction_to(wander_target)
 	velocity = direction * (BASE_SPEED * 0.4)
-
 	if global_position.distance_to(wander_target) < 10:
 		wander_wait_timer = WANDER_WAIT
 		_set_new_wander_target()
@@ -100,8 +92,6 @@ func _set_new_wander_target():
 	var offset = Vector2(randf_range(-WANDER_RADIUS, WANDER_RADIUS), randf_range(-WANDER_RADIUS, WANDER_RADIUS))
 	wander_target = origin_position + offset
 
-
-# === COLLISION ===
 func _on_area_enemy_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
 		target = body
@@ -118,11 +108,9 @@ func _on_area_sword_body_exited(body: Node2D) -> void:
 	if body.name == "Player":
 		in_sword_area = false
 
-
-# === DAMAGE & ATTACK ===
 func take_damage(amount: int):
 	is_hit = true
-	$Audio_Manager/hurt.play()
+	hurt.play()
 	velocity = Vector2.ZERO
 	health_bar.value = health
 	if health <= 0:
@@ -140,15 +128,12 @@ func play_attack():
 	is_attacking = true	
 	velocity = Vector2.ZERO
 	animated_sprite_2d.play("attack")
-
 	await get_tree().create_timer(0.6).timeout 
 	var damage_to_player = randi_range(1, 5)
 	GlobalVar.hurt_active = true
 	GlobalVar.healthPlayer -= damage_to_player
 	is_attacking = false
 
-
-# === DROP ITEM ===
 func init_dropped_items(count: int):
 	for i in range(count):
 		var rand_drop = randf()

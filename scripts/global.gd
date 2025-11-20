@@ -1,8 +1,5 @@
 extends Node
 
-# ==========================
-# === PLAYER STATUS ========
-# ==========================
 var attack_active = false
 var hurt_active = true
 var healthPlayer = 200
@@ -13,9 +10,6 @@ var apple_taken = false
 var health_taken = false
 var skull_taken = false
 
-# ==========================
-# === WAVE SYSTEM ==========
-# ==========================
 var current_waves = 1
 const ENEMIES_PER_WAVE = 4
 var waves_active = false
@@ -24,18 +18,12 @@ signal wave_updated
 signal enemy_updated
 var TIMER_CHANGE_WAVES = 3.0
 var Is_boss_alive:bool = false
-# ==========================
-# === KILL COMBO SYSTEM ====
-# ==========================
+
 var kill_count = 0
 var combo_timer: Timer
 var combo_duration = 5.0
 signal show_kill_message(text: String)
 
-
-# ==========================
-# === LOG PLAYER DOING =====
-# ==========================
 signal log_added(text: String)
 var logs: Array = []
 
@@ -45,9 +33,6 @@ func logPlayer(text: String):
 		logs.pop_front()
 	emit_signal("log_added", text)
 
-# ==========================
-# === SPAWN SYSTEM =========
-# ==========================
 @onready var spawn_point_scene = preload("res://scenes/characters/spawn_enemy.tscn")
 @onready var spawn_boss = preload("res://scenes/giant_goblin.tscn")
 
@@ -58,9 +43,6 @@ func _ready():
 	add_child(combo_timer)
 	combo_timer.connect("timeout", Callable(self, "_on_combo_timeout"))
 
-# ==========================
-# === MAIN WAVE SYSTEM =====
-# ==========================
 func spawn_wave_enemies(player_pos: Vector2):
 	for i in range(current_waves):
 		var spawn_point_enemy = spawn_point_scene.instantiate()
@@ -72,8 +54,6 @@ func spawn_wave_enemies(player_pos: Vector2):
 		spawn_point_enemy.name = "spawn_enemy_" + str(i + 1)		
 		print("Spawn enemy on:", spawn_point_enemy.global_position)	
 	start_wave(current_waves)
-
-
 
 func start_wave(enemy_count: int):
 	waves_active = true
@@ -96,7 +76,6 @@ func reroll_wave():
 	emit_signal("wave_updated")
 	print("Wave %d selesai! Memulai Wave %d..." % [current_waves - 1, current_waves])
 	GlobalVar.logPlayer("⏭️ Next wave to %d ..." % GlobalVar.current_waves)
-	# set timer countdown
 	TIMER_CHANGE_WAVES = 3
 	var countdown_timer = Timer.new()
 	countdown_timer.wait_time = 1.0
@@ -104,13 +83,11 @@ func reroll_wave():
 	countdown_timer.name = "WaveCountdownTimer"
 	add_child(countdown_timer)
 	countdown_timer.start()
-
 	countdown_timer.timeout.connect(func():
 		TIMER_CHANGE_WAVES -= 1
 		if TIMER_CHANGE_WAVES <= 0:
 			countdown_timer.stop()
 			countdown_timer.queue_free()
-
 			var next_enemy_count = ENEMIES_PER_WAVE + (current_waves - 1) * 2
 			var spawn_manager = get_tree().get_first_node_in_group("spawn_manager_group")
 			if is_instance_valid(spawn_manager):
@@ -130,9 +107,7 @@ func reroll_wave():
 			else:
 				print("ERROR: Spawn Manager not found!")
 	)
-# ==========================
-# === KILL COMBO SYSTEM ====
-# ==========================
+
 func add_kill():
 	kill_count += 1
 	combo_timer.start()

@@ -12,7 +12,6 @@ var direction : Vector2
 var in_sword_area: bool = false
 var immune_time :float = 0.7
 var is_hit : bool = false
-# Jeda untuk mencegah serangan instan saat spawn
 var spawn_invulnerability_time: float = 0.2 
 
 
@@ -31,33 +30,23 @@ var health = 1000:
 		if value <= 0:
 			progress_bar.visible = false
 			find_child("FiniteSateMachine").change_state("Death")
-			
+
 func _ready():
-	# 1. Mulai dengan is_hit = true untuk mencegah damage instan (invulnerability)
 	is_hit = true
 	attack_hitbox.monitoring = false
 	hit_area.monitoring = true
-	
-	# 2. Aktifkan pergerakan segera setelah siap
 	set_physics_process(true)
-	
-	# 3. Tunggu sebentar lalu non-aktifkan invulnerability
 	await get_tree().create_timer(spawn_invulnerability_time).timeout
 	is_hit = false
-	
+
 func _process(_delta):
 	if is_instance_valid(player):
-		# Logic mengejar
 		direction = player.position - position
-		
-		# Logic menerima damage (pemain menyerang musuh)
 		if in_sword_area and GlobalVar.attack_active and not is_hit:
 			is_hit = true
 			take_damage() 
 			await get_tree().create_timer(immune_time).timeout
 			is_hit = false
-			
-		# Logic flip sprite
 		if direction.x < 0:
 			animated_sprite.flip_h = true
 		else:

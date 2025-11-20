@@ -15,7 +15,6 @@ func spawn_random_enemies(count: int) -> void:
 	if spawn_points.is_empty():
 		print("ERROR: No Marker2D spawn points found!")
 		return
-
 	count = min(count, spawn_points.size())
 	spawn_points.shuffle()
 	var selected_points = spawn_points.slice(0, count)
