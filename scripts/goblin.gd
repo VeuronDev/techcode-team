@@ -107,7 +107,7 @@ func _on_area_sword_body_exited(body: Node2D) -> void:
 
 func take_damage(amount: int):
 	is_hit = true
-	$hurt.play()
+	hurt.play()
 	velocity = Vector2.ZERO
 	health -= amount
 	health_bar.value = health

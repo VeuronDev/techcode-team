@@ -52,7 +52,6 @@ func spawn_wave_enemies(player_pos: Vector2):
 		spawn_point_enemy.global_position = player_pos + random_offset
 		get_node("/root/dungeon/").add_child.call_deferred(spawn_point_enemy)
 		spawn_point_enemy.name = "spawn_enemy_" + str(i + 1)		
-		print("Spawn enemy on:", spawn_point_enemy.global_position)	
 	start_wave(current_waves)
 
 func start_wave(enemy_count: int):
@@ -74,7 +73,6 @@ func reroll_wave():
 	waves_active = false
 	current_waves += 1
 	emit_signal("wave_updated")
-	print("Wave %d selesai! Memulai Wave %d..." % [current_waves - 1, current_waves])
 	GlobalVar.logPlayer("⏭️ Next wave to %d ..." % GlobalVar.current_waves)
 	TIMER_CHANGE_WAVES = 3
 	var countdown_timer = Timer.new()
@@ -93,7 +91,6 @@ func reroll_wave():
 			if is_instance_valid(spawn_manager):
 				spawn_manager.spawn_random_enemies(next_enemy_count)
 				waves_active = true
-				print("Wave %d dimulai!" % current_waves)
 				if current_waves == 5:
 					Is_boss_alive = true
 					var boss = spawn_boss.instantiate()
@@ -103,7 +100,6 @@ func reroll_wave():
 					boss.position = Vector2(650, 395) + random_offset
 					get_node("/root/dungeon/").add_child(boss)
 					boss.name = "spawn_enemy_boss"
-					print("Spawn enemy boss on:", boss.position)
 			else:
 				print("ERROR: Spawn Manager not found!")
 	)
