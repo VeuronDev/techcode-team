@@ -5,6 +5,8 @@ extends CharacterBody2D
 @onready var notifications = $notification
 @onready var take_notif = $notification/take
 @onready var kill_message = $KillMessage
+@onready var hit = $Audio_Manager/hit
+@onready var notif_kill = $Audio_Manager/notif_kill
 
 const BASESPEED = 450
 const ROLLSPEED = 750
@@ -22,12 +24,12 @@ func _ready():
 	GlobalVar.healthPlayer = 200
 
 func _on_kill_message(text):
-	$Audio_Manager/notif_kill.play()
+	notif_kill.play()
 	kill_message.text = text
 	kill_message.show()
 	kill_message.modulate.a = 1
 	kill_message.scale = Vector2(1.2, 1.2)
-	kill_message.create_tween().tween_property($KillMessage, "modulate:a", 0, 1.5)
+	kill_message.create_tween().tween_property(kill_message, "modulate:a", 0, 1.5)
 
 func _physics_process(delta):
 	if GlobalVar.apple_taken or GlobalVar.health_taken or GlobalVar.skull_taken:
@@ -48,7 +50,7 @@ func input_handle():
 		GlobalVar.attack_active = true
 		player_sheet.play("attack_sword")
 		await get_tree().create_timer(0.3).timeout
-		$Audio_Manager/hit.play()
+		hit.play()
 		cam.add_trauma(0.3)
 		await get_tree().create_timer(0.4).timeout
 		GlobalVar.attack_active = false
