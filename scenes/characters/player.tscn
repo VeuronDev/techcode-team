@@ -523,7 +523,7 @@ script = ExtResource("1_yewv4")
 position = Vector2(-8, 27)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_rpnd8")
-animation = &"death"
+animation = &"idle"
 autoplay = "idle"
 
 [node name="player_body" type="CollisionShape2D" parent="."]

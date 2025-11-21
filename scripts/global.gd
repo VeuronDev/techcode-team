@@ -3,6 +3,7 @@ extends Node
 var attack_active = false
 var hurt_active = true
 var healthPlayer = 200
+var expPlayer = 0
 var apple = 0
 var skull = 0
 var health_count = 0
@@ -120,3 +121,5 @@ func add_kill():
 func _on_combo_timeout():
 	kill_count = 0
 	
+func add_exp_player():
+	expPlayer += randf_range(1,5)

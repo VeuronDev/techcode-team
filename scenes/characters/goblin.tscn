@@ -344,7 +344,7 @@ radius = 24.0
 radius = 184.69975
 
 [node name="Goblin" type="CharacterBody2D"]
-z_index = 16
+z_index = 17
 platform_floor_layers = 4294967040
 script = ExtResource("1_v8e32")
 
@@ -352,8 +352,9 @@ script = ExtResource("1_v8e32")
 position = Vector2(1, -21)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_dksay")
-animation = &"attack"
+animation = &"idle"
 autoplay = "idle"
+frame_progress = 0.3689208
 
 [node name="AreaSword" type="Area2D" parent="."]
 visible = false
@@ -376,6 +377,7 @@ position = Vector2(2, -40)
 shape = SubResource("CircleShape2D_v8e32")
 
 [node name="HealthBar" type="ProgressBar" parent="."]
+z_index = 16
 offset_left = -42.0
 offset_top = -81.0
 offset_right = 56.0
@@ -383,6 +385,7 @@ offset_bottom = -60.0
 theme_override_font_sizes/font_size = 12
 
 [node name="Label" type="Label" parent="."]
+z_index = 16
 offset_left = -60.0
 offset_top = -106.0
 offset_right = 71.0
@@ -406,6 +409,7 @@ stream = ExtResource("8_a4r6r")
 pitch_scale = 1.7
 
 [node name="Skull" type="Sprite2D" parent="."]
+z_index = 16
 position = Vector2(-39, -71)
 scale = Vector2(2.25, 2.25)
 texture = ExtResource("10_feqsl")

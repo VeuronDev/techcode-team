@@ -2,9 +2,6 @@ extends CanvasLayer
 
 @onready var HealthPlayer = $HealthPlayer
 @onready var ExpPlayer = $ExpPlayer
-@onready var enemy_left = $enemy_count
-@onready var waves_info = $waves_info
-@onready var countdown_label = $CountDown
 @onready var apple = $apple
 @onready var skull = $skull
 @onready var health = $health
@@ -14,8 +11,6 @@ extends CanvasLayer
 func _ready() -> void:
 	GlobalVar.connect("log_added", Callable(self, "_on_log_added"))
 	HealthPlayer.value = GlobalVar.healthPlayer
-	waves_info.text = "Wave: %d" % GlobalVar.current_waves
-	enemy_left.text = "Enemies : %d" % GlobalVar.enemies_alive
 
 func _process(_delta: float) -> void:
 	ExpPlayer.value = GlobalVar.expPlayer
@@ -23,20 +18,6 @@ func _process(_delta: float) -> void:
 	apple.text = "%d"%GlobalVar.apple
 	health.text = "%d"%GlobalVar.health_count
 	skull.text = "%d"%GlobalVar.skull
-	if GlobalVar.current_waves > 5:
-		waves_info.text = "Wave Ended!"
-		enemy_left.text = "No Enemy remains!"
-		countdown_label.text = ""
-	else:
-		if GlobalVar.current_waves < 5:
-			waves_info.text = "Wave : %d/5" % GlobalVar.current_waves
-		else:
-			waves_info.text = "Last Wave!"
-		enemy_left.text = "Kill Enemy : %d" % GlobalVar.enemies_alive
-		if GlobalVar.enemies_alive <= 0 and GlobalVar.TIMER_CHANGE_WAVES > 0:
-			countdown_label.text = "Next wave in %d..." % GlobalVar.TIMER_CHANGE_WAVES
-		else:
-			countdown_label.text = ""
 
 func _input(event):
 	if event is InputEventKey and event.pressed:
