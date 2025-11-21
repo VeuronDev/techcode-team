@@ -1,5 +1,6 @@
 extends Area2D
 
+#PLAYER MEMASUKI AREA ITEM
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
 		GlobalVar.skull_taken = true

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cwm7wa8ijhy2f"
-path="res://.godot/imported/spr_deco_sheep_01_strip4.png-e5188de8a125967a02beb3e6a37f64b7.ctex"
+uid="uid://t12o5x5vibqs"
+path="res://.godot/imported/shadow.png-3173238ccf86d40049705a3f19f9d8f0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scripts/spr_deco_sheep_01_strip4.png"
-dest_files=["res://.godot/imported/spr_deco_sheep_01_strip4.png-e5188de8a125967a02beb3e6a37f64b7.ctex"]
+source_file="res://assests/tileset/shadow.png"
+dest_files=["res://.godot/imported/shadow.png-3173238ccf86d40049705a3f19f9d8f0.ctex"]
 
 [params]
 

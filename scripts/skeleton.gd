@@ -1,47 +1,49 @@
 extends CharacterBody2D
 
+#PROPERTY SCENES
 const apple = preload("res://scenes/item/apple.tscn")
 const potion = preload("res://scenes/item/potion.tscn")
 const skull = preload("res://scenes/item/skull.tscn")
 
+#PROPERTY NODE
 @onready var animated_sprite_2d = $Sheet
 @onready var health_bar = $HealthBar
-@onready var hurt  = $Audio_Manager/hurt
+@onready var hurt = $Audio_Manager/hurt
 
-const BASE_SPEED = 300
-const MAX_HEALTH = 100
-const ATTACK_COOLDOWN = 1.5
-const WANDER_RADIUS = 120.0
-const WANDER_WAIT = 1.5
-var player_post
+#PROPERTY SKELETON
+var wander_wait_timer: float = 0.0
+const ATTACK_COOLDOWN: float = 1.5
+const WANDER_RADIUS: float = 120.0
+const WANDER_WAIT: float = 1.5
+var attack_timer: float = 0.0
+const BASE_SPEED: int = 300
+const MAX_HEALTH: int = 100
+var health: int = MAX_HEALTH
 var target: CharacterBody2D
-var in_sword_area = false
-var is_hit = false
-var is_dead = false
-var is_attacking = false
-var health = MAX_HEALTH
-var attack_timer = 0.0
+var in_sword_area: bool = false
+var is_hit: bool = false
+var is_dead: bool = false
+var is_attacking: bool = false
 var origin_position: Vector2
 var wander_target: Vector2
-var wander_wait_timer: float = 0.0
+var player_post
 
-func _ready():
+#READY SISTEM
+func _ready() ->void:
 	player_post = get_tree().get_first_node_in_group("Player")
 	health_bar.max_value = MAX_HEALTH
 	health_bar.value = health
 	origin_position = global_position
 	_set_new_wander_target()
 
-func _physics_process(delta):
-	randomize()
-	
+#LOOP PENGECEKAN SERANG/JALAN
+func _physics_process(delta) -> void:
+	randomize()	
 	if attack_timer > 0:
 		attack_timer -= delta
-	
 	if is_dead:
 		velocity = Vector2.ZERO
 		return
-
 	if in_sword_area and not is_hit and not is_dead and attack_timer <= 0:
 		play_attack()
 	elif is_hit or is_attacking:
@@ -77,51 +79,55 @@ func _physics_process(delta):
 	if in_sword_area and GlobalVar.attack_active and not is_hit and not is_dead:
 		take_damage(randi_range(10, 15))
 
-func _wander_behavior(delta):
+#JALAN SECARA ACAK
+func _wander_behavior(delta) -> void:
 	if wander_wait_timer > 0:
 		wander_wait_timer -= delta
 		velocity = Vector2.ZERO
-		return	
+		return
 	var direction = global_position.direction_to(wander_target)
 	velocity = direction * (BASE_SPEED * 0.4)
 	if global_position.distance_to(wander_target) < 10:
 		wander_wait_timer = WANDER_WAIT
 		_set_new_wander_target()
 
-func _set_new_wander_target():
+#JARAK JALAN TERHADAP TITIK SPAWN
+func _set_new_wander_target() -> void:
 	var offset = Vector2(randf_range(-WANDER_RADIUS, WANDER_RADIUS), randf_range(-WANDER_RADIUS, WANDER_RADIUS))
 	wander_target = origin_position + offset
 
+#PENGECEKAN PLAYER MEMASUKIN AREA SERANG
 func _on_area_enemy_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
 		target = body
-
 func _on_area_enemy_body_exited(body: Node2D) -> void:
 	if body.name == "Player":
 		target = null
 
+#PENGECEKAN PEDANG PLAYER DI AREA GOBLIN
 func _on_area_sword_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
 		in_sword_area = true
-
 func _on_area_sword_body_exited(body: Node2D) -> void:
 	if body.name == "Player":
 		in_sword_area = false
 
-func take_damage(amount: int):
+#MENERIMA DAMAGE DARI PLAYER
+func take_damage(amount: int) -> void:
 	is_hit = true
 	hurt.play()
 	velocity = Vector2.ZERO
+	health -= amount
 	health_bar.value = health
 	if health <= 0:
 		die()
 	else:
 		animated_sprite_2d.play("hit")
 		await get_tree().create_timer(0.6).timeout
-		health -= amount
 		is_hit = false
 
-func play_attack():
+#MENYERANG PLAYER
+func play_attack() -> void:
 	if is_dead or is_hit or is_attacking:
 		return
 	attack_timer = ATTACK_COOLDOWN	
@@ -134,7 +140,8 @@ func play_attack():
 	GlobalVar.healthPlayer -= damage_to_player
 	is_attacking = false
 
-func init_dropped_items(count: int):
+#MENJATUHKAN ITEM
+func init_dropped_items(count: int) -> void:
 	for i in range(count):
 		var rand_drop = randf()
 		var drop_scene
@@ -151,7 +158,8 @@ func init_dropped_items(count: int):
 		drop_instance.global_position = position + random_offset
 		get_parent().add_child(drop_instance)
 
-func die():
+#MATI
+func die() -> void:
 	is_dead = true
 	is_hit = false
 	velocity = Vector2.ZERO

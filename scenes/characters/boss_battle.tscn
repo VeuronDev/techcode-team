@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://yy08ynj41ny5"]
 
-[ext_resource type="PackedScene" uid="uid://ck6ko63f447e1" path="res://scenes/giant_goblin.tscn" id="1_qejwk"]
+[ext_resource type="PackedScene" uid="uid://ck6ko63f447e1" path="res://scenes/characters/giant_goblin.tscn" id="1_qejwk"]
 [ext_resource type="PackedScene" uid="uid://c5f38ojmtakna" path="res://scenes/characters/player.tscn" id="2_fuej0"]
 
 [node name="BossBattle" type="Node2D"]

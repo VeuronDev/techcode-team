@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://x8pu5dyhip5a" path="res://assests/characters/goblin/spr_run_strip8.png" id="5_2p7dg"]
 [ext_resource type="Texture2D" uid="uid://no4bwhumcevq" path="res://assests/characters/goblin/spr_idle_strip9.png" id="5_qod07"]
 [ext_resource type="FontFile" uid="uid://cpjhfhv4bnnns" path="res://assests/MedodicaRegular.otf" id="7_bg15l"]
-[ext_resource type="Texture2D" uid="uid://t12o5x5vibqs" path="res://assests/shadow.png" id="7_lxi4k"]
+[ext_resource type="Texture2D" uid="uid://t12o5x5vibqs" path="res://assests/tileset/shadow.png" id="7_lxi4k"]
 [ext_resource type="AudioStream" uid="uid://dj6g7v7yjde02" path="res://assests/music/Goblin/Goblin_1.mp3" id="8_a4r6r"]
 [ext_resource type="Texture2D" uid="uid://n4hi6useqkvt" path="res://assests/characters/item/skull.png" id="10_feqsl"]
 

@@ -1,10 +1,9 @@
-[gd_scene load_steps=31 format=4 uid="uid://87b2n6q6halq"]
+[gd_scene load_steps=30 format=4 uid="uid://87b2n6q6halq"]
 
 [ext_resource type="Texture2D" uid="uid://dk4co5h086gx5" path="res://assests/tileset/spr_tileset_sunnysideworld_16px.png" id="2_yg107"]
 [ext_resource type="Texture2D" uid="uid://b4wyejx2oift4" path="res://assests/characters/skeleton/skeleton_death_strip10.png" id="3_5a71x"]
 [ext_resource type="PackedScene" uid="uid://c5f38ojmtakna" path="res://scenes/characters/player.tscn" id="4_pkerd"]
 [ext_resource type="PackedScene" uid="uid://of0cy65lonem" path="res://scenes/characters/skeleton.tscn" id="5_c4w6r"]
-[ext_resource type="PackedScene" uid="uid://ubhgv7b3lcs7" path="res://scenes/levels/hud_play.tscn" id="6_a515f"]
 [ext_resource type="PackedScene" uid="uid://biprgqbvg75mf" path="res://scenes/characters/goblin.tscn" id="6_yg107"]
 [ext_resource type="AudioStream" uid="uid://bmi7ja4asekq2" path="res://assests/music/Backsound game/Backsound Game_fight.mp3" id="7_mykwo"]
 
@@ -19519,5 +19518,3 @@ position = Vector2(-110, 426)
 
 [node name="Goblin11" parent="goblin" instance=ExtResource("6_yg107")]
 position = Vector2(-3719, -1173)
-
-[node name="HUD_Fight" parent="." instance=ExtResource("6_a515f")]

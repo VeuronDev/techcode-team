@@ -1,9 +1,11 @@
 extends State
 
-func _enter_tree():
+#MEMULAI RANDOMIZE
+func _enter_tree() -> void:
 	randomize()
 
-func enter():
+#MEMULAI ANIMASI
+func enter() -> void:
 	super.enter()
 	if owner.direction.length() > 700:
 		get_parent().change_state("Idle")
@@ -11,13 +13,15 @@ func enter():
 		owner.set_physics_process(true)
 		animation_player.play("walk")
 		owner.attack_hitbox.monitoring = false
-	
-func exit():
+
+#MENGHENTIKAN FISIK BOSS GOBLIN
+func exit() -> void:
 	super.exit()
 	owner.set_physics_process(false)
 	
-	
-func transition():
+
+#TRANSISI BOSS GOBLIN
+func transition() -> void:
 	if owner.direction.length() < 80:
 		get_parent().change_state("Attack")
 	if owner.direction.length() > 300:

@@ -1,12 +1,15 @@
 extends Node2D
 
+#PROPERTY SCENES
 @onready var skeleton_scene = preload("res://scenes/characters/skeleton.tscn")
 @onready var goblin_scene = preload("res://scenes/characters/goblin.tscn")
 
-func _ready():
+#READY SISTEM
+func _ready() -> void:
 	spawn_random_enemies(GlobalVar.current_waves * 2)
 	add_to_group("spawn_manager_group")
 
+#SPAWN RANDOM ENEMY BERDASARKAN TITIK YANG DI TENTUKAN
 func spawn_random_enemies(count: int) -> void:
 	var spawn_points: Array = []
 	for child in get_children():

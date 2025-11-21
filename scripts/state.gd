@@ -1,24 +1,30 @@
 extends Node2D
 class_name State
 
+#PROPERTY NODE
 @onready var debug = owner.find_child("debug")
 @onready var player = owner.get_parent().find_child("player")
 @onready var animation_player = owner.find_child("AnimationPlayer")
 
 
-func _ready():
+#READY SISTEM
+func _ready() -> void:
 	set_physics_process(false)
-	
-func enter():
+
+#SET FISIK KE TRUE
+func enter() -> void:
 	set_physics_process(true)
-	
-func exit():
+
+#SET FISIK KE FALSE
+func exit() -> void:
 	set_physics_process(false)
 	
-func transition():
+#TRANSISI OPTION
+func transition() -> void:
 	pass
 	
-func _physics_process(_delta):
+#LOOP CEK TRANSISI
+func _physics_process(_delta) -> void:
 	transition()
 	debug.text = name
 	

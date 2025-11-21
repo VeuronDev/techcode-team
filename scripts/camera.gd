@@ -1,15 +1,18 @@
 extends Camera2D
 
+#PROPERTY VARIABLE
 @export var max_offset: Vector2 = Vector2(100, 75)
 @export var max_roll: float = 0.1
-@export var trauma_power: int = 2
 var trauma: float = 0.0
+@export var trauma_power: int = 2
 
-func _process(_delta):
+#LOOP PENGECEKAN SHAKE CAMERA
+func _process(_delta) -> void:
 	if trauma > 0:
 		shake()
 
-func shake():
+#SHAKE CAMERA
+func shake() -> void:
 	if trauma <= 0:
 		return
 	var amount = pow(trauma, trauma_power)	
@@ -20,5 +23,6 @@ func shake():
 	)
 	trauma = max(trauma - 0.05, 0)
 
-func add_trauma(amount: float):
+#KEKUATAN SHAKE CAMERA
+func add_trauma(amount: float) -> void:
 	trauma = clamp(trauma + amount, 0, 1)

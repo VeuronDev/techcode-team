@@ -1,50 +1,54 @@
 extends Node
 
-var attack_active = false
-var hurt_active = true
-var healthPlayer = 200
-var expPlayer = 0
-var apple = 0
-var skull = 0
-var health_count = 0
-var apple_taken = false
-var health_taken = false
-var skull_taken = false
+#CALL SCENES PROPERTY
+@onready var spawn_point_scene = preload("res://scenes/characters/spawn_enemy.tscn")
+@onready var spawn_boss = preload("res://scenes/characters/giant_goblin.tscn")
 
-var current_waves = 1
-const ENEMIES_PER_WAVE = 4
-var waves_active = false
-var enemies_alive = 0
+#PLAYER PROPERTY
+var attack_active: bool = false
+var hurt_active: bool = true
+var apple_taken: bool = false
+var health_taken: bool = false
+var skull_taken: bool = false
+var healthPlayer: int = 200
+var expPlayer: int = 0
+var apple: int = 0
+var skull: int = 0
+var health_count: int = 0
+
+#SYSTEM PROPERTY
+var TIMER_CHANGE_WAVES: float = 3.0
+const ENEMIES_PER_WAVE: int = 4
+var combo_duration: float = 5.0
+var current_waves: int = 1
+var enemies_alive: int = 0
+var kill_count: int = 0
+var waves_active: bool = false
+var Is_boss_alive: bool = false
 signal wave_updated
 signal enemy_updated
-var TIMER_CHANGE_WAVES = 3.0
-var Is_boss_alive:bool = false
-
-var kill_count = 0
 var combo_timer: Timer
-var combo_duration = 5.0
 signal show_kill_message(text: String)
-
 signal log_added(text: String)
 var logs: Array = []
 
-func logPlayer(text: String):
-	logs.append(text)
-	if logs.size() > 5:
-		logs.pop_front()
-	emit_signal("log_added", text)
-
-@onready var spawn_point_scene = preload("res://scenes/characters/spawn_enemy.tscn")
-@onready var spawn_boss = preload("res://scenes/giant_goblin.tscn")
-
-func _ready():
+#READY SISTEM
+func _ready() -> void:
 	combo_timer = Timer.new()
 	combo_timer.one_shot = true
 	combo_timer.wait_time = combo_duration
 	add_child(combo_timer)
 	combo_timer.connect("timeout", Callable(self, "_on_combo_timeout"))
 
-func spawn_wave_enemies(player_pos: Vector2):
+#LOG TEXT PLAYER 
+func logPlayer(text: String) -> void:
+	logs.append(text)
+	if logs.size() > 5:
+		logs.pop_front()
+	emit_signal("log_added", text)
+
+#SPAWN ENEMY BERDASARKAN POSISI PLAYER
+func spawn_wave_enemies(player_pos: Vector2) -> void:
 	for i in range(current_waves):
 		var spawn_point_enemy = spawn_point_scene.instantiate()
 		var offset_x = randf_range(10.0, 30.0)
@@ -55,13 +59,15 @@ func spawn_wave_enemies(player_pos: Vector2):
 		spawn_point_enemy.name = "spawn_enemy_" + str(i + 1)		
 	start_wave(current_waves)
 
-func start_wave(enemy_count: int):
+#START WAVE
+func start_wave(enemy_count: int) -> void:
 	waves_active = true
 	enemies_alive = enemy_count
 	emit_signal("wave_updated")
 	emit_signal("enemy_updated")
 
-func enemy_died():
+#SAAT MUSUH HABIS DI CURRENT WAVE
+func enemy_died() -> void:
 	if not waves_active:
 		return
 	enemies_alive -= 1
@@ -70,7 +76,8 @@ func enemy_died():
 	if enemies_alive <= 0 and not Is_boss_alive:
 		reroll_wave()
 
-func reroll_wave():
+#MELANJUTKAN CURRENT WAVE
+func reroll_wave() -> void:
 	waves_active = false
 	current_waves += 1
 	emit_signal("wave_updated")
@@ -105,7 +112,8 @@ func reroll_wave():
 				print("ERROR: Spawn Manager not found!")
 	)
 
-func add_kill():
+#KILL NOTIFIKASI BERDASARKAN KILL COUNT
+func add_kill() -> void:
 	kill_count += 1
 	combo_timer.start()
 	match kill_count:
@@ -118,8 +126,10 @@ func add_kill():
 		_:
 			emit_signal("show_kill_message", "☠️ Kill x%d" % kill_count)
 
-func _on_combo_timeout():
+#RESET KILL COUNT
+func _on_combo_timeout() -> void:
 	kill_count = 0
-	
-func add_exp_player():
-	expPlayer += randf_range(1,5)
+
+#MENAMBAHKAN EXP PLAYER
+func add_exp_player() -> void:
+	expPlayer += randi_range(1,5)

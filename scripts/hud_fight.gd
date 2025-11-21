@@ -1,5 +1,6 @@
 extends CanvasLayer
 
+#PROPERTY NODE
 @onready var HealthPlayer = $HealthPlayer
 @onready var ExpPlayer = $ExpPlayer
 @onready var enemy_left = $enemy_count
@@ -11,12 +12,14 @@ extends CanvasLayer
 @onready var log_player = $log_player
 @onready var log_input = $log_input
 
+#READY SISTEM
 func _ready() -> void:
 	GlobalVar.connect("log_added", Callable(self, "_on_log_added"))
 	HealthPlayer.value = GlobalVar.healthPlayer
 	waves_info.text = "Wave: %d" % GlobalVar.current_waves
 	enemy_left.text = "Enemies : %d" % GlobalVar.enemies_alive
 
+#LOOP MENGECEK INFORMASI PLAYER
 func _process(_delta: float) -> void:
 	ExpPlayer.value = GlobalVar.expPlayer
 	HealthPlayer.value = GlobalVar.healthPlayer
@@ -38,11 +41,13 @@ func _process(_delta: float) -> void:
 		else:
 			countdown_label.text = ""
 
+#MENGECEK VALUE HOTKEY USER
 func _input(event):
 	if event is InputEventKey and event.pressed:
 		var key_name = OS.get_keycode_string(event.keycode)
 		log_input.text = "Value : " + key_name
 
+#MENAMBAHKAN LOG TEXT PLAYER
 func _on_log_added(text: String):
 	var label = Label.new()
 	label.text = text
@@ -69,5 +74,6 @@ func _on_log_added(text: String):
 					oldest.queue_free()
 			)
 
+#BUTTON MENU DI TEKAN
 func _on_menu_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/levels/main_game.tscn")
