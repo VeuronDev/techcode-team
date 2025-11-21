@@ -1,0 +1,59 @@
+[gd_scene load_steps=3 format=3 uid="uid://qrwb2mgbpo0v"]
+
+[ext_resource type="Texture2D" uid="uid://k8n48lpq0qrt" path="res://icon.svg" id="1_5s1lr"]
+[ext_resource type="Script" uid="uid://hdn56bxptv1g" path="res://scripts/call_dialog.gd" id="1_kgxrk"]
+
+[node name="call_dialog" type="CanvasLayer"]
+script = ExtResource("1_kgxrk")
+
+[node name="border_dialog" type="Button" parent="."]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.453
+anchor_right = 0.5
+anchor_bottom = 0.453
+offset_left = -281.0
+offset_top = -96.16
+offset_right = 281.0
+offset_bottom = 96.84
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="tag_name" type="Button" parent="border_dialog"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.453
+anchor_right = 0.5
+anchor_bottom = 0.453
+offset_left = 142.0
+offset_top = 63.571
+offset_right = 275.0
+offset_bottom = 92.571
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="char" type="Sprite2D" parent="border_dialog"]
+position = Vector2(487, 78)
+texture = ExtResource("1_5s1lr")
+
+[node name="back" type="Button" parent="."]
+offset_left = 369.0
+offset_top = 389.0
+offset_right = 419.0
+offset_bottom = 413.0
+text = "back
+"
+
+[node name="next" type="Button" parent="."]
+offset_left = 430.0
+offset_top = 389.0
+offset_right = 480.0
+offset_bottom = 413.0
+text = "next"
+
+[node name="text" type="Label" parent="."]
+offset_left = 369.0
+offset_top = 244.0
+offset_right = 713.0
+offset_bottom = 372.0
