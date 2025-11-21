@@ -1,14 +1,14 @@
 [gd_scene load_steps=30 format=4 uid="uid://87b2n6q6halq"]
 
-[ext_resource type="Texture2D" uid="uid://dk4co5h086gx5" path="res://assests/tileset/spr_tileset_sunnysideworld_16px.png" id="2_yg107"]
-[ext_resource type="Texture2D" uid="uid://b4wyejx2oift4" path="res://assests/characters/skeleton/skeleton_death_strip10.png" id="3_5a71x"]
-[ext_resource type="PackedScene" uid="uid://c5f38ojmtakna" path="res://scenes/characters/player.tscn" id="4_pkerd"]
-[ext_resource type="PackedScene" uid="uid://of0cy65lonem" path="res://scenes/characters/skeleton.tscn" id="5_c4w6r"]
-[ext_resource type="PackedScene" uid="uid://biprgqbvg75mf" path="res://scenes/characters/goblin.tscn" id="6_yg107"]
-[ext_resource type="AudioStream" uid="uid://bmi7ja4asekq2" path="res://assests/music/Backsound game/Backsound Game_fight.mp3" id="7_mykwo"]
+[ext_resource type="Texture2D" uid="uid://dk4co5h086gx5" path="res://assests/tileset/spr_tileset_sunnysideworld_16px.png" id="1_34oeu"]
+[ext_resource type="Texture2D" uid="uid://b4wyejx2oift4" path="res://assests/characters/skeleton/skeleton_death_strip10.png" id="2_qy144"]
+[ext_resource type="PackedScene" uid="uid://c5f38ojmtakna" path="res://scenes/characters/player.tscn" id="3_aq6al"]
+[ext_resource type="AudioStream" uid="uid://bmi7ja4asekq2" path="res://assests/music/Backsound game/Backsound Game_fight.mp3" id="4_vcvny"]
+[ext_resource type="PackedScene" uid="uid://of0cy65lonem" path="res://scenes/characters/skeleton.tscn" id="5_62u43"]
+[ext_resource type="PackedScene" uid="uid://biprgqbvg75mf" path="res://scenes/characters/goblin.tscn" id="6_bvuuk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qu0b2"]
-texture = ExtResource("2_yg107")
+texture = ExtResource("1_34oeu")
 12:0/0 = 0
 13:0/0 = 0
 14:0/0 = 0
@@ -1741,7 +1741,7 @@ tile_size = Vector2i(64, 64)
 sources/0 = SubResource("TileSetAtlasSource_qu0b2")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_orq0m"]
-texture = ExtResource("2_yg107")
+texture = ExtResource("1_34oeu")
 12:0/0 = 0
 13:0/0 = 0
 14:0/0 = 0
@@ -3505,7 +3505,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_orq0m")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vol8w"]
-texture = ExtResource("2_yg107")
+texture = ExtResource("1_34oeu")
 12:0/0 = 0
 13:0/0 = 0
 14:0/0 = 0
@@ -5269,7 +5269,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_vol8w")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_noicg"]
-texture = ExtResource("2_yg107")
+texture = ExtResource("1_34oeu")
 12:0/0 = 0
 13:0/0 = 0
 14:0/0 = 0
@@ -7015,7 +7015,7 @@ texture = ExtResource("2_yg107")
 sources/0 = SubResource("TileSetAtlasSource_noicg")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_my81p"]
-texture = ExtResource("2_yg107")
+texture = ExtResource("1_34oeu")
 12:0/0 = 0
 13:0/0 = 0
 14:0/0 = 0
@@ -8761,7 +8761,7 @@ texture = ExtResource("2_yg107")
 sources/0 = SubResource("TileSetAtlasSource_my81p")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4f3i4"]
-texture = ExtResource("2_yg107")
+texture = ExtResource("1_34oeu")
 12:0/0 = 0
 13:0/0 = 0
 14:0/0 = 0
@@ -10517,7 +10517,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_4f3i4")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tgur7"]
-texture = ExtResource("2_yg107")
+texture = ExtResource("1_34oeu")
 12:0/0 = 0
 13:0/0 = 0
 14:0/0 = 0
@@ -12263,7 +12263,7 @@ texture = ExtResource("2_yg107")
 sources/0 = SubResource("TileSetAtlasSource_tgur7")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7wc3a"]
-texture = ExtResource("2_yg107")
+texture = ExtResource("1_34oeu")
 12:0/0 = 0
 13:0/0 = 0
 14:0/0 = 0
@@ -14009,7 +14009,7 @@ texture = ExtResource("2_yg107")
 sources/0 = SubResource("TileSetAtlasSource_7wc3a")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jqckn"]
-texture = ExtResource("2_yg107")
+texture = ExtResource("1_34oeu")
 12:0/0 = 0
 13:0/0 = 0
 14:0/0 = 0
@@ -15755,7 +15755,7 @@ texture = ExtResource("2_yg107")
 sources/0 = SubResource("TileSetAtlasSource_jqckn")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_av2vf"]
-texture = ExtResource("2_yg107")
+texture = ExtResource("1_34oeu")
 12:0/0 = 0
 13:0/0 = 0
 14:0/0 = 0
@@ -17556,7 +17556,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_av2vf")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q5kms"]
-texture = ExtResource("2_yg107")
+texture = ExtResource("1_34oeu")
 12:0/0 = 0
 13:0/0 = 0
 14:0/0 = 0
@@ -19347,7 +19347,7 @@ texture = ExtResource("2_yg107")
 43:49/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kun6q"]
-texture = ExtResource("3_5a71x")
+texture = ExtResource("2_qy144")
 2:1/0 = 0
 3:1/0 = 0
 8:1/0 = 0
@@ -19392,7 +19392,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_q5kms")
 sources/1 = SubResource("TileSetAtlasSource_kun6q")
 
-[node name="dungeon" type="Node2D"]
+[node name="dungeon_explore" type="Node2D"]
 
 [node name="laut" type="TileMapLayer" parent="."]
 z_index = -3
@@ -19450,71 +19450,71 @@ z_index = 6
 tile_map_data = PackedByteArray("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AAA7AFsAAAArABEAAABQAFYAAAArABAAAABQAFcAAAArABEAAABoAFEAAAArABAAAABoAFIAAAArABEAAABYAC8AAAArABAAAABYADAAAAArABEAAABeACUAAAArABAAAABeACYAAAArABEAAABUAFIAAQAyAAEAAABUAFMAAQAyAAIAAABVAFIAAQAzAAEAAABVAFMAAQAzAAIAAABeAE0AAQAyAAEAABBdAE0AAQAzAAEAABBeAE4AAQAyAAIAABBdAE4AAQAzAAIAABBNAEAAAQAyAAEAABBMAEAAAQAzAAEAABBNAEEAAQAyAAIAABBMAEEAAQAzAAIAABBtADcAAQAyAAEAABBsADcAAQAzAAEAABBtADgAAQAyAAIAABBsADgAAQAzAAIAABBuACgAAQAyAAEAABBtACgAAQAzAAEAABBuACkAAQAyAAIAABBtACkAAQAzAAIAABBQACoAAQAyAAEAABBPACoAAQAzAAEAABBQACsAAQAyAAIAABBPACsAAQAzAAIAABA9ADoAAQAyAAEAABA8ADoAAQAzAAEAABA9ADsAAQAyAAIAABA8ADsAAQAzAAIAABBEADUAAQAyAAEAABBDADUAAQAzAAEAABBEADYAAQAyAAIAABBDADYAAQAzAAIAABAxAEYAAQAyAAEAABAwAEYAAQAzAAEAABAxAEcAAQAyAAIAABAwAEcAAQAzAAIAABA6AFAAAQA4AAEAAAA6AFEAAQA4AAIAAAA7AFAAAQA5AAEAAAA7AFEAAQA5AAIAAAA6AEUAAQA4AAEAAAA6AEYAAQA4AAIAAAA7AEUAAQA5AAEAAAA7AEYAAQA5AAIAAABEAGIAAQA4AAEAAABEAGMAAQA4AAIAAABFAGIAAQA5AAEAAABFAGMAAQA5AAIAAABGAGMAAQA4AAEAAABGAGQAAQA4AAIAAABHAGMAAQA5AAEAAABHAGQAAQA5AAIAAABHAF4AAQA4AAEAAABHAF8AAQA4AAIAAABIAF4AAQA5AAEAAABIAF8AAQA5AAIAAABuAEsAAQAyAAEAABBtAEsAAQAzAAEAABBuAEwAAQAyAAIAABBtAEwAAQAzAAIAABBzAFIAAQAyAAEAABByAFIAAQAzAAEAABBzAFMAAQAyAAIAABByAFMAAQAzAAIAABB7AE0AAQAsAAIAABB6AE0AAQAtAAIAABB4AEIAAQAmAAEAAAB4AEMAAQAmAAIAAAB5AEIAAQAnAAEAAAB5AEMAAQAnAAIAAAB/AD0AAQAmAAEAAAB/AD4AAQAmAAIAAACAAD0AAQAnAAEAAACAAD4AAQAnAAIAAACEAEMAAQA4AAEAABCDAEMAAQA5AAEAABCEAEQAAQA4AAIAABCDAEQAAQA5AAIAABBdAD8AAQA4AAEAABBcAD8AAQA5AAEAABBdAEAAAQA4AAIAABBcAEAAAQA5AAIAABBjAEQAAQAyAAEAAABjAEUAAQAyAAIAAABkAEQAAQAzAAEAAABkAEUAAQAzAAIAAABRAEcAAQAyAAEAAABRAEgAAQAyAAIAAABSAEcAAQAzAAEAAABSAEgAAQAzAAIAAABEAD4AAQAyAAEAAABEAD8AAQAyAAIAAABFAD4AAQAzAAEAAABFAD8AAQAzAAIAAAA0AD0AAQAyAAEAAAA0AD4AAQAyAAIAAAA1AD0AAQAzAAEAAAA1AD4AAQAzAAIAAABFACwAAQAyAAEAAABFAC0AAQAyAAIAAABGACwAAQAzAAEAAABGAC0AAQAzAAIAAAA8AC0AAQAyAAEAAAA8AC4AAQAyAAIAAAA9AC0AAQAzAAEAAAA9AC4AAQAzAAIAAABiADQAAQAyAAEAABBhADQAAQAzAAEAABBiADUAAQAyAAIAABBhADUAAQAzAAIAABBmACkAAQAyAAEAABBlACkAAQAzAAEAABBmACoAAQAyAAIAABBlACoAAQAzAAIAABBwADAAAQAyAAEAABBvADAAAQAzAAEAABBwADEAAQAyAAIAABBvADEAAQAzAAIAABB4ADIAAQAyAAEAABB3ADIAAQAzAAEAABB4ADMAAQAyAAIAABB3ADMAAQAzAAIAABBBAC4AAAAqAAsAAABBAC8AAAAqAAwAAABBADAAAAAqAAwAAABBADEAAAArAAwAAAA=")
 tile_set = SubResource("TileSet_7wc3a")
 
-[node name="Player" parent="." instance=ExtResource("4_pkerd")]
+[node name="Player" parent="." instance=ExtResource("3_aq6al")]
 position = Vector2(557, -1912)
 
 [node name="audio" type="AudioStreamPlayer2D" parent="Player"]
 position = Vector2(-557, 1912)
-stream = ExtResource("7_mykwo")
+stream = ExtResource("4_vcvny")
 autoplay = true
 parameters/looping = true
 
 [node name="skeleton" type="Node" parent="."]
 
-[node name="Skeleton1" parent="skeleton" instance=ExtResource("5_c4w6r")]
+[node name="Skeleton1" parent="skeleton" instance=ExtResource("5_62u43")]
 
-[node name="Skeleton2" parent="skeleton" instance=ExtResource("5_c4w6r")]
+[node name="Skeleton2" parent="skeleton" instance=ExtResource("5_62u43")]
 position = Vector2(-480, -357)
 
-[node name="Skeleton3" parent="skeleton" instance=ExtResource("5_c4w6r")]
+[node name="Skeleton3" parent="skeleton" instance=ExtResource("5_62u43")]
 position = Vector2(-1704, -382)
 
-[node name="Skeleton4" parent="skeleton" instance=ExtResource("5_c4w6r")]
+[node name="Skeleton4" parent="skeleton" instance=ExtResource("5_62u43")]
 position = Vector2(1029, -784)
 
-[node name="Skeleton5" parent="skeleton" instance=ExtResource("5_c4w6r")]
+[node name="Skeleton5" parent="skeleton" instance=ExtResource("5_62u43")]
 position = Vector2(-565, 887)
 
-[node name="Skeleton6" parent="skeleton" instance=ExtResource("5_c4w6r")]
+[node name="Skeleton6" parent="skeleton" instance=ExtResource("5_62u43")]
 position = Vector2(977, 426)
 
-[node name="Skeleton7" parent="skeleton" instance=ExtResource("5_c4w6r")]
+[node name="Skeleton7" parent="skeleton" instance=ExtResource("5_62u43")]
 position = Vector2(-1518, 501)
 
-[node name="Skeleton8" parent="skeleton" instance=ExtResource("5_c4w6r")]
+[node name="Skeleton8" parent="skeleton" instance=ExtResource("5_62u43")]
 position = Vector2(-648, 1111)
 
 [node name="goblin" type="Node" parent="."]
 
-[node name="Goblin1" parent="goblin" instance=ExtResource("6_yg107")]
+[node name="Goblin1" parent="goblin" instance=ExtResource("6_bvuuk")]
 position = Vector2(884, -1465)
 
-[node name="Goblin2" parent="goblin" instance=ExtResource("6_yg107")]
+[node name="Goblin2" parent="goblin" instance=ExtResource("6_bvuuk")]
 position = Vector2(345, -1173)
 
-[node name="Goblin3" parent="goblin" instance=ExtResource("6_yg107")]
+[node name="Goblin3" parent="goblin" instance=ExtResource("6_bvuuk")]
 position = Vector2(1421, -1032)
 
-[node name="Goblin4" parent="goblin" instance=ExtResource("6_yg107")]
+[node name="Goblin4" parent="goblin" instance=ExtResource("6_bvuuk")]
 position = Vector2(-480, -1026)
 
-[node name="Goblin5" parent="goblin" instance=ExtResource("6_yg107")]
+[node name="Goblin5" parent="goblin" instance=ExtResource("6_bvuuk")]
 position = Vector2(525, -678)
 
-[node name="Goblin6" parent="goblin" instance=ExtResource("6_yg107")]
+[node name="Goblin6" parent="goblin" instance=ExtResource("6_bvuuk")]
 position = Vector2(1090, -401)
 
-[node name="Goblin7" parent="goblin" instance=ExtResource("6_yg107")]
+[node name="Goblin7" parent="goblin" instance=ExtResource("6_bvuuk")]
 position = Vector2(-505, -638)
 
-[node name="Goblin8" parent="goblin" instance=ExtResource("6_yg107")]
+[node name="Goblin8" parent="goblin" instance=ExtResource("6_bvuuk")]
 position = Vector2(598, -127)
 
-[node name="Goblin9" parent="goblin" instance=ExtResource("6_yg107")]
+[node name="Goblin9" parent="goblin" instance=ExtResource("6_bvuuk")]
 position = Vector2(-1519, 138)
 
-[node name="Goblin10" parent="goblin" instance=ExtResource("6_yg107")]
+[node name="Goblin10" parent="goblin" instance=ExtResource("6_bvuuk")]
 position = Vector2(-110, 426)
 
-[node name="Goblin11" parent="goblin" instance=ExtResource("6_yg107")]
+[node name="Goblin11" parent="goblin" instance=ExtResource("6_bvuuk")]
 position = Vector2(-3719, -1173)
