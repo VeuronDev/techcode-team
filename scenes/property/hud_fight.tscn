@@ -94,22 +94,13 @@ offset_bottom = 53.0
 theme_override_font_sizes/font_size = 28
 text = "Menu"
 
-[node name="enemy_count" type="Label" parent="."]
-offset_left = 578.0
-offset_top = 592.4772
-offset_right = 731.0
-offset_bottom = 620.4772
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.8235294)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_17f16")
-theme_override_font_sizes/font_size = 28
-
 [node name="CountDown" type="Label" parent="."]
-offset_left = 532.0
-offset_top = 70.0
-offset_right = 746.0
-offset_bottom = 105.0
+offset_left = 531.0
+offset_top = 82.0
+offset_right = 745.0
+offset_bottom = 117.0
 theme_override_font_sizes/font_size = 34
+text = "Waves timer.."
 
 [node name="apple" type="Label" parent="."]
 offset_left = 547.0
@@ -154,21 +145,17 @@ theme_override_fonts/font = ExtResource("3_17f16")
 theme_override_font_sizes/font_size = 24
 vertical_alignment = 2
 
-[node name="skull_left" type="Sprite2D" parent="."]
-position = Vector2(553, 605.47723)
-scale = Vector2(2.6249971, 2.6846552)
-texture = ExtResource("3_x2h8g")
-
 [node name="waves_info" type="Label" parent="."]
-offset_left = 580.0
+offset_left = 546.0
 offset_top = 27.0
-offset_right = 715.0
+offset_right = 722.0
 offset_bottom = 70.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.7764706)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 2
 theme_override_fonts/font = ExtResource("3_17f16")
 theme_override_font_sizes/font_size = 42
+text = "Waves Info"
 
 [node name="Label" type="Label" parent="."]
 offset_left = 351.0
