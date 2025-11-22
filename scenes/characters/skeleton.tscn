@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://of0cy65lonem"]
+[gd_scene load_steps=55 format=3 uid="uid://of0cy65lonem"]
 
 [ext_resource type="Script" uid="uid://dgydff65w3c4o" path="res://scripts/skeleton.gd" id="1_11w7t"]
 [ext_resource type="Texture2D" uid="uid://dwch4gtgyi65v" path="res://assests/characters/skeleton/skeleton_attack_strip7.png" id="2_bhsuw"]
@@ -315,6 +315,20 @@ radius = 25.317978
 [sub_resource type="CircleShape2D" id="CircleShape2D_bhsuw"]
 radius = 121.0
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1lx0f"]
+bg_color = Color(0.13725491, 0.13725491, 0.13725491, 0.6313726)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7tan2"]
+bg_color = Color(1.1859418, 0.74120414, 0, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
 [node name="Skeleton" type="CharacterBody2D"]
 z_index = 14
 platform_floor_layers = 4294967040
@@ -353,7 +367,9 @@ offset_left = -38.5
 offset_top = -81.49999
 offset_right = 47.5
 offset_bottom = -60.499992
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 14
+theme_override_styles/background = SubResource("StyleBoxFlat_1lx0f")
+theme_override_styles/fill = SubResource("StyleBoxFlat_7tan2")
 
 [node name="Name" type="Label" parent="."]
 offset_left = -47.0
