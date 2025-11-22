@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5066nv6ry0jc"]
+
+[ext_resource type="PackedScene" uid="uid://deec6mcbmvuyv" path="res://scenes/property/hud_fight.tscn" id="1_jn4kd"]
+[ext_resource type="PackedScene" uid="uid://c5f38ojmtakna" path="res://scenes/characters/player.tscn" id="2_bcayq"]
+
+[node name="game" type="Node2D"]
+
+[node name="interface" parent="." instance=ExtResource("1_jn4kd")]
+
+[node name="player" parent="." instance=ExtResource("2_bcayq")]
+position = Vector2(637, 376)
