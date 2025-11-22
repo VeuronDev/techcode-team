@@ -45,7 +45,8 @@ _data = {
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kle4b"]
 texture = ExtResource("5_x4sgh")
-region_rect = Rect2(3.9359093, 9.968657, 23.104998, 11.082346)
+region_rect = Rect2(13.856617, 25.832815, 36.156376, 15.270929)
+modulate_color = Color(0.93333334, 1, 1, 1)
 
 [node name="mainGame" type="Control"]
 layout_mode = 3
@@ -102,6 +103,7 @@ offset_top = -77.514595
 offset_right = 37.66989
 offset_bottom = -10.514595
 rotation = 0.06098294
+theme_override_colors/font_hover_color = Color(0.25882354, 0.14117648, 0, 1)
 theme_override_fonts/font = ExtResource("3_n7npl")
 theme_override_font_sizes/font_size = 28
 theme_override_styles/normal = SubResource("StyleBoxTexture_kle4b")
@@ -117,6 +119,7 @@ offset_top = 37.485405
 offset_right = 26.669891
 offset_bottom = 104.485405
 rotation = -0.01343144
+theme_override_colors/font_hover_color = Color(0.6313726, 0.3372549, 0, 1)
 theme_override_fonts/font = ExtResource("3_n7npl")
 theme_override_font_sizes/font_size = 28
 theme_override_styles/normal = SubResource("StyleBoxTexture_kle4b")
@@ -132,6 +135,7 @@ offset_top = 131.48541
 offset_right = 24.669891
 offset_bottom = 198.48541
 rotation = 0.11472756
+theme_override_colors/font_hover_color = Color(0.6313726, 0.3372549, 0, 1)
 theme_override_fonts/font = ExtResource("3_n7npl")
 theme_override_font_sizes/font_size = 28
 theme_override_styles/normal = SubResource("StyleBoxTexture_kle4b")
@@ -146,6 +150,8 @@ offset_top = -178.51459
 offset_right = 27.669891
 offset_bottom = -111.51459
 rotation = -0.06541526
+theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
+theme_override_colors/font_hover_color = Color(0.6313726, 0.3372549, 0, 1)
 theme_override_fonts/font = ExtResource("3_n7npl")
 theme_override_font_sizes/font_size = 28
 theme_override_styles/normal = SubResource("StyleBoxTexture_kle4b")
