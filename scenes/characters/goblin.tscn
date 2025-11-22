@@ -345,10 +345,17 @@ radius = 184.69975
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e1l1v"]
 bg_color = Color(0.13725491, 0.13725491, 0.13725491, 0.5803922)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.021434633, 0.021434639, 0.021434609, 1)
+border_blend = true
 corner_radius_top_left = 20
 corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
+anti_aliasing = false
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fcts7"]
 bg_color = Color(0.20998451, 0.559337, 0.039071966, 1)
@@ -356,6 +363,7 @@ corner_radius_top_left = 20
 corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
+anti_aliasing = false
 
 [node name="Goblin" type="CharacterBody2D"]
 z_index = 17
@@ -392,13 +400,14 @@ shape = SubResource("CircleShape2D_v8e32")
 
 [node name="HealthBar" type="ProgressBar" parent="."]
 z_index = 16
-offset_left = -42.0
-offset_top = -81.0
-offset_right = 56.0
-offset_bottom = -60.0
+offset_left = -44.0
+offset_top = -76.0
+offset_right = 54.0
+offset_bottom = -65.0
 theme_override_font_sizes/font_size = 14
 theme_override_styles/background = SubResource("StyleBoxFlat_e1l1v")
 theme_override_styles/fill = SubResource("StyleBoxFlat_fcts7")
+show_percentage = false
 
 [node name="Label" type="Label" parent="."]
 z_index = 16
