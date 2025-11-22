@@ -1,4 +1,4 @@
-extends Node2D
+extends Control
 
 #PROPERTY NODE
 @onready var music = $music_bg
