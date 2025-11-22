@@ -48,7 +48,7 @@ texture = ExtResource("5_x4sgh")
 region_rect = Rect2(13.856617, 25.832815, 36.156376, 15.270929)
 modulate_color = Color(0.93333334, 1, 1, 1)
 
-[node name="mainGame" type="Control"]
+[node name="main_game" type="Control"]
 layout_mode = 3
 anchor_right = 0.026
 anchor_bottom = 0.033
@@ -98,11 +98,11 @@ autoplay = "main"
 
 [node name="settings" type="Button" parent="."]
 layout_mode = 0
-offset_left = -153.33011
-offset_top = -77.514595
-offset_right = 37.66989
-offset_bottom = -10.514595
-rotation = 0.06098294
+offset_left = -181.99998
+offset_top = -64.00001
+offset_right = 9.000015
+offset_bottom = 2.9999924
+rotation = 0.06298325
 theme_override_colors/font_hover_color = Color(0.25882354, 0.14117648, 0, 1)
 theme_override_fonts/font = ExtResource("3_n7npl")
 theme_override_font_sizes/font_size = 28
@@ -114,11 +114,11 @@ text = "Settings
 
 [node name="credits" type="Button" parent="."]
 layout_mode = 0
-offset_left = -164.33011
-offset_top = 37.485405
-offset_right = 26.669891
-offset_bottom = 104.485405
-rotation = -0.01343144
+offset_left = -187.0
+offset_top = 62.999992
+offset_right = 4.0
+offset_bottom = 130.0
+rotation = -0.037973467
 theme_override_colors/font_hover_color = Color(0.6313726, 0.3372549, 0, 1)
 theme_override_fonts/font = ExtResource("3_n7npl")
 theme_override_font_sizes/font_size = 28
@@ -130,11 +130,11 @@ text = "Credits
 
 [node name="exit" type="Button" parent="."]
 layout_mode = 0
-offset_left = -166.33011
-offset_top = 131.48541
-offset_right = 24.669891
-offset_bottom = 198.48541
-rotation = 0.11472756
+offset_left = -180.0
+offset_top = 175.0
+offset_right = 11.0
+offset_bottom = 242.0
+rotation = 0.050462686
 theme_override_colors/font_hover_color = Color(0.6313726, 0.3372549, 0, 1)
 theme_override_fonts/font = ExtResource("3_n7npl")
 theme_override_font_sizes/font_size = 28
@@ -145,11 +145,11 @@ text = "Exit"
 
 [node name="play" type="Button" parent="."]
 layout_mode = 0
-offset_left = -163.33011
-offset_top = -178.51459
-offset_right = 27.669891
-offset_bottom = -111.51459
-rotation = -0.06541526
+offset_left = -183.0
+offset_top = -174.0
+offset_right = 8.0
+offset_bottom = -107.0
+rotation = -0.08154248
 theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
 theme_override_colors/font_hover_color = Color(0.6313726, 0.3372549, 0, 1)
 theme_override_fonts/font = ExtResource("3_n7npl")
@@ -159,7 +159,7 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_kle4b")
 theme_override_styles/hover = SubResource("StyleBoxTexture_kle4b")
 text = "Play"
 
-[connection signal="pressed" from="settings" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="credits" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="play" to="." method="_on_play_pressed"]
