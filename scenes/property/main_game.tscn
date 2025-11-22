@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://b4pavxhcdhhj"]
+[gd_scene load_steps=10 format=3 uid="uid://b4pavxhcdhhj"]
 
 [ext_resource type="Script" uid="uid://b57lphxxlwf0t" path="res://scripts/main_game.gd" id="1_3bnjd"]
 [ext_resource type="Texture2D" uid="uid://ctx32w2mkv55a" path="res://assests/tileset/menu game.png" id="3_3bnjd"]
 [ext_resource type="FontFile" uid="uid://cgl8w7k8kdixk" path="res://assests/BoldPixels.ttf" id="3_n7npl"]
 [ext_resource type="AudioStream" uid="uid://bk4bv1ftka6xq" path="res://assests/music/Backsound game/BacksoundGame_1.mp3" id="3_viahy"]
+[ext_resource type="Texture2D" uid="uid://ck0562rvlxdiy" path="res://assests/tileset/button.png" id="5_x4sgh"]
 
 [sub_resource type="Animation" id="Animation_1rp33"]
 resource_name = "main"
@@ -42,24 +43,18 @@ _data = {
 &"main": SubResource("Animation_1rp33")
 }
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n7npl"]
-bg_color = Color(0.3764706, 0.19215687, 0.047058824, 1)
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color(0.76862746, 0.4, 0.10980392, 1)
-shadow_color = Color(0, 0, 0, 0.8235294)
-anti_aliasing = false
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kle4b"]
+texture = ExtResource("5_x4sgh")
+region_rect = Rect2(3.9359093, 9.968657, 23.104998, 11.082346)
 
 [node name="mainGame" type="Control"]
 layout_mode = 3
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_right = 0.026
+anchor_bottom = 0.033
 offset_left = 330.0
 offset_top = 329.0
-offset_right = -950.0
-offset_bottom = -391.0
+offset_right = 296.72
+offset_bottom = 305.24
 pivot_offset = Vector2(359, 54)
 size_flags_horizontal = 4
 script = ExtResource("1_3bnjd")
@@ -100,61 +95,65 @@ libraries = {
 }
 autoplay = "main"
 
-[node name="play" type="Button" parent="."]
-layout_mode = 0
-offset_left = -131.0
-offset_top = -142.0
-offset_right = 60.0
-offset_bottom = -75.0
-rotation = -0.06541526
-theme_override_fonts/font = ExtResource("3_n7npl")
-theme_override_font_sizes/font_size = 28
-theme_override_styles/normal = SubResource("StyleBoxFlat_n7npl")
-text = "Play"
-metadata/_edit_use_anchors_ = true
-
 [node name="settings" type="Button" parent="."]
 layout_mode = 0
-offset_left = -121.0
-offset_top = -41.0
-offset_right = 70.0
-offset_bottom = 26.0
+offset_left = -153.33011
+offset_top = -77.514595
+offset_right = 37.66989
+offset_bottom = -10.514595
 rotation = 0.06098294
 theme_override_fonts/font = ExtResource("3_n7npl")
 theme_override_font_sizes/font_size = 28
-theme_override_styles/normal = SubResource("StyleBoxFlat_n7npl")
+theme_override_styles/normal = SubResource("StyleBoxTexture_kle4b")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_kle4b")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kle4b")
 text = "Settings
 "
-metadata/_edit_use_anchors_ = true
 
 [node name="credits" type="Button" parent="."]
 layout_mode = 0
-offset_left = -132.0
-offset_top = 74.0
-offset_right = 59.0
-offset_bottom = 141.0
+offset_left = -164.33011
+offset_top = 37.485405
+offset_right = 26.669891
+offset_bottom = 104.485405
 rotation = -0.01343144
 theme_override_fonts/font = ExtResource("3_n7npl")
 theme_override_font_sizes/font_size = 28
-theme_override_styles/normal = SubResource("StyleBoxFlat_n7npl")
+theme_override_styles/normal = SubResource("StyleBoxTexture_kle4b")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_kle4b")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kle4b")
 text = "Credits
 "
-metadata/_edit_use_anchors_ = true
 
 [node name="exit" type="Button" parent="."]
 layout_mode = 0
-offset_left = -134.0
-offset_top = 168.0
-offset_right = 57.0
-offset_bottom = 235.0
+offset_left = -166.33011
+offset_top = 131.48541
+offset_right = 24.669891
+offset_bottom = 198.48541
 rotation = 0.11472756
 theme_override_fonts/font = ExtResource("3_n7npl")
 theme_override_font_sizes/font_size = 28
-theme_override_styles/normal = SubResource("StyleBoxFlat_n7npl")
+theme_override_styles/normal = SubResource("StyleBoxTexture_kle4b")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_kle4b")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kle4b")
 text = "Exit"
-metadata/_edit_use_anchors_ = true
 
-[connection signal="pressed" from="play" to="." method="_on_play_pressed"]
+[node name="play" type="Button" parent="."]
+layout_mode = 0
+offset_left = -163.33011
+offset_top = -178.51459
+offset_right = 27.669891
+offset_bottom = -111.51459
+rotation = -0.06541526
+theme_override_fonts/font = ExtResource("3_n7npl")
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxTexture_kle4b")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_kle4b")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kle4b")
+text = "Play"
+
 [connection signal="pressed" from="settings" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="credits" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="play" to="." method="_on_play_pressed"]

@@ -345,12 +345,11 @@ radius = 184.69975
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e1l1v"]
 bg_color = Color(0.13725491, 0.13725491, 0.13725491, 0.5803922)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
 border_color = Color(0.021434633, 0.021434639, 0.021434609, 1)
-border_blend = true
 corner_radius_top_left = 20
 corner_radius_top_right = 20
 corner_radius_bottom_right = 20
@@ -359,6 +358,11 @@ anti_aliasing = false
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fcts7"]
 bg_color = Color(0.20998451, 0.559337, 0.039071966, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
 corner_radius_top_left = 20
 corner_radius_top_right = 20
 corner_radius_bottom_right = 20
