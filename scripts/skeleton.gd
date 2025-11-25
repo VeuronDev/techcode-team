@@ -156,7 +156,7 @@ func init_dropped_items(count: int) -> void:
 		var offset_y = randf_range(-50.0, 50.0)
 		var random_offset = Vector2(offset_x, offset_y)		
 		drop_instance.global_position = position + random_offset
-		get_parent().add_child(drop_instance)
+		get_parent().add_child(drop_instance ,false , Node.INTERNAL_MODE_BACK)
 
 #MATI
 func die() -> void:

@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://b0w5ui0ebnb1m"]
+
+[ext_resource type="Script" uid="uid://buqc30u05os1s" path="res://RefactoringTestingGround/script/health_component.gd" id="1_ckx5v"]
+
+[node name="HealthComponent" type="Node2D"]
+script = ExtResource("1_ckx5v")
+MAX_HEALTH = null

@@ -6,7 +6,6 @@ class_name State
 @onready var player = owner.get_parent().find_child("player")
 @onready var animation_player = owner.find_child("AnimationPlayer")
 
-
 #READY SISTEM
 func _ready() -> void:
 	set_physics_process(false)

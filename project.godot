@@ -77,6 +77,12 @@ dodge={
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="Map"
+2d_physics/layer_5="player"
+2d_physics/layer_6="Player_Hitbox"
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0

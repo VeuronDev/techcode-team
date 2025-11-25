@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://cdf2prwjlk2v6"]
+
+[ext_resource type="PackedScene" uid="uid://dp6tgkuefbajc" path="res://RefactoringTestingGround/scenes/player.tscn" id="1_3j1x2"]
+[ext_resource type="PackedScene" uid="uid://bg6o0xpitxwuk" path="res://RefactoringTestingGround/scenes/goblin.tscn" id="2_hdkab"]
+
+[node name="Node2D" type="Node2D"]
+rotation = 0.0021756534
+
+[node name="Player" parent="." instance=ExtResource("1_3j1x2")]
+position = Vector2(186, 210)
+
+[node name="Goblin" parent="." instance=ExtResource("2_hdkab")]
+position = Vector2(156, 111)
+
+[node name="Goblin2" parent="." instance=ExtResource("2_hdkab")]
+position = Vector2(30, 183)
+
+[node name="Goblin3" parent="." instance=ExtResource("2_hdkab")]
+position = Vector2(487, 236)
+
+[node name="Goblin4" parent="." instance=ExtResource("2_hdkab")]
+position = Vector2(156, 367)

@@ -18,11 +18,12 @@ const BASEDROLLCOOLDOWN: float = 1.0
 var direction: Vector2 = Vector2.ZERO
 var is_rolling: bool = false
 var can_roll: bool = true
+var collectible_count:int = 0
 
 #READY SISTEM
 func _ready() -> void:
 	input_handle()
-	GlobalVar.spawn_wave_enemies(global_position)
+	#GlobalVar.spawn_wave_enemies(global_position)
 	GlobalVar.connect("show_kill_message", Callable(self, "_on_kill_message"))
 	GlobalVar.healthPlayer = 200
 

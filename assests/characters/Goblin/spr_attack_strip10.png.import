@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://1875rvcapl8k"
-path="res://.godot/imported/spr_attack_strip10.png-2654a18c3c2887e74cd10c25eb02fce7.ctex"
+path="res://.godot/imported/spr_attack_strip10.png-e05ac1e9ecfe5e53a96987df4cc94d3e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assests/characters/goblin/spr_attack_strip10.png"
-dest_files=["res://.godot/imported/spr_attack_strip10.png-2654a18c3c2887e74cd10c25eb02fce7.ctex"]
+source_file="res://assests/characters/Goblin/spr_attack_strip10.png"
+dest_files=["res://.godot/imported/spr_attack_strip10.png-e05ac1e9ecfe5e53a96987df4cc94d3e.ctex"]
 
 [params]
 
