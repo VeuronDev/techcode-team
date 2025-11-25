@@ -2,7 +2,6 @@ extends Node
 
 @onready var player = $"../Player"
 
-
 var enemie_skeleton = preload("res://scenes/characters/skeleton.tscn")
 var enemie_goblin = preload("res://scenes/characters/goblin.tscn")
 var new_enemy

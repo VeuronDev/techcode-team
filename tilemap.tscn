@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=4 uid="uid://cwxu14trcqrty"]
+[gd_scene load_steps=7 format=4 uid="uid://lggw0ed8g2l4"]
 
 [ext_resource type="TileSet" uid="uid://b7x5trgyarc2q" path="res://Tilemap.tres" id="1_1i3gi"]
 [ext_resource type="PackedScene" uid="uid://c5f38ojmtakna" path="res://scenes/characters/player.tscn" id="2_3qqdj"]
-[ext_resource type="PackedScene" uid="uid://fgfwq73v7382" path="res://scenes/property/game_manager.tscn" id="3_dqtar"]
-[ext_resource type="PackedScene" uid="uid://bq5lxqi7q8h4r" path="res://scenes/item/collectible.tscn" id="4_dqtar"]
+[ext_resource type="PackedScene" path="res://scenes/property/game_manager.tscn" id="3_dqtar"]
+[ext_resource type="PackedScene" path="res://scenes/item/collectible.tscn" id="4_dqtar"]
+[ext_resource type="PackedScene" uid="uid://deec6mcbmvuyv" path="res://scenes/property/hud_fight.tscn" id="5_w2evn"]
 
 [sub_resource type="Curve2D" id="Curve2D_dqtar"]
 _data = {
@@ -230,3 +231,5 @@ position = Vector2(1376, 405)
 
 [node name="Collectible66" parent="Collectibel" instance=ExtResource("4_dqtar")]
 position = Vector2(1375, 452)
+
+[node name="HUD_Fight" parent="." instance=ExtResource("5_w2evn")]

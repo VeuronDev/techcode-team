@@ -20,6 +20,11 @@ var is_rolling: bool = false
 var can_roll: bool = true
 var collectible_count:int = 0
 
+#ABILITY PLAYER
+var attack_ability = 0
+var defend_ability = 0
+var health_ability = GlobalVar.healthPlayer
+
 #READY SISTEM
 func _ready() -> void:
 	input_handle()

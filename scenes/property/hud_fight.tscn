@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://deec6mcbmvuyv"]
+[gd_scene load_steps=13 format=3 uid="uid://deec6mcbmvuyv"]
 
 [ext_resource type="Script" uid="uid://pfrs13k4k3yi" path="res://scripts/hud_fight.gd" id="1_obyjr"]
 [ext_resource type="Texture2D" uid="uid://iyqe058nrlim" path="res://assests/tileset/border coklat.png" id="2_040vd"]
@@ -11,11 +11,29 @@
 [ext_resource type="Texture2D" uid="uid://lef3n0f4hgsb" path="res://assests/tileset/keyboard.png" id="8_040vd"]
 [ext_resource type="Texture2D" uid="uid://b2lm02t2by11w" path="res://assests/tileset/pause button.png" id="11_kambu"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p5cse"]
+bg_color = Color(0.6, 0.6, 0.6, 0.73333335)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_040vd"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [node name="HUD_Fight" type="CanvasLayer"]
 script = ExtResource("1_obyjr")
+
+[node name="back" type="Button" parent="."]
+modulate = Color(0.38431373, 0.20784314, 0.07058824, 1)
+self_modulate = Color(0.38431373, 0.20784314, 0.07058824, 0.6745098)
+offset_left = 9.0
+offset_top = 4.0
+offset_right = 341.0
+offset_bottom = 71.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_p5cse")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_p5cse")
+theme_override_styles/hover = SubResource("StyleBoxFlat_p5cse")
 
 [node name="health_icon" type="Sprite2D" parent="."]
 position = Vector2(24.616325, 19.538303)
@@ -32,7 +50,7 @@ region_enabled = true
 region_rect = Rect2(704.931, 722.3708, 12.061279, 12.619629)
 
 [node name="HealthPlayer" type="ProgressBar" parent="."]
-modulate = Color(16.920147, 0, 0, 1)
+modulate = Color(18.892, 0, 0, 1)
 offset_left = 45.856125
 offset_top = 10.076607
 offset_right = 323.85614
@@ -320,7 +338,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_040vd")
 icon = ExtResource("11_kambu")
 icon_alignment = 1
 
-[node name="Keyboard2" type="Sprite2D" parent="."]
+[node name="hotkey_icon" type="Sprite2D" parent="."]
 z_index = -1
 position = Vector2(1264, 704.00006)
 scale = Vector2(1.3789063, 1.4394528)
