@@ -1,31 +1,52 @@
-[gd_scene load_steps=7 format=3 uid="uid://deec6mcbmvuyv"]
+[gd_scene load_steps=12 format=3 uid="uid://deec6mcbmvuyv"]
 
 [ext_resource type="Script" uid="uid://pfrs13k4k3yi" path="res://scripts/hud_fight.gd" id="1_obyjr"]
+[ext_resource type="Texture2D" uid="uid://iyqe058nrlim" path="res://assests/tileset/border coklat.png" id="2_040vd"]
 [ext_resource type="Texture2D" uid="uid://dbwgdlgn0tdbu" path="res://assests/characters/item/apple.png" id="2_354ej"]
 [ext_resource type="FontFile" uid="uid://cpjhfhv4bnnns" path="res://assests/MedodicaRegular.otf" id="3_17f16"]
 [ext_resource type="Texture2D" uid="uid://n4hi6useqkvt" path="res://assests/characters/item/skull.png" id="3_x2h8g"]
 [ext_resource type="Texture2D" uid="uid://cc7p6fqw50ikr" path="res://assests/characters/item/health.png" id="4_x2h8g"]
 [ext_resource type="FontFile" uid="uid://cgl8w7k8kdixk" path="res://assests/BoldPixels.ttf" id="5_peluy"]
+[ext_resource type="Texture2D" uid="uid://dk4co5h086gx5" path="res://assests/tileset/spr_tileset_sunnysideworld_16px.png" id="6_kambu"]
+[ext_resource type="Texture2D" uid="uid://lef3n0f4hgsb" path="res://assests/tileset/keyboard.png" id="8_040vd"]
+[ext_resource type="Texture2D" uid="uid://b2lm02t2by11w" path="res://assests/tileset/pause button.png" id="11_kambu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_040vd"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [node name="HUD_Fight" type="CanvasLayer"]
 script = ExtResource("1_obyjr")
 
+[node name="health_icon" type="Sprite2D" parent="."]
+position = Vector2(24.616325, 19.538303)
+scale = Vector2(2.6594741, 2.4615097)
+texture = ExtResource("6_kambu")
+region_enabled = true
+region_rect = Rect2(703.20984, 753.9054, 14.582825, 11.444702)
+
+[node name="exp_icon" type="Sprite2D" parent="."]
+position = Vector2(25.616325, 53.538303)
+scale = Vector2(2.6594741, 2.4615097)
+texture = ExtResource("6_kambu")
+region_enabled = true
+region_rect = Rect2(704.931, 722.3708, 12.061279, 12.619629)
+
 [node name="HealthPlayer" type="ProgressBar" parent="."]
 modulate = Color(16.920147, 0, 0, 1)
-offset_left = 96.0
-offset_top = 17.0
-offset_right = 374.0
-offset_bottom = 37.0
+offset_left = 45.856125
+offset_top = 10.076607
+offset_right = 323.85614
+offset_bottom = 30.076607
 max_value = 200.0
 value = 200.0
 show_percentage = false
 
 [node name="ExpPlayer" type="ProgressBar" parent="."]
 modulate = Color(0, 13.539555, 13.539555, 1)
-offset_left = 96.0
-offset_top = 50.0
-offset_right = 345.0
-offset_bottom = 70.0
+offset_left = 45.856125
+offset_top = 43.076607
+offset_right = 294.85614
+offset_bottom = 63.076607
 max_value = 200.0
 value = 200.0
 show_percentage = false
@@ -36,18 +57,36 @@ anchor_left = 0.384
 anchor_top = 0.91800004
 anchor_right = 0.384
 anchor_bottom = 0.91800004
-offset_left = -4.5200195
-offset_top = -20.960022
-offset_right = 75.47998
-offset_bottom = 53.039978
+offset_left = 12.47998
+offset_top = -29.960022
+offset_right = 92.47998
+offset_bottom = 44.039978
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_040vd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_040vd")
+theme_override_styles/hover = SubResource("StyleBoxFlat_040vd")
 
-[node name="Sprite2D" type="Sprite2D" parent="apple_item"]
+[node name="BorderCoklat" type="Sprite2D" parent="apple_item"]
+z_index = 2
+position = Vector2(46.00006, 37.00006)
+scale = Vector2(1.3153839, 1.315384)
+texture = ExtResource("2_040vd")
+
+[node name="apple" type="Sprite2D" parent="apple_item"]
+z_index = 2
 position = Vector2(39.000008, 37.999992)
 scale = Vector2(4.4687505, 3.9000006)
 texture = ExtResource("2_354ej")
+
+[node name="shadow" type="ColorRect" parent="apple_item"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 78.0
+offset_bottom = 76.0
+color = Color(0, 0, 0, 0.5294118)
 
 [node name="health_item" type="Button" parent="."]
 anchors_preset = -1
@@ -55,18 +94,36 @@ anchor_left = 0.384
 anchor_top = 0.91800004
 anchor_right = 0.384
 anchor_bottom = 0.91800004
-offset_left = 106.47998
-offset_top = -20.960022
-offset_right = 186.47998
-offset_bottom = 53.039978
+offset_left = 102.47998
+offset_top = -29.960022
+offset_right = 182.47998
+offset_bottom = 44.039978
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_040vd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_040vd")
+theme_override_styles/hover = SubResource("StyleBoxFlat_040vd")
+
+[node name="BorderCoklat" type="Sprite2D" parent="health_item"]
+z_index = 2
+position = Vector2(46.00006, 37.00006)
+scale = Vector2(1.3153839, 1.315384)
+texture = ExtResource("2_040vd")
 
 [node name="Health_icon" type="Sprite2D" parent="health_item"]
-position = Vector2(37, 38)
-scale = Vector2(5.5624995, 5.5624995)
+z_index = 2
+position = Vector2(38.000015, 38.000015)
+scale = Vector2(5.031252, 5.031252)
 texture = ExtResource("4_x2h8g")
+
+[node name="shadow" type="ColorRect" parent="health_item"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 78.0
+offset_bottom = 76.0
+color = Color(0, 0, 0, 0.5294118)
 
 [node name="skull_item" type="Button" parent="."]
 anchors_preset = -1
@@ -74,55 +131,80 @@ anchor_left = 0.384
 anchor_top = 0.91800004
 anchor_right = 0.384
 anchor_bottom = 0.91800004
-offset_left = 211.47998
-offset_top = -20.960022
-offset_right = 291.47998
-offset_bottom = 53.039978
+offset_left = 194.47998
+offset_top = -28.960022
+offset_right = 274.47998
+offset_bottom = 45.039978
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_040vd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_040vd")
+theme_override_styles/hover = SubResource("StyleBoxFlat_040vd")
+
+[node name="BorderCoklat" type="Sprite2D" parent="skull_item"]
+z_index = 2
+position = Vector2(46.00006, 37.00006)
+scale = Vector2(1.3153839, 1.315384)
+texture = ExtResource("2_040vd")
 
 [node name="Skull_icon" type="Sprite2D" parent="skull_item"]
+z_index = 2
 position = Vector2(37, 38)
 scale = Vector2(4.5, 4.5)
 texture = ExtResource("3_x2h8g")
 
-[node name="menu" type="Button" parent="."]
-offset_left = 1160.0
-offset_top = 4.0
-offset_right = 1276.0
-offset_bottom = 53.0
-theme_override_fonts/font = ExtResource("5_peluy")
-theme_override_font_sizes/font_size = 28
-text = "Menu"
+[node name="shadow" type="ColorRect" parent="skull_item"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 78.0
+offset_bottom = 76.0
+color = Color(0, 0, 0, 0.5294118)
 
 [node name="CountDown" type="Label" parent="."]
-offset_left = 531.0
-offset_top = 82.0
-offset_right = 745.0
-offset_bottom = 117.0
+offset_left = 557.0
+offset_top = 57.0
+offset_right = 771.0
+offset_bottom = 92.0
 theme_override_font_sizes/font_size = 34
 text = "Waves timer.."
 
+[node name="time_icon" type="Sprite2D" parent="CountDown"]
+position = Vector2(-15.000027, 19.000002)
+scale = Vector2(1.9461226, 2.1160553)
+texture = ExtResource("6_kambu")
+region_enabled = true
+region_rect = Rect2(642.01086, 784.3523, 12.507935, 15.523254)
+
 [node name="apple" type="Label" parent="."]
-offset_left = 547.0
-offset_top = 695.0
-offset_right = 557.0
-offset_bottom = 718.0
+z_index = 2
+offset_left = 565.0
+offset_top = 685.0
+offset_right = 575.0
+offset_bottom = 708.0
+theme_override_colors/font_color = Color(0.4611506, 0.18781191, 0, 1)
+theme_override_fonts/font = ExtResource("5_peluy")
 text = "0"
 
 [node name="skull" type="Label" parent="."]
-offset_left = 662.0
-offset_top = 695.0
-offset_right = 672.0
-offset_bottom = 718.0
+z_index = 2
+offset_left = 748.0
+offset_top = 687.0
+offset_right = 758.0
+offset_bottom = 710.0
+theme_override_colors/font_color = Color(0.4627451, 0.1882353, 0, 1)
+theme_override_fonts/font = ExtResource("5_peluy")
 text = "0"
 
 [node name="health" type="Label" parent="."]
-offset_left = 767.0
-offset_top = 695.0
-offset_right = 777.0
-offset_bottom = 718.0
+modulate = Color(0.4627451, 0.1882353, 0, 1)
+z_index = 2
+offset_left = 656.0
+offset_top = 685.0
+offset_right = 666.0
+offset_bottom = 708.0
+theme_override_fonts/font = ExtResource("5_peluy")
 text = "0"
 
 [node name="log_player" type="Label" parent="."]
@@ -148,10 +230,10 @@ theme_override_font_sizes/font_size = 24
 vertical_alignment = 2
 
 [node name="waves_info" type="Label" parent="."]
-offset_left = 546.0
-offset_top = 27.0
-offset_right = 722.0
-offset_bottom = 70.0
+offset_left = 547.0
+offset_top = 11.0
+offset_right = 723.0
+offset_bottom = 54.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.7764706)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 2
@@ -159,21 +241,64 @@ theme_override_fonts/font = ExtResource("3_17f16")
 theme_override_font_sizes/font_size = 42
 text = "Waves Info"
 
+[node name="time" type="Sprite2D" parent="waves_info"]
+position = Vector2(-19.999983, 22)
+scale = Vector2(1.9794557, 1.8321103)
+texture = ExtResource("6_kambu")
+region_enabled = true
+region_rect = Rect2(672.7113, 751.8571, 15.736511, 16.650208)
+
+[node name="timer" type="Label" parent="."]
+offset_left = 1100.5
+offset_top = 15.458334
+offset_right = 1195.5
+offset_bottom = 47.458336
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.7764706)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_fonts/font = ExtResource("3_17f16")
+theme_override_font_sizes/font_size = 30
+text = "Timer"
+
+[node name="time" type="Sprite2D" parent="timer"]
+position = Vector2(-24.75, 15.770861)
+scale = Vector2(2.9583378, 2.9583378)
+texture = ExtResource("6_kambu")
+region_enabled = true
+region_rect = Rect2(642.10266, 768.29987, 12.172913, 13.8480835)
+
 [node name="Label" type="Label" parent="."]
-offset_left = 351.0
-offset_top = 50.0
-offset_right = 391.0
-offset_bottom = 74.0
+offset_left = 300.85614
+offset_top = 43.076607
+offset_right = 340.85614
+offset_bottom = 67.07661
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 1
 theme_override_font_sizes/font_size = 24
 text = "Lv."
 
-[node name="player" type="Button" parent="."]
-offset_left = 10.0
-offset_top = 11.0
-offset_right = 88.0
-offset_bottom = 96.0
+[node name="ui_menu" type="Node" parent="."]
+
+[node name="Keyboard" type="Sprite2D" parent="."]
+modulate = Color(1, 0.49803922, 0.039215688, 1)
+z_index = -1
+position = Vector2(1253.0001, 29.5)
+scale = Vector2(2.5625005, 2.5937495)
+texture = ExtResource("8_040vd")
+
+[node name="menu" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0.5686275)
+z_index = 4
+offset_left = 1238.0
+offset_top = 17.0
+offset_right = 1267.0
+offset_bottom = 42.0
+theme_override_font_sizes/font_size = 23
+theme_override_styles/normal = SubResource("StyleBoxFlat_040vd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_040vd")
+theme_override_styles/hover = SubResource("StyleBoxFlat_040vd")
+icon = ExtResource("11_kambu")
+icon_alignment = 1
 
 [connection signal="pressed" from="menu" to="." method="_on_menu_pressed"]
