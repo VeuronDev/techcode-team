@@ -220,13 +220,14 @@ vertical_alignment = 2
 
 [node name="log_input" type="Label" parent="."]
 modulate = Color(1, 1, 1, 0.7137255)
-offset_left = 1138.0
-offset_top = 678.0
-offset_right = 1265.0
-offset_bottom = 708.0
+offset_left = 1191.0
+offset_top = 685.0
+offset_right = 1318.0
+offset_bottom = 715.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.87058824)
 theme_override_fonts/font = ExtResource("3_17f16")
 theme_override_font_sizes/font_size = 24
+text = "Value : A"
 vertical_alignment = 2
 
 [node name="waves_info" type="Label" parent="."]
@@ -241,14 +242,14 @@ theme_override_fonts/font = ExtResource("3_17f16")
 theme_override_font_sizes/font_size = 42
 text = "Waves Info"
 
-[node name="time" type="Sprite2D" parent="waves_info"]
+[node name="waves_icon" type="Sprite2D" parent="waves_info"]
 position = Vector2(-19.999983, 22)
 scale = Vector2(1.9794557, 1.8321103)
 texture = ExtResource("6_kambu")
 region_enabled = true
 region_rect = Rect2(672.7113, 751.8571, 15.736511, 16.650208)
 
-[node name="timer" type="Label" parent="."]
+[node name="timer_waves" type="Label" parent="."]
 offset_left = 1100.5
 offset_top = 15.458334
 offset_right = 1195.5
@@ -260,14 +261,33 @@ theme_override_fonts/font = ExtResource("3_17f16")
 theme_override_font_sizes/font_size = 30
 text = "Timer"
 
-[node name="time" type="Sprite2D" parent="timer"]
+[node name="time" type="Sprite2D" parent="timer_waves"]
 position = Vector2(-24.75, 15.770861)
 scale = Vector2(2.9583378, 2.9583378)
 texture = ExtResource("6_kambu")
 region_enabled = true
 region_rect = Rect2(642.10266, 768.29987, 12.172913, 13.8480835)
 
-[node name="Label" type="Label" parent="."]
+[node name="count_point" type="Label" parent="."]
+offset_left = 599.0
+offset_top = 588.0
+offset_right = 706.0
+offset_bottom = 620.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.7764706)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_fonts/font = ExtResource("3_17f16")
+theme_override_font_sizes/font_size = 30
+text = "0 Point"
+
+[node name="time" type="Sprite2D" parent="count_point"]
+position = Vector2(-27.000011, 14.000026)
+scale = Vector2(2.6556377, 2.6556377)
+texture = ExtResource("6_kambu")
+region_enabled = true
+region_rect = Rect2(815.3399, 508.1947, 17.80603, 20.503906)
+
+[node name="lvl_info" type="Label" parent="."]
 offset_left = 300.85614
 offset_top = 43.076607
 offset_right = 340.85614
@@ -281,7 +301,6 @@ text = "Lv."
 [node name="ui_menu" type="Node" parent="."]
 
 [node name="Keyboard" type="Sprite2D" parent="."]
-modulate = Color(1, 0.49803922, 0.039215688, 1)
 z_index = -1
 position = Vector2(1253.0001, 29.5)
 scale = Vector2(2.5625005, 2.5937495)
@@ -300,5 +319,11 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_040vd")
 theme_override_styles/hover = SubResource("StyleBoxFlat_040vd")
 icon = ExtResource("11_kambu")
 icon_alignment = 1
+
+[node name="Keyboard2" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(1264, 704.00006)
+scale = Vector2(1.3789063, 1.4394528)
+texture = ExtResource("8_040vd")
 
 [connection signal="pressed" from="menu" to="." method="_on_menu_pressed"]
