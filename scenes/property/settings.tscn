@@ -1,7 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://c4e7g57q5irju"]
+[gd_scene load_steps=9 format=3 uid="uid://c4e7g57q5irju"]
 
-[ext_resource type="Texture2D" uid="uid://4na262gbdacx" path="res://assests/tileset/back_01.jpg" id="1_pubcw"]
+[ext_resource type="Script" uid="uid://bof3jajkph1bd" path="res://scripts/settings.gd" id="1_snpej"]
+[ext_resource type="Texture2D" uid="uid://c30ncyciqfuab" path="res://assests/tileset/main_menu.png" id="2_1qfjt"]
 [ext_resource type="Texture2D" uid="uid://cqvnx17n3j0m8" path="res://assests/tileset/Background UI.png" id="2_e23nf"]
+[ext_resource type="FontFile" uid="uid://cgl8w7k8kdixk" path="res://assests/BoldPixels.ttf" id="4_1qfjt"]
+[ext_resource type="Texture2D" uid="uid://ck0562rvlxdiy" path="res://assests/tileset/button.png" id="5_fw8jg"]
+[ext_resource type="AudioStream" uid="uid://bk4bv1ftka6xq" path="res://assests/music/Backsound game/BacksoundGame_1.mp3" id="6_1qfjt"]
+[ext_resource type="Texture2D" uid="uid://dk4co5h086gx5" path="res://assests/tileset/spr_tileset_sunnysideworld_16px.png" id="7_fw8jg"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_adoi0"]
+texture = ExtResource("5_fw8jg")
+region_rect = Rect2(13.856617, 25.832815, 36.156376, 15.270929)
+modulate_color = Color(0.93333334, 1, 1, 1)
 
 [node name="settings" type="Control"]
 layout_mode = 3
@@ -10,13 +20,14 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_snpej")
 
 [node name="bg_menu" type="Sprite2D" parent="."]
 modulate = Color(0.46229059, 0.46229059, 0.46229059, 1)
 z_index = -2
-position = Vector2(664, 362.00003)
-scale = Vector2(1.4870368, 1.4870372)
-texture = ExtResource("1_pubcw")
+position = Vector2(636, 360.00003)
+scale = Vector2(1.2245243, 1.2245246)
+texture = ExtResource("2_1qfjt")
 flip_h = true
 
 [node name="border" type="Node" parent="."]
@@ -46,3 +57,59 @@ texture = ExtResource("2_e23nf")
 flip_h = true
 region_enabled = true
 region_rect = Rect2(27.429123, 0, 12.187233, 64)
+
+[node name="exit" type="Button" parent="."]
+z_index = 2
+layout_mode = 0
+offset_left = 557.0
+offset_top = 497.0
+offset_right = 748.0
+offset_bottom = 564.0
+theme_override_colors/font_hover_color = Color(0.6313726, 0.3372549, 0, 1)
+theme_override_fonts/font = ExtResource("4_1qfjt")
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxTexture_adoi0")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_adoi0")
+theme_override_styles/hover = SubResource("StyleBoxTexture_adoi0")
+text = "Back"
+
+[node name="music_bg" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_1qfjt")
+autoplay = true
+
+[node name="settings_icon" type="Sprite2D" parent="."]
+self_modulate = Color(0.68152857, 0.63108444, 0.65611356, 1)
+z_index = 2
+position = Vector2(658, 171)
+scale = Vector2(7.22851, 7.30959)
+texture = ExtResource("7_fw8jg")
+region_enabled = true
+region_rect = Rect2(671.71185, 705.80914, 14.418457, 14.269775)
+
+[node name="music" type="CheckButton" parent="."]
+z_index = 2
+layout_mode = 0
+offset_left = 407.0
+offset_top = 248.0
+offset_right = 628.0
+offset_bottom = 275.33334
+scale = Vector2(2.2, 2.2)
+theme_override_colors/font_color = Color(1, 1, 1, 0.45882353)
+theme_override_fonts/font = ExtResource("4_1qfjt")
+text = "Music"
+icon_alignment = 1
+
+[node name="tutor" type="CheckButton" parent="."]
+z_index = 2
+layout_mode = 0
+offset_left = 407.0
+offset_top = 337.0
+offset_right = 628.0
+offset_bottom = 364.33334
+scale = Vector2(2.2, 2.2)
+theme_override_colors/font_color = Color(1, 1, 1, 0.45882353)
+theme_override_fonts/font = ExtResource("4_1qfjt")
+text = "Skip Tutorial"
+icon_alignment = 1
+
+[connection signal="pressed" from="exit" to="." method="_on_exit_pressed"]

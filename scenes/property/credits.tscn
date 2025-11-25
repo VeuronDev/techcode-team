@@ -1,7 +1,74 @@
-[gd_scene load_steps=3 format=3 uid="uid://cq767xi2sfmj7"]
+[gd_scene load_steps=17 format=3 uid="uid://cq767xi2sfmj7"]
 
-[ext_resource type="Texture2D" uid="uid://4na262gbdacx" path="res://assests/tileset/back_01.jpg" id="1_tmf6h"]
+[ext_resource type="Script" uid="uid://bx2pli8v83jue" path="res://scripts/credits.gd" id="1_irk4q"]
 [ext_resource type="Texture2D" uid="uid://cqvnx17n3j0m8" path="res://assests/tileset/Background UI.png" id="2_3mb3p"]
+[ext_resource type="Texture2D" uid="uid://c30ncyciqfuab" path="res://assests/tileset/main_menu.png" id="2_8oh8r"]
+[ext_resource type="FontFile" uid="uid://cgl8w7k8kdixk" path="res://assests/BoldPixels.ttf" id="3_kw87e"]
+[ext_resource type="Texture2D" uid="uid://ck0562rvlxdiy" path="res://assests/tileset/button.png" id="4_irk4q"]
+[ext_resource type="AudioStream" uid="uid://bk4bv1ftka6xq" path="res://assests/music/Backsound game/BacksoundGame_1.mp3" id="6_8oh8r"]
+[ext_resource type="Texture2D" uid="uid://dy7anisy5edkf" path="res://assests/characters/player/sunnyside_world_chatacter_anim_v0.png" id="7_ski4s"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8oh8r"]
+texture = ExtResource("4_irk4q")
+region_rect = Rect2(13.856617, 25.832815, 36.156376, 15.270929)
+modulate_color = Color(0.93333334, 1, 1, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mma68"]
+atlas = ExtResource("7_ski4s")
+region = Rect2(0, 174, 124, 87)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3w86l"]
+atlas = ExtResource("7_ski4s")
+region = Rect2(124, 174, 124, 87)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uxghi"]
+atlas = ExtResource("7_ski4s")
+region = Rect2(248, 174, 124, 87)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gb5yi"]
+atlas = ExtResource("7_ski4s")
+region = Rect2(372, 174, 124, 87)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_duoc6"]
+atlas = ExtResource("7_ski4s")
+region = Rect2(496, 174, 124, 87)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a5371"]
+atlas = ExtResource("7_ski4s")
+region = Rect2(620, 174, 124, 87)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qjgsq"]
+atlas = ExtResource("7_ski4s")
+region = Rect2(744, 174, 124, 87)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t3khl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mma68")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3w86l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uxghi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gb5yi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_duoc6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a5371")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qjgsq")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 8.0
+}]
 
 [node name="credits" type="Control"]
 layout_mode = 3
@@ -10,19 +77,20 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_irk4q")
 
 [node name="bg_menu" type="Sprite2D" parent="."]
 modulate = Color(0.46229059, 0.46229059, 0.46229059, 1)
 z_index = -2
-position = Vector2(671, 358)
-scale = Vector2(1.4185183, 1.4185187)
-texture = ExtResource("1_tmf6h")
+position = Vector2(663, 362)
+scale = Vector2(1.1621739, 1.1621742)
+texture = ExtResource("2_8oh8r")
 flip_h = true
 
 [node name="border" type="Node" parent="."]
 
 [node name="border_1" type="Sprite2D" parent="border"]
-self_modulate = Color(1, 0.5058824, 0, 1)
+self_modulate = Color(0.8466508, 0.4243554, 0, 1)
 position = Vector2(284, 340)
 scale = Vector2(8.578125, 8.578125)
 texture = ExtResource("2_3mb3p")
@@ -30,7 +98,7 @@ region_enabled = true
 region_rect = Rect2(0, 0, 33.353745, 64)
 
 [node name="border_2" type="Sprite2D" parent="border"]
-self_modulate = Color(1, 0.5058824, 0, 1)
+self_modulate = Color(0.8466508, 0.4243554, 0, 1)
 position = Vector2(1019, 340)
 scale = Vector2(8.578125, 8.578125)
 texture = ExtResource("2_3mb3p")
@@ -39,10 +107,66 @@ region_enabled = true
 region_rect = Rect2(0, 0, 33.353745, 64)
 
 [node name="border_3" type="Sprite2D" parent="border"]
-self_modulate = Color(1, 0.5058824, 0, 1)
+self_modulate = Color(0.8466508, 0.4243554, 0, 1)
 position = Vector2(651, 340)
 scale = Vector2(39.16667, 8.578125)
 texture = ExtResource("2_3mb3p")
 flip_h = true
 region_enabled = true
 region_rect = Rect2(27.429123, 0, 12.187233, 64)
+
+[node name="credit_nama" type="Label" parent="."]
+modulate = Color(1, 1, 1, 0.4627451)
+z_index = 1
+layout_mode = 0
+offset_left = 240.0
+offset_top = 113.0
+offset_right = 1056.0
+offset_bottom = 582.0
+theme_override_fonts/font = ExtResource("3_kw87e")
+theme_override_font_sizes/font_size = 32
+text = "PROJECT MANAGER
+Rezki Maulana
+
+PROGRAMMER
+Miftakul Huda Septian Eka Saputra
+
+ART & DESIGN
+Saibatul Aslamiah
+Yuda Pangestu
+
+TESTER
+Muhammad Noor Madi
+Nova Andika"
+horizontal_alignment = 1
+
+[node name="exit" type="Button" parent="."]
+z_index = 2
+layout_mode = 0
+offset_left = 799.0
+offset_top = 496.0
+offset_right = 990.0
+offset_bottom = 563.0
+theme_override_colors/font_hover_color = Color(0.6313726, 0.3372549, 0, 1)
+theme_override_fonts/font = ExtResource("3_kw87e")
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxTexture_8oh8r")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_8oh8r")
+theme_override_styles/hover = SubResource("StyleBoxTexture_8oh8r")
+text = "Back"
+
+[node name="music_bg" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_8oh8r")
+autoplay = true
+
+[node name="skeleton_icon" type="AnimatedSprite2D" parent="."]
+self_modulate = Color(0.66558725, 0.57631594, 0.5832308, 1)
+z_index = 1
+position = Vector2(381.99997, 497)
+scale = Vector2(6.5726986, 6.5726986)
+sprite_frames = SubResource("SpriteFrames_t3khl")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.34403348
+
+[connection signal="pressed" from="exit" to="." method="_on_exit_pressed"]

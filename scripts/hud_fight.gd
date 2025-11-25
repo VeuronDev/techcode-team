@@ -72,4 +72,4 @@ func _on_log_added(text: String):
 
 #BUTTON MENU DI TEKAN
 func _on_menu_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/levels/main_game.tscn")
+	get_tree().change_scene_to_file("res://scenes/property/main_game.tscn")
