@@ -1,4 +1,7 @@
-[gd_scene format=3 uid="uid://cq767xi2sfmj7"]
+[gd_scene load_steps=3 format=3 uid="uid://cq767xi2sfmj7"]
+
+[ext_resource type="Texture2D" uid="uid://4na262gbdacx" path="res://assests/tileset/back_01.jpg" id="1_tmf6h"]
+[ext_resource type="Texture2D" uid="uid://cqvnx17n3j0m8" path="res://assests/tileset/Background UI.png" id="2_3mb3p"]
 
 [node name="credits" type="Control"]
 layout_mode = 3
@@ -7,3 +10,39 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="bg_menu" type="Sprite2D" parent="."]
+modulate = Color(0.46229059, 0.46229059, 0.46229059, 1)
+z_index = -2
+position = Vector2(671, 358)
+scale = Vector2(1.4185183, 1.4185187)
+texture = ExtResource("1_tmf6h")
+flip_h = true
+
+[node name="border" type="Node" parent="."]
+
+[node name="border_1" type="Sprite2D" parent="border"]
+self_modulate = Color(1, 0.5058824, 0, 1)
+position = Vector2(284, 340)
+scale = Vector2(8.578125, 8.578125)
+texture = ExtResource("2_3mb3p")
+region_enabled = true
+region_rect = Rect2(0, 0, 33.353745, 64)
+
+[node name="border_2" type="Sprite2D" parent="border"]
+self_modulate = Color(1, 0.5058824, 0, 1)
+position = Vector2(1019, 340)
+scale = Vector2(8.578125, 8.578125)
+texture = ExtResource("2_3mb3p")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(0, 0, 33.353745, 64)
+
+[node name="border_3" type="Sprite2D" parent="border"]
+self_modulate = Color(1, 0.5058824, 0, 1)
+position = Vector2(651, 340)
+scale = Vector2(39.16667, 8.578125)
+texture = ExtResource("2_3mb3p")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(27.429123, 0, 12.187233, 64)

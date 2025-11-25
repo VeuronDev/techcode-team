@@ -16,7 +16,6 @@ func _ready() -> void:
 	GlobalVar.connect("log_added", Callable(self, "_on_log_added"))
 	HealthPlayer.value = GlobalVar.healthPlayer
 	waves_info.text = "Wave: %d" % GlobalVar.current_waves
-	enemy_left.text = "Enemies : %d" % GlobalVar.enemies_alive
 
 #LOOP MENGECEK INFORMASI PLAYER
 func _process(_delta: float) -> void:
