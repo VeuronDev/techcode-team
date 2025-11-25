@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://na6jg2uct4rf"
-path="res://.godot/imported/skeleton_hurt_strip7.png-696e7f090f6a2b133ec5777432280b94.ctex"
+uid="uid://du6r5w2awrii5"
+path="res://.godot/imported/sunflower0001.png-f7e10c1583d0af78c8ff11492465012b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assests/characters/Skeleton/skeleton_hurt_strip7.png"
-dest_files=["res://.godot/imported/skeleton_hurt_strip7.png-696e7f090f6a2b133ec5777432280b94.ctex"]
+source_file="res://assests/characters/item/sunflower0001.png"
+dest_files=["res://.godot/imported/sunflower0001.png-f7e10c1583d0af78c8ff11492465012b.ctex"]
 
 [params]
 

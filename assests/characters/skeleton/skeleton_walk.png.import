@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dkiwbqu1vkhl4"
-path="res://.godot/imported/skeleton_walk.png-39ee3b49709c3aa6a313fb36041469f0.ctex"
+path="res://.godot/imported/skeleton_walk.png-07d2fa80b21d6ed2d7a5b23a7dc120ea.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assests/characters/skeleton/skeleton_walk.png"
-dest_files=["res://.godot/imported/skeleton_walk.png-39ee3b49709c3aa6a313fb36041469f0.ctex"]
+source_file="res://assests/characters/Skeleton/skeleton_walk.png"
+dest_files=["res://.godot/imported/skeleton_walk.png-07d2fa80b21d6ed2d7a5b23a7dc120ea.ctex"]
 
 [params]
 

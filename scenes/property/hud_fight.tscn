@@ -1,13 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://deec6mcbmvuyv"]
+[gd_scene load_steps=7 format=3 uid="uid://deec6mcbmvuyv"]
 
 [ext_resource type="Script" uid="uid://pfrs13k4k3yi" path="res://scripts/hud_fight.gd" id="1_obyjr"]
 [ext_resource type="Texture2D" uid="uid://dbwgdlgn0tdbu" path="res://assests/characters/item/apple.png" id="2_354ej"]
+[ext_resource type="PackedScene" uid="uid://b4pavxhcdhhj" path="res://scenes/property/main_game.tscn" id="2_peluy"]
 [ext_resource type="FontFile" uid="uid://cpjhfhv4bnnns" path="res://assests/MedodicaRegular.otf" id="3_17f16"]
 [ext_resource type="Texture2D" uid="uid://n4hi6useqkvt" path="res://assests/characters/item/skull.png" id="3_x2h8g"]
 [ext_resource type="Texture2D" uid="uid://cc7p6fqw50ikr" path="res://assests/characters/item/health.png" id="4_x2h8g"]
 
 [node name="HUD_Fight" type="CanvasLayer"]
 script = ExtResource("1_obyjr")
+MAIN_GAME = ExtResource("2_peluy")
 
 [node name="HealthPlayer" type="ProgressBar" parent="."]
 modulate = Color(16.920147, 0, 0, 1)

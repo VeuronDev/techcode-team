@@ -10,6 +10,7 @@ extends CanvasLayer
 @onready var health = $health
 @onready var log_player = $log_player
 @onready var log_input = $log_input
+@export var MAIN_GAME = PackedScene
 
 #READY SISTEM
 func _ready() -> void:
@@ -72,4 +73,4 @@ func _on_log_added(text: String):
 
 #BUTTON MENU DI TEKAN
 func _on_menu_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/levels/main_game.tscn")
+	get_tree().change_scene_to_packed(MAIN_GAME)
