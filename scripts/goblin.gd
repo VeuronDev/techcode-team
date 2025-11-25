@@ -27,7 +27,7 @@ var is_attacking: bool = false
 var origin_position: Vector2
 var wander_target: Vector2
 var player_post
-
+var despawncounter:int = 0
 #READY SISTEM
 func _ready() -> void:
 	player_post = get_tree().get_first_node_in_group("Player")
@@ -89,6 +89,9 @@ func _wander_behavior(delta) -> void:
 	velocity = direction * (BASE_SPEED * 0.4)
 	if global_position.distance_to(wander_target) < 10:
 		wander_wait_timer = WANDER_WAIT
+		despawncounter += 1
+		if despawncounter > 5:
+			queue_free()
 		_set_new_wander_target()
 
 #JARAK JALAN TERHADAP TITIK SPAWN

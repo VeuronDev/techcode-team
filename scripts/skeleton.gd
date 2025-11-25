@@ -27,6 +27,8 @@ var is_attacking: bool = false
 var origin_position: Vector2
 var wander_target: Vector2
 var player_post
+var despawncounter:int = 0
+
 
 #READY SISTEM
 func _ready() ->void:
@@ -89,17 +91,23 @@ func _wander_behavior(delta) -> void:
 	velocity = direction * (BASE_SPEED * 0.4)
 	if global_position.distance_to(wander_target) < 10:
 		wander_wait_timer = WANDER_WAIT
+		if wander_wait_timer > 1.0:
+			despawncounter += 1
+			if despawncounter > 5:
+				queue_free()
 		_set_new_wander_target()
 
 #JARAK JALAN TERHADAP TITIK SPAWN
 func _set_new_wander_target() -> void:
 	var offset = Vector2(randf_range(-WANDER_RADIUS, WANDER_RADIUS), randf_range(-WANDER_RADIUS, WANDER_RADIUS))
 	wander_target = origin_position + offset
-
+	
 #PENGECEKAN PLAYER MEMASUKIN AREA SERANG
 func _on_area_enemy_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
 		target = body
+		despawncounter = 0
+		
 func _on_area_enemy_body_exited(body: Node2D) -> void:
 	if body.name == "Player":
 		target = null
