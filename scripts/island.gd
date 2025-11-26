@@ -14,7 +14,10 @@ func _process(_delta: float) -> void:
 		GlobalVar.healthPlayer = 0
 		$Player/music.stop()
 		var lose = GlobalVar.LoseUI.instantiate()
-		get_node("/root/island_%d"%GlobalVar.current_waves).add_child(lose)
+		if lose == null:
+			get_tree().change_scene_to_file("res://scenes/property/main_game.tscn")
+		else:
+			get_node("/root/island_%d"%GlobalVar.current_waves).add_child(lose)
 		await get_tree().create_timer(10).timeout 
 		GlobalVar.reset_all()
 		queue_free()
