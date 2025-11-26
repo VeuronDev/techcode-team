@@ -10,7 +10,8 @@ func _process(delta):
 	bar.value = progress
 	if progress >= 100:
 		if GlobalVar.is_loading:
-			get_tree().change_scene_to_file("res://tilemap.tscn")
+			var path_scene = GlobalVar.get_island_scene_path()
+			get_tree().change_scene_to_file(path_scene)
 			GlobalVar.is_loading = false
 		else:
 			get_tree().change_scene_to_file("res://scenes/property/rest_area.tscn")

@@ -6,7 +6,7 @@ extends Node2D
 
 #READY SISTEM
 func _ready() -> void:
-	spawn_random_enemies(GlobalVar.current_waves * 2)
+	spawn_random_enemies(4)
 	add_to_group("spawn_manager_group")
 
 #SPAWN RANDOM ENEMY BERDASARKAN TITIK YANG DI TENTUKAN
@@ -25,5 +25,4 @@ func spawn_random_enemies(count: int) -> void:
 		var enemy_scene = skeleton_scene if randf() < 0.5 else goblin_scene
 		var enemy = enemy_scene.instantiate()
 		enemy.global_position = point.global_position
-		add_child(enemy)
-	GlobalVar.start_wave(count)
+		get_node("/root/island").add_child(enemy)

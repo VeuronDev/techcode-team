@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cvujhl32hhcv0"]
+
+[ext_resource type="PackedScene" uid="uid://ck6ko63f447e1" path="res://scenes/characters/giant_goblin.tscn" id="1_n5wkp"]
+
+[node name="boss_location" type="Node2D"]
+
+[node name="boss" parent="." instance=ExtResource("1_n5wkp")]
+position = Vector2(-861, -1843)

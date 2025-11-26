@@ -1,0 +1,35 @@
+[gd_scene load_steps=2 format=3 uid="uid://ck5uptrbq0cv3"]
+
+[ext_resource type="PackedScene" uid="uid://dytpf6wif7c1t" path="res://scenes/item/collectible.tscn" id="1_3jwer"]
+
+[node name="waves_2" type="Node2D"]
+
+[node name="Collectible" parent="." instance=ExtResource("1_3jwer")]
+position = Vector2(1992.0833, 208.33334)
+
+[node name="Collectible2" parent="." instance=ExtResource("1_3jwer")]
+position = Vector2(1992.0833, -327.91666)
+
+[node name="Collectible3" parent="." instance=ExtResource("1_3jwer")]
+position = Vector2(-1002.91675, 1087.0834)
+
+[node name="Collectible4" parent="." instance=ExtResource("1_3jwer")]
+position = Vector2(-440.41663, 2443.3335)
+
+[node name="Collectible5" parent="." instance=ExtResource("1_3jwer")]
+position = Vector2(1074.5834, 2267.083)
+
+[node name="Collectible6" parent="." instance=ExtResource("1_3jwer")]
+position = Vector2(2660.8335, 1783.3331)
+
+[node name="Collectible7" parent="." instance=ExtResource("1_3jwer")]
+position = Vector2(1080.8335, 828.33325)
+
+[node name="Collectible8" parent="." instance=ExtResource("1_3jwer")]
+position = Vector2(2350.8333, 153.33325)
+
+[node name="Collectible9" parent="." instance=ExtResource("1_3jwer")]
+position = Vector2(1525.8331, -330.4167)
+
+[node name="Collectible10" parent="." instance=ExtResource("1_3jwer")]
+position = Vector2(-27.91668, 1084.5833)

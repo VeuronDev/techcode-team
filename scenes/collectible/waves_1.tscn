@@ -1,0 +1,64 @@
+[gd_scene load_steps=2 format=3 uid="uid://by7o27kx7cr17"]
+
+[ext_resource type="PackedScene" uid="uid://dytpf6wif7c1t" path="res://scenes/item/collectible.tscn" id="1_d1wno"]
+
+[node name="waves_1" type="Node2D"]
+
+[node name="Collectible" parent="." instance=ExtResource("1_d1wno")]
+
+[node name="Collectible2" parent="." instance=ExtResource("1_d1wno")]
+position = Vector2(-181.66669, 514.5833)
+
+[node name="Collectible3" parent="." instance=ExtResource("1_d1wno")]
+position = Vector2(1055.8333, 442.08328)
+
+[node name="Collectible4" parent="." instance=ExtResource("1_d1wno")]
+position = Vector2(1049.5833, 1165.8333)
+
+[node name="Collectible5" parent="." instance=ExtResource("1_d1wno")]
+position = Vector2(482.0832, 1469.5833)
+
+[node name="Collectible6" parent="." instance=ExtResource("1_d1wno")]
+position = Vector2(528.33325, 2115.833)
+
+[node name="Collectible7" parent="." instance=ExtResource("1_d1wno")]
+position = Vector2(840.8333, 2382.0835)
+
+[node name="Collectible8" parent="." instance=ExtResource("1_d1wno")]
+position = Vector2(99.58331, 2262.083)
+
+[node name="Collectible9" parent="." instance=ExtResource("1_d1wno")]
+position = Vector2(1724.5833, 1750.8333)
+
+[node name="Collectible10" parent="." instance=ExtResource("1_d1wno")]
+position = Vector2(2280.8333, 1465.8331)
+
+[node name="Collectible11" parent="." instance=ExtResource("1_d1wno")]
+position = Vector2(2318.3333, 1994.5831)
+
+[node name="Collectible12" parent="." instance=ExtResource("1_d1wno")]
+position = Vector2(2393.3333, 754.58325)
+
+[node name="Collectible13" parent="." instance=ExtResource("1_d1wno")]
+position = Vector2(2000.8333, 749.5833)
+
+[node name="Collectible14" parent="." instance=ExtResource("1_d1wno")]
+position = Vector2(-200.41669, 1569.5833)
+
+[node name="Collectible15" parent="." instance=ExtResource("1_d1wno")]
+position = Vector2(210.83331, 1947.0833)
+
+[node name="Collectible16" parent="." instance=ExtResource("1_d1wno")]
+position = Vector2(1979.5833, 2149.5833)
+
+[node name="Collectible17" parent="." instance=ExtResource("1_d1wno")]
+position = Vector2(2344.583, 2285.8333)
+
+[node name="Collectible18" parent="." instance=ExtResource("1_d1wno")]
+position = Vector2(2653.3333, 1459.5833)
+
+[node name="Collectible19" parent="." instance=ExtResource("1_d1wno")]
+position = Vector2(2132.0833, 492.08325)
+
+[node name="Collectible20" parent="." instance=ExtResource("1_d1wno")]
+position = Vector2(504.5833, -250.41666)

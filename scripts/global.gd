@@ -79,7 +79,7 @@ func start_wave_with_timer():
 					current_waves, point_player, needed
 				])
 				var lose = LoseUI.instantiate()
-				get_node("/root/Tilemap").add_child(lose)
+				get_node("/root/island_%d"%current_waves).add_child(lose)
 				pass 
 				return
 			get_tree().change_scene_to_file("res://scenes/property/rest_area.tscn")
@@ -93,7 +93,7 @@ func start_next_wave():
 	if current_waves >= 5:
 		logPlayer("🎉 All waves completed!")
 		var win = WinUI.instantiate()
-		get_node("/root/Tilemap").add_child(win)
+		get_node("/root/island_%d"%current_waves).add_child(win)
 		return 
 	current_waves += 1
 	emit_signal("wave_updated")
@@ -141,10 +141,10 @@ func logPlayer(text):
 
 func get_wave_timer(wave):
 	match wave:
-		1: return 30
-		2: return 40
-		3: return 50
-		_: return 60
+		1: return 100
+		2: return 120
+		3: return 150
+		_: return 200
 		
 func get_required_point(wave):
 	match wave:
@@ -152,4 +152,11 @@ func get_required_point(wave):
 		2: return 30
 		3: return 40
 		4: return 50
-		5: return 60
+
+func get_island_scene_path() -> String:
+	match current_waves:
+		1: return "res://scenes/property/island/island_1.tscn"
+		2: return "res://scenes/property/island/island_2.tscn"
+		3: return "res://scenes/property/island/island_3.tscn"
+		4: return "res://scenes/property/island/island_4.tscn"
+		_: return "res://scenes/property/island/island_1.tscn" # fallback

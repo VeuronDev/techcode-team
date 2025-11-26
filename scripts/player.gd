@@ -144,4 +144,4 @@ func die() -> void:
 	GlobalVar.is_dead = true
 	if GlobalVar.is_dead:
 		var lose = GlobalVar.LoseUI.instantiate()
-		get_node("/root/Tilemap").add_child(lose)
+		get_node("/root/island_%d"%GlobalVar.current_waves).add_child(lose)

@@ -1,0 +1,41 @@
+[gd_scene load_steps=3 format=3 uid="uid://ct35hyx6rdcgl"]
+
+[ext_resource type="PackedScene" uid="uid://biprgqbvg75mf" path="res://scenes/characters/goblin.tscn" id="1_f171a"]
+[ext_resource type="PackedScene" uid="uid://of0cy65lonem" path="res://scenes/characters/skeleton.tscn" id="2_y0f4d"]
+
+[node name="waves_3" type="Node2D"]
+
+[node name="waves_3" type="Node2D" parent="."]
+
+[node name="Goblin" parent="waves_3" instance=ExtResource("1_f171a")]
+position = Vector2(-1727.3334, 1651.6667)
+
+[node name="Goblin2" parent="waves_3" instance=ExtResource("1_f171a")]
+position = Vector2(-1304.3334, 1835.6666)
+
+[node name="Goblin3" parent="waves_3" instance=ExtResource("1_f171a")]
+position = Vector2(116.666626, 1889.6666)
+
+[node name="Goblin4" parent="waves_3" instance=ExtResource("1_f171a")]
+position = Vector2(2043.6666, 1427.6666)
+
+[node name="Goblin5" parent="waves_3" instance=ExtResource("1_f171a")]
+position = Vector2(1734.6666, -99.33333)
+
+[node name="Goblin6" parent="waves_3" instance=ExtResource("1_f171a")]
+position = Vector2(1249.6666, -63.33333)
+
+[node name="Skeleton" parent="waves_3" instance=ExtResource("2_y0f4d")]
+position = Vector2(1449.6666, -420.33334)
+
+[node name="Skeleton2" parent="waves_3" instance=ExtResource("2_y0f4d")]
+position = Vector2(-1654.3334, 1400.6666)
+
+[node name="Skeleton3" parent="waves_3" instance=ExtResource("2_y0f4d")]
+position = Vector2(-1645.3334, 2097.6665)
+
+[node name="Skeleton4" parent="waves_3" instance=ExtResource("2_y0f4d")]
+position = Vector2(-1891.3334, 1894.6666)
+
+[node name="Skeleton5" parent="waves_3" instance=ExtResource("2_y0f4d")]
+position = Vector2(-1550.3334, 1885.6666)

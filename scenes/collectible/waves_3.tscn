@@ -1,0 +1,35 @@
+[gd_scene load_steps=2 format=3 uid="uid://dk0b0dboasas0"]
+
+[ext_resource type="PackedScene" uid="uid://dytpf6wif7c1t" path="res://scenes/item/collectible.tscn" id="1_wfv34"]
+
+[node name="waves_3" type="Node2D"]
+
+[node name="Collectible" parent="." instance=ExtResource("1_wfv34")]
+position = Vector2(-1164.1666, 615.83325)
+
+[node name="Collectible2" parent="." instance=ExtResource("1_wfv34")]
+position = Vector2(-1046.6665, 944.58325)
+
+[node name="Collectible3" parent="." instance=ExtResource("1_wfv34")]
+position = Vector2(-665.41675, 2007.0833)
+
+[node name="Collectible4" parent="." instance=ExtResource("1_wfv34")]
+position = Vector2(-1660.4166, 2214.5833)
+
+[node name="Collectible5" parent="." instance=ExtResource("1_wfv34")]
+position = Vector2(-2319.1665, 2129.5833)
+
+[node name="Collectible6" parent="." instance=ExtResource("1_wfv34")]
+position = Vector2(-2180.4167, 2643.333)
+
+[node name="Collectible7" parent="." instance=ExtResource("1_wfv34")]
+position = Vector2(-2005.4167, 1832.0833)
+
+[node name="Collectible8" parent="." instance=ExtResource("1_wfv34")]
+position = Vector2(-1867.9169, 2423.3333)
+
+[node name="Collectible9" parent="." instance=ExtResource("1_wfv34")]
+position = Vector2(-1572.9167, 1172.0833)
+
+[node name="Collectible10" parent="." instance=ExtResource("1_wfv34")]
+position = Vector2(-1147.9167, 322.0833)

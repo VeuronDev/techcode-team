@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://yu68w0vn2cok"]
+
+[ext_resource type="PackedScene" uid="uid://dytpf6wif7c1t" path="res://scenes/item/collectible.tscn" id="1_a4nnr"]
+
+[node name="boss_defeated" type="Node2D"]
+
+[node name="Collectible" parent="." instance=ExtResource("1_a4nnr")]
+position = Vector2(-1305.4165, -2402.9165)
+
+[node name="Collectible2" parent="." instance=ExtResource("1_a4nnr")]
+position = Vector2(-902.9166, -2470.4165)
+
+[node name="Collectible3" parent="." instance=ExtResource("1_a4nnr")]
+position = Vector2(-1341.6666, -2581.6665)
+
+[node name="Collectible4" parent="." instance=ExtResource("1_a4nnr")]
+position = Vector2(-1136.6666, -2499.1665)
+
+[node name="Collectible5" parent="." instance=ExtResource("1_a4nnr")]
+position = Vector2(-1186.6666, -2164.1665)

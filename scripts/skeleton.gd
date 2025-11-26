@@ -91,10 +91,10 @@ func _wander_behavior(delta) -> void:
 	velocity = direction * (BASE_SPEED * 0.4)
 	if global_position.distance_to(wander_target) < 10:
 		wander_wait_timer = WANDER_WAIT
-		if wander_wait_timer > 1.0:
-			despawncounter += 1
-			if despawncounter > 5:
-				queue_free()
+		#if wander_wait_timer > 1.0:
+			#despawncounter += 1
+			#if despawncounter > 5:
+				#queue_free()
 		_set_new_wander_target()
 
 #JARAK JALAN TERHADAP TITIK SPAWN

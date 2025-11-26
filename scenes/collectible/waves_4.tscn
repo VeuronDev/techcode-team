@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://ckcoxumv6y42x"]
+
+[ext_resource type="PackedScene" uid="uid://dytpf6wif7c1t" path="res://scenes/item/collectible.tscn" id="1_fupty"]
+
+[node name="waves_4" type="Node2D"]
+
+[node name="Collectible" parent="." instance=ExtResource("1_fupty")]
+position = Vector2(-1106.6667, -924.1666)
+
+[node name="Collectible2" parent="." instance=ExtResource("1_fupty")]
+position = Vector2(-1074.1665, -225.41656)
+
+[node name="Collectible3" parent="." instance=ExtResource("1_fupty")]
+position = Vector2(-1174.1666, -1729.1665)
+
+[node name="Collectible4" parent="." instance=ExtResource("1_fupty")]
+position = Vector2(-881.6666, -2300.4165)
+
+[node name="Collectible5" parent="." instance=ExtResource("1_fupty")]
+position = Vector2(-1054.1666, -2719.1667)

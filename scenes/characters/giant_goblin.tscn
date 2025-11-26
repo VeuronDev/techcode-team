@@ -1,18 +1,18 @@
 [gd_scene load_steps=93 format=3 uid="uid://ck6ko63f447e1"]
 
 [ext_resource type="Script" uid="uid://d2bj0cfsfaagf" path="res://scripts/giant_goblin.gd" id="1_waptb"]
-[ext_resource type="Texture2D" uid="uid://bpxdhoq4c4t2s" path="res://assests/characters/Goblin/goblin_attack.png" id="1_xha5n"]
-[ext_resource type="Texture2D" uid="uid://bxu2q1n74jvbm" path="res://assests/characters/Goblin/goblin_death.png" id="2_3nm0q"]
-[ext_resource type="Texture2D" uid="uid://cdl7dfklsrfy1" path="res://assests/characters/Goblin/goblin_axe.png" id="3_758h2"]
-[ext_resource type="Texture2D" uid="uid://boq2wcrl4mx8s" path="res://assests/characters/Goblin/goblin_idle.png" id="3_ohxar"]
-[ext_resource type="Texture2D" uid="uid://bt8qke8vxfspk" path="res://assests/characters/Goblin/goblin_run.png" id="4_kaa3t"]
-[ext_resource type="Texture2D" uid="uid://djcubx4ieyg4v" path="res://assests/characters/Goblin/goblin_walk.png" id="5_ntflo"]
+[ext_resource type="Texture2D" uid="uid://bpxdhoq4c4t2s" path="res://assests/characters/goblin/goblin_attack.png" id="1_xha5n"]
+[ext_resource type="Texture2D" uid="uid://bxu2q1n74jvbm" path="res://assests/characters/goblin/goblin_death.png" id="2_3nm0q"]
+[ext_resource type="Texture2D" uid="uid://cdl7dfklsrfy1" path="res://assests/characters/goblin/goblin_axe.png" id="3_758h2"]
+[ext_resource type="Texture2D" uid="uid://boq2wcrl4mx8s" path="res://assests/characters/goblin/goblin_idle.png" id="3_ohxar"]
+[ext_resource type="Texture2D" uid="uid://bt8qke8vxfspk" path="res://assests/characters/goblin/goblin_run.png" id="4_kaa3t"]
+[ext_resource type="Texture2D" uid="uid://djcubx4ieyg4v" path="res://assests/characters/goblin/goblin_walk.png" id="5_ntflo"]
 [ext_resource type="Script" uid="uid://b15w42afirvvn" path="res://scripts/finite_sate_machine.gd" id="6_ohxar"]
-[ext_resource type="Texture2D" uid="uid://blhopgy71248s" path="res://assests/characters/Goblin/goblin_doing.png" id="7_arpt4"]
+[ext_resource type="Texture2D" uid="uid://blhopgy71248s" path="res://assests/characters/goblin/goblin_doing.png" id="7_arpt4"]
 [ext_resource type="Script" uid="uid://ejc7g8xf87l5" path="res://scripts/idle.gd" id="7_ntflo"]
 [ext_resource type="Script" uid="uid://ce32ggtibfmde" path="res://scripts/follow.gd" id="8_ntflo"]
 [ext_resource type="Script" uid="uid://d2ebu3a7a28q3" path="res://scripts/attack_hitbox.gd" id="9_etokx"]
-[ext_resource type="Script" uid="uid://chgmjtnbxn5la" path="res://scripts/attack.gd" id="11_c28a0"]
+[ext_resource type="Script" path="res://scripts/attack.gd" id="11_c28a0"]
 [ext_resource type="Script" uid="uid://iupkjxbarbco" path="res://scripts/chase.gd" id="11_tftqj"]
 [ext_resource type="Script" uid="uid://bm7newmen3yty" path="res://scripts/death.gd" id="14_jn7js"]
 [ext_resource type="Script" uid="uid://bgams7jj4q6ki" path="res://scripts/spawn_minion.gd" id="15_g66t2"]
@@ -913,10 +913,10 @@ shape = SubResource("CapsuleShape2D_1xbtb")
 
 [node name="ProgressBar" type="ProgressBar" parent="UI"]
 custom_minimum_size = Vector2(500, 0)
-offset_left = 14.0
-offset_top = 39.0
-offset_right = 514.0
-offset_bottom = 66.0
+offset_left = 389.0
+offset_top = 557.0
+offset_right = 889.0
+offset_bottom = 584.0
 size_flags_horizontal = 8
 size_flags_vertical = 8
 max_value = 1000.0
