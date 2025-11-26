@@ -112,7 +112,7 @@ func logPlayer(text):
 
 func get_wave_timer(wave):
 	match wave:
-		1: return 10
+		1: return 100
 		2: return 120
 		3: return 150
 		_: return 200
