@@ -12490,7 +12490,7 @@ position = Vector2(657, -487)
 
 [node name="music" type="AudioStreamPlayer2D" parent="Player"]
 stream = ExtResource("8_2vi3e")
-volume_db = -1.53
+volume_db = -5.53
 autoplay = true
 
 [node name="enemy" type="Node2D" parent="."]

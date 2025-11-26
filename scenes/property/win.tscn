@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dv0rkplf6snq3"]
+[gd_scene load_steps=13 format=3 uid="uid://dv0rkplf6snq3"]
 
 [ext_resource type="Script" uid="uid://dsijofqxd21ki" path="res://scripts/lose.gd" id="1_e5cqh"]
 [ext_resource type="Texture2D" uid="uid://c7oifoye82njp" path="res://assests/tileset/border ui.png" id="2_g1pbr"]
@@ -7,6 +7,22 @@
 [ext_resource type="Texture2D" uid="uid://dk4co5h086gx5" path="res://assests/tileset/spr_tileset_sunnysideworld_16px.png" id="5_davss"]
 [ext_resource type="Texture2D" uid="uid://na6jg2uct4rf" path="res://assests/characters/skeleton/skeleton_hurt_strip7.png" id="6_e5cqh"]
 [ext_resource type="Texture2D" uid="uid://cuh3ylkov1ugw" path="res://assests/characters/goblin/goblin_hurt.png" id="7_g1pbr"]
+[ext_resource type="AudioStream" uid="uid://d1rlfrp0s3162" path="res://assests/music/Item drop/win_sound.mp3" id="8_g1pbr"]
+
+[sub_resource type="Animation" id="Animation_p1csy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("win:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_j7ucx"]
 resource_name = "add"
@@ -22,21 +38,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 0.5358866),
 "update": 0,
 "values": [Vector2(0, -520), Vector2(0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_p1csy"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("win:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_10piv"]
@@ -137,3 +138,7 @@ offset_left = -28.0
 offset_top = -23.0
 offset_right = 1302.0
 offset_bottom = 740.0
+
+[node name="win_sfx" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_g1pbr")
+autoplay = true

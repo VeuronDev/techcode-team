@@ -5,7 +5,6 @@ extends CharacterBody2D
 @onready var cam = $Camera2D
 @onready var notifications = $notification
 @onready var take_notif = $notification/take
-@onready var kill_message = $KillMessage
 @onready var hit = $Audio_Manager/hit
 @onready var notif_kill = $Audio_Manager/notif_kill
 
@@ -27,14 +26,6 @@ func _ready() -> void:
 	#GlobalVar.connect("show_kill_message", Callable(self, "_on_kill_message"))
 	#GlobalVar.healthPlayer = 200
 
-#KILL MESSAGE PLAYER
-func _on_kill_message(text) -> void:
-	notif_kill.play()
-	kill_message.text = text
-	kill_message.show()
-	kill_message.modulate.a = 1
-	kill_message.scale = Vector2(1.2, 1.2)
-	kill_message.create_tween().tween_property(kill_message, "modulate:a", 0, 1.5)
 
 #PENGECEKAN PLAYER SERANG/JALAN/SAKIT
 func _physics_process(delta) -> void:

@@ -6,7 +6,7 @@ func _ready():
 	bar.value = 0
 	progress = 0
 func _process(delta):
-	progress += delta * 40
+	progress += delta * 20
 	bar.value = progress
 	if progress >= 100:
 		if GlobalVar.is_loading:

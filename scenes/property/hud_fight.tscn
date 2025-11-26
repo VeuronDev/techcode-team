@@ -63,6 +63,39 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_p5cse")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_p5cse")
 theme_override_styles/hover = SubResource("StyleBoxFlat_p5cse")
 
+[node name="back2" type="Button" parent="."]
+modulate = Color(0.38431373, 0.20784314, 0.07058824, 1)
+self_modulate = Color(0.38431373, 0.20784314, 0.07058824, 0.6745098)
+offset_left = 484.0
+offset_top = -22.0
+offset_right = 767.0
+offset_bottom = 62.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_p5cse")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_p5cse")
+theme_override_styles/hover = SubResource("StyleBoxFlat_p5cse")
+
+[node name="back3" type="Button" parent="."]
+modulate = Color(0.38431373, 0.20784314, 0.07058824, 1)
+self_modulate = Color(0.38431373, 0.20784314, 0.07058824, 0.6745098)
+offset_left = 970.0
+offset_top = -33.0
+offset_right = 1169.0
+offset_bottom = 55.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_p5cse")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_p5cse")
+theme_override_styles/hover = SubResource("StyleBoxFlat_p5cse")
+
+[node name="back4" type="Button" parent="."]
+modulate = Color(0.38431373, 0.20784314, 0.07058824, 1)
+self_modulate = Color(0.38431373, 0.20784314, 0.07058824, 0.6745098)
+offset_left = 527.0
+offset_top = 576.0
+offset_right = 740.0
+offset_bottom = 627.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_p5cse")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_p5cse")
+theme_override_styles/hover = SubResource("StyleBoxFlat_p5cse")
+
 [node name="health_icon" type="Sprite2D" parent="."]
 position = Vector2(26.000002, 29)
 scale = Vector2(2.6594741, 2.4615097)
@@ -300,9 +333,9 @@ region_enabled = true
 region_rect = Rect2(642.10266, 768.29987, 12.172913, 13.8480835)
 
 [node name="count_point" type="Label" parent="."]
-offset_left = 599.0
+offset_left = 583.0
 offset_top = 588.0
-offset_right = 706.0
+offset_right = 690.0
 offset_bottom = 620.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.7764706)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)

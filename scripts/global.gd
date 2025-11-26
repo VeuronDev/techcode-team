@@ -1,8 +1,6 @@
 extends Node
 
 signal wave_updated
-signal enemy_updated
-signal show_kill_message(text)
 signal log_added(text)
 signal wave_timer_updated(value)
 
@@ -12,6 +10,8 @@ signal wave_timer_updated(value)
 @onready var LoseUI = preload("res://scenes/property/lose.tscn")
 
 # VAR
+# Tambahkan timer di sini
+var countdown_timer: Timer = Timer.new()
 var attack_active = false 
 var hurt_active = true 
 var apple_taken = false 
@@ -25,12 +25,13 @@ var kill_count = 0
 var logs = []
 var is_loading = false
 var is_dead = false
+var start_new_timir = true
+var is_lose = false
 
 const ENEMIES_PER_WAVE = 4
 var TIMER_CHANGE_WAVES = 0.0
 
 var combo_duration = 5.0
-var combo_timer: Timer
 
 var expPlayer = 0 
 var apple = 0 
@@ -43,48 +44,38 @@ var health_ability = 1
 var healthPlayer = 100 * health_ability
 
 func _ready():
-	combo_timer = Timer.new()
-	combo_timer.one_shot = true
-	combo_timer.wait_time = combo_duration
-	add_child(combo_timer)
-	combo_timer.timeout.connect(_on_combo_timeout)
-
-	start_wave_with_timer() # mulai wave pertama
-
+	# Setup timer sekali di awal
+	add_child(countdown_timer)
+	countdown_timer.wait_time = 1
+	countdown_timer.one_shot = false
+	countdown_timer.timeout.connect(_on_countdown_timeout)
 
 # -----------------------------------------
 # ⛔ WAVE HANYA DIGANTI OLEH TIMER
 # -----------------------------------------
 func start_wave_with_timer():
-	emit_signal("wave_updated")
-	logPlayer("🔥 Wave %d started!" % current_waves)
+	if countdown_timer.is_stopped():
+		emit_signal("wave_updated")
+		logPlayer("🔥 Wave %d started!" % current_waves)
+		var wave_time = get_wave_timer(current_waves)
+		TIMER_CHANGE_WAVES = wave_time
+		countdown_timer.start()
+	else:
+		logPlayer("⚠️ Wave timer already running!")
 
-	var wave_time = get_wave_timer(current_waves)
-	TIMER_CHANGE_WAVES = wave_time
-
-	var countdown_timer = Timer.new()
-	countdown_timer.wait_time = 1
-	countdown_timer.one_shot = false
-	add_child(countdown_timer)
-	countdown_timer.start()
-	countdown_timer.timeout.connect(func():
-		TIMER_CHANGE_WAVES -= 1
-		emit_signal("wave_timer_updated", TIMER_CHANGE_WAVES)
-		if TIMER_CHANGE_WAVES <= 0:
-			countdown_timer.stop()
-			countdown_timer.queue_free()
-			var needed = get_required_point(current_waves)
-			if point_player < needed:
-				logPlayer("❌ Wave %d failed! Not enough points (%d/%d)" % [
-					current_waves, point_player, needed
-				])
-				var lose = LoseUI.instantiate()
-				get_node("/root/island_%d"%current_waves).add_child(lose)
-				reset_all()
-				pass 
-				return
-			get_tree().change_scene_to_file("res://scenes/property/rest_area.tscn")
-	)
+func _on_countdown_timeout():
+	TIMER_CHANGE_WAVES -= 1
+	emit_signal("wave_timer_updated", TIMER_CHANGE_WAVES)
+	if TIMER_CHANGE_WAVES <= 0:
+		countdown_timer.stop()
+		var needed = get_required_point(current_waves)
+		if point_player < needed:
+			logPlayer("❌ Wave %d failed! Not enough points (%d/%d)" % [
+				current_waves, point_player, needed
+			])
+			is_lose = true
+		else:
+			get_tree().change_scene_to_file("res://scenes/property/laoding.tscn")
 
 
 # -----------------------------------------
@@ -108,30 +99,9 @@ func start_next_wave():
 # -----------------------------------------
 func enemy_died():
 	enemies_alive -= 1
-	add_kill()
-	emit_signal("enemy_updated")
 
 	# ❌ TIDAK ADA reroll_wave()
 	# Wave lanjut hanya lewat TIMER
-
-
-# -----------------------------------------
-# EXP + KILL EFFECT
-# -----------------------------------------
-func add_kill():
-	kill_count += 1
-	combo_timer.start()
-
-	match kill_count:
-		3: emit_signal("show_kill_message", "🔥 TRIPLE KILL!")
-		5: emit_signal("show_kill_message", "💥 UNSTOPPABLE!")
-		8: emit_signal("show_kill_message", "👑 GODLIKE!")
-		_: emit_signal("show_kill_message", "☠️ Kill x%d" % kill_count)
-
-
-func _on_combo_timeout():
-	kill_count = 0
-
 
 func logPlayer(text):
 	logs.append(text)
@@ -142,7 +112,7 @@ func logPlayer(text):
 
 func get_wave_timer(wave):
 	match wave:
-		1: return 100
+		1: return 10
 		2: return 120
 		3: return 150
 		_: return 200
@@ -160,10 +130,14 @@ func get_island_scene_path() -> String:
 		2: return "res://scenes/property/island/island_2.tscn"
 		3: return "res://scenes/property/island/island_3.tscn"
 		4: return "res://scenes/property/island/island_4.tscn"
-		_: return "res://scenes/property/island/island_1.tscn" # fallback
+		_: return "res://scenes/property/island/island_1.tscn"
+
+
 
 func reset_all():
-	# VAR
+	# Menghentikan timer yang mungkin sedang berjalan
+	if countdown_timer.is_stopped() == false:
+		countdown_timer.stop()
 	attack_active = false 
 	hurt_active = true 
 	apple_taken = false 
@@ -177,8 +151,9 @@ func reset_all():
 	logs = []
 	is_loading = false
 	is_dead = false
+	is_lose = false
+	start_new_timir = true
 	TIMER_CHANGE_WAVES = 0.0
-	combo_duration = 5.0
 	expPlayer = 0 
 	apple = 0 
 	skull = 0 
@@ -188,3 +163,4 @@ func reset_all():
 	defend_ability = 1
 	health_ability = 1
 	healthPlayer = 100 * health_ability
+	logPlayer("Game state reset.")

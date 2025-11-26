@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://l7q744q4ql6n"]
+[gd_scene load_steps=13 format=3 uid="uid://l7q744q4ql6n"]
 
 [ext_resource type="Texture2D" uid="uid://c7oifoye82njp" path="res://assests/tileset/border ui.png" id="1_7utjf"]
 [ext_resource type="Script" uid="uid://dsijofqxd21ki" path="res://scripts/lose.gd" id="1_p1csy"]
@@ -7,9 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://dk4co5h086gx5" path="res://assests/tileset/spr_tileset_sunnysideworld_16px.png" id="4_p1csy"]
 [ext_resource type="Texture2D" uid="uid://boq2wcrl4mx8s" path="res://assests/characters/goblin/goblin_idle.png" id="5_j7ucx"]
 [ext_resource type="Texture2D" uid="uid://dp75vpyikm7bw" path="res://assests/characters/skeleton/skeleton_idle.png" id="6_p1csy"]
+[ext_resource type="AudioStream" uid="uid://dwewc2q858v04" path="res://assests/music/Item drop/lose_sounds.mp3" id="8_34piv"]
 
 [sub_resource type="Animation" id="Animation_p1csy"]
-length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -21,6 +21,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("b:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0.27058825)]
 }
 
 [sub_resource type="Animation" id="Animation_j7ucx"]
@@ -37,6 +49,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 0.5358866),
 "update": 0,
 "values": [Vector2(0, -520), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("b:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 0.4666667, 1.1333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0.27058825), Color(0, 0, 0, 0.45882353), Color(0, 0, 0, 0.27058825), Color(0, 0, 0, 0.9098039)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_10piv"]
@@ -82,21 +106,6 @@ theme_override_fonts/font = ExtResource("2_3ud5d")
 theme_override_font_sizes/font_size = 106
 text = "You Lose!"
 
-[node name="play" type="Button" parent="lose/label"]
-layout_mode = 0
-offset_left = 104.0
-offset_top = 191.0
-offset_right = 295.0
-offset_bottom = 258.0
-theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
-theme_override_colors/font_hover_color = Color(0.6313726, 0.3372549, 0, 1)
-theme_override_fonts/font = ExtResource("2_3ud5d")
-theme_override_font_sizes/font_size = 28
-theme_override_styles/normal = SubResource("StyleBoxTexture_10piv")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_10piv")
-theme_override_styles/hover = SubResource("StyleBoxTexture_10piv")
-text = "  Retry"
-
 [node name="exit" type="Button" parent="lose/label"]
 layout_mode = 0
 offset_left = 106.0
@@ -111,14 +120,6 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_10piv")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_10piv")
 theme_override_styles/hover = SubResource("StyleBoxTexture_10piv")
 text = " Exit"
-
-[node name="sword_icon" type="Sprite2D" parent="lose/label"]
-self_modulate = Color(0.68152857, 0.63108444, 0.65611356, 1)
-position = Vector2(160, 224)
-scale = Vector2(2.6250017, 2.4773827)
-texture = ExtResource("4_p1csy")
-region_enabled = true
-region_rect = Rect2(576.70593, 256.22882, 14.61969, 15.837982)
 
 [node name="exit_icon" type="Sprite2D" parent="lose/label"]
 self_modulate = Color(0.68152857, 0.63108444, 0.65611356, 1)
@@ -153,7 +154,17 @@ texture = ExtResource("4_p1csy")
 region_enabled = true
 region_rect = Rect2(689.13617, 767.50024, 14.618713, 17.198486)
 
-[node name="lose_sfx" type="AudioStreamPlayer2D" parent="."]
+[node name="Label" type="Label" parent="lose/label"]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 212.0
+offset_right = 302.0
+offset_bottom = 246.0
+theme_override_font_sizes/font_size = 33
+text = "Lol, Noob...!"
 
-[connection signal="pressed" from="lose/label/play" to="." method="_on_play_pressed"]
+[node name="lose_sfx" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_34piv")
+autoplay = true
+
 [connection signal="pressed" from="lose/label/exit" to="." method="_on_exit_pressed"]

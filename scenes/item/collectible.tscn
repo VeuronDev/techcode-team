@@ -140,8 +140,9 @@ frame_progress = 0.54396
 scale = Vector2(0.0058784615, 0.010416667)
 texture = ExtResource("3_q8l23")
 
-[node name="collect" type="AudioStreamPlayer2D" parent="."]
+[node name="collect_item" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_x5m3t")
-volume_db = 7.068
+volume_db = 4.0
+pitch_scale = 1.5
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -166,7 +166,6 @@ func die() -> void:
 	is_dead = true
 	is_hit = false
 	velocity = Vector2.ZERO
-	GlobalVar.add_kill()
 	GlobalVar.enemy_died()
 	GlobalVar.logPlayer("💀 You killed the Manusia Hijau Enemy.")
 	GlobalVar.expPlayer += randi_range(5, 10)
