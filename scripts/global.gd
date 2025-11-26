@@ -166,4 +166,3 @@ func reset_all():
 	attack_ability = 1
 	defend_ability = 1
 	health_ability = 1
-	logPlayer("Game state reset.")
