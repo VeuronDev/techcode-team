@@ -80,6 +80,7 @@ func start_wave_with_timer():
 				])
 				var lose = LoseUI.instantiate()
 				get_node("/root/island_%d"%current_waves).add_child(lose)
+				reset_all()
 				pass 
 				return
 			get_tree().change_scene_to_file("res://scenes/property/rest_area.tscn")
@@ -160,3 +161,30 @@ func get_island_scene_path() -> String:
 		3: return "res://scenes/property/island/island_3.tscn"
 		4: return "res://scenes/property/island/island_4.tscn"
 		_: return "res://scenes/property/island/island_1.tscn" # fallback
+
+func reset_all():
+	# VAR
+	attack_active = false 
+	hurt_active = true 
+	apple_taken = false 
+	health_taken = false 
+	skull_taken = false
+	current_waves = 1
+	enemies_alive = 0
+	waves_active = false
+	Is_boss_alive = false
+	kill_count = 0
+	logs = []
+	is_loading = false
+	is_dead = false
+	TIMER_CHANGE_WAVES = 0.0
+	combo_duration = 5.0
+	expPlayer = 0 
+	apple = 0 
+	skull = 0 
+	health_count = 0
+	point_player = 0
+	attack_ability = 1
+	defend_ability = 1
+	health_ability = 1
+	healthPlayer = 100 * health_ability

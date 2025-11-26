@@ -1,11 +1,11 @@
 [gd_scene load_steps=55 format=3 uid="uid://of0cy65lonem"]
 
 [ext_resource type="Script" uid="uid://dgydff65w3c4o" path="res://scripts/skeleton.gd" id="1_11w7t"]
-[ext_resource type="Texture2D" uid="uid://dwch4gtgyi65v" path="res://assests/characters/Skeleton/skeleton_attack_strip7.png" id="2_bhsuw"]
-[ext_resource type="Texture2D" uid="uid://b4wyejx2oift4" path="res://assests/characters/Skeleton/skeleton_death_strip10.png" id="3_7y8xs"]
-[ext_resource type="Texture2D" uid="uid://na6jg2uct4rf" path="res://assests/characters/Skeleton/skeleton_hurt_strip7.png" id="4_ohjdn"]
-[ext_resource type="Texture2D" uid="uid://cfu750thunaap" path="res://assests/characters/Skeleton/skeleton_idle_strip6.png" id="5_1lx0f"]
-[ext_resource type="Texture2D" uid="uid://b0e5fmtvnwemc" path="res://assests/characters/Skeleton/skeleton_walk_strip8.png" id="6_7tan2"]
+[ext_resource type="Texture2D" uid="uid://dwch4gtgyi65v" path="res://assests/characters/skeleton/skeleton_attack_strip7.png" id="2_bhsuw"]
+[ext_resource type="Texture2D" uid="uid://b4wyejx2oift4" path="res://assests/characters/skeleton/skeleton_death_strip10.png" id="3_7y8xs"]
+[ext_resource type="Texture2D" uid="uid://na6jg2uct4rf" path="res://assests/characters/skeleton/skeleton_hurt_strip7.png" id="4_ohjdn"]
+[ext_resource type="Texture2D" uid="uid://cfu750thunaap" path="res://assests/characters/skeleton/skeleton_idle_strip6.png" id="5_1lx0f"]
+[ext_resource type="Texture2D" uid="uid://b0e5fmtvnwemc" path="res://assests/characters/skeleton/skeleton_walk_strip8.png" id="6_7tan2"]
 [ext_resource type="FontFile" uid="uid://cpjhfhv4bnnns" path="res://assests/MedodicaRegular.otf" id="7_1lx0f"]
 [ext_resource type="Texture2D" uid="uid://t12o5x5vibqs" path="res://assests/tileset/shadow.png" id="7_bhsuw"]
 [ext_resource type="AudioStream" uid="uid://bgl03xadkwb18" path="res://assests/music/Skeleton/Skeleton_1.mp3" id="8_7y8xs"]
@@ -342,7 +342,7 @@ corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
 [node name="Skeleton" type="CharacterBody2D"]
-z_index = 14
+z_index = 10
 platform_floor_layers = 4294967040
 script = ExtResource("1_11w7t")
 

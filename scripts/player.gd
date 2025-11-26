@@ -142,6 +142,7 @@ func healing() -> void:
 func die() -> void:
 	GlobalVar.current_waves = 1
 	GlobalVar.is_dead = true
+	GlobalVar.reset_all()
 	if GlobalVar.is_dead:
 		var lose = GlobalVar.LoseUI.instantiate()
 		get_node("/root/island_%d"%GlobalVar.current_waves).add_child(lose)
