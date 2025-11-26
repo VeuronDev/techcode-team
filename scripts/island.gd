@@ -1,8 +1,13 @@
 extends Node2D
 var game_over_processed = false
 
+func _ready() -> void:
+	if GlobalVar.healthPlayer <= 0:
+				GlobalVar.healthPlayer = 100 * GlobalVar.health_ability
+
 func _process(_delta: float) -> void:
-	if (GlobalVar.healthPlayer <= 0 or GlobalVar.is_lose) and not game_over_processed:	
+	if (GlobalVar.healthPlayer < 0 or GlobalVar.is_lose) and not game_over_processed:	
+		GlobalVar.healthPlayer = 0
 		game_over_processed = true
 		if GlobalVar.is_lose:
 			GlobalVar.is_lose = false

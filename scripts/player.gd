@@ -36,8 +36,6 @@ func _physics_process(delta) -> void:
 	input_handle()
 	roll_hanlde(delta)
 	update_animation()
-	if GlobalVar.healthPlayer > 200:
-		GlobalVar.healthPlayer = 200
 
 #SISTEM PERGERAKAN PLAYER
 func input_handle() -> void:
