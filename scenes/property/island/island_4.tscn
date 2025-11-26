@@ -12412,7 +12412,7 @@ texture = ExtResource("4_njqj8")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_4uxjr")
 
-[node name="island_1" type="Node2D"]
+[node name="island_4" type="Node2D"]
 script = ExtResource("1_xv7xy")
 
 [node name="island" type="Node2D" parent="."]

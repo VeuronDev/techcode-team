@@ -6,6 +6,7 @@ func _ready() -> void:
 				GlobalVar.healthPlayer = 100 * GlobalVar.health_ability
 
 func _process(_delta: float) -> void:
+	print(GlobalVar.current_waves)
 	if (GlobalVar.healthPlayer < 0 or GlobalVar.is_lose) and not game_over_processed:	
 		GlobalVar.healthPlayer = 0
 		game_over_processed = true
