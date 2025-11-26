@@ -96,6 +96,17 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_p5cse")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_p5cse")
 theme_override_styles/hover = SubResource("StyleBoxFlat_p5cse")
 
+[node name="back5" type="Button" parent="."]
+modulate = Color(0.38431373, 0.20784314, 0.07058824, 1)
+self_modulate = Color(0.38431373, 0.20784314, 0.07058824, 0.6745098)
+offset_left = 6.0
+offset_top = 603.0
+offset_right = 310.0
+offset_bottom = 795.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_p5cse")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_p5cse")
+theme_override_styles/hover = SubResource("StyleBoxFlat_p5cse")
+
 [node name="health_icon" type="Sprite2D" parent="."]
 position = Vector2(26.000002, 29)
 scale = Vector2(2.6594741, 2.4615097)
@@ -390,4 +401,7 @@ position = Vector2(1264, 704.00006)
 scale = Vector2(1.3789063, 1.4394528)
 texture = ExtResource("8_040vd")
 
+[connection signal="pressed" from="apple_item" to="." method="_on_apple_item_pressed"]
+[connection signal="pressed" from="health_item" to="." method="_on_health_item_pressed"]
+[connection signal="pressed" from="skull_item" to="." method="_on_skull_item_pressed"]
 [connection signal="pressed" from="menu" to="." method="_on_menu_pressed"]

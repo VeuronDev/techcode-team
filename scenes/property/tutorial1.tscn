@@ -1,10 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://b548lvqkit62"]
+[gd_scene load_steps=9 format=3 uid="uid://b548lvqkit62"]
 
+[ext_resource type="Script" uid="uid://ck8owd60pfbjb" path="res://scripts/tutorial_1.gd" id="1_6rp8s"]
 [ext_resource type="Texture2D" uid="uid://c30ncyciqfuab" path="res://assests/tileset/main_menu.png" id="1_hblqp"]
 [ext_resource type="AudioStream" uid="uid://bk4bv1ftka6xq" path="res://assests/music/Backsound game/BacksoundGame_1.mp3" id="2_v8lki"]
 [ext_resource type="Texture2D" uid="uid://bwyvobw7gxdp2" path="res://assests/tileset/desain background tutorial.png" id="3_v8lki"]
 [ext_resource type="FontFile" uid="uid://cgl8w7k8kdixk" path="res://assests/BoldPixels.ttf" id="4_dtobv"]
 [ext_resource type="Texture2D" uid="uid://ck0562rvlxdiy" path="res://assests/tileset/button.png" id="5_kxto5"]
+[ext_resource type="Texture2D" uid="uid://cyhbr6dywbefc" path="res://assests/tileset/tutorial/tutorial1.png" id="6_r4jdh"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r4jdh"]
 texture = ExtResource("5_kxto5")
@@ -18,6 +20,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_6rp8s")
 
 [node name="bg_menu" type="Sprite2D" parent="."]
 modulate = Color(0.48178947, 0.48178947, 0.48178947, 1)
@@ -41,8 +44,8 @@ region_rect = Rect2(0, 0, 1280, 679.5879)
 
 [node name="back_down" type="Sprite2D" parent="back"]
 modulate = Color(0.9559385, 0.8481103, 0.7501635, 1)
-position = Vector2(0, 384.78586)
-scale = Vector2(1, 1.2932724)
+position = Vector2(0, 386.1036)
+scale = Vector2(1, 1.2607355)
 texture = ExtResource("3_v8lki")
 flip_v = true
 region_enabled = true
@@ -52,18 +55,18 @@ region_rect = Rect2(0, 0, 1280, 81.21541)
 modulate = Color(1, 1, 1, 0.4862745)
 layout_mode = 0
 offset_left = 472.0
-offset_top = 35.0
+offset_top = 64.0
 offset_right = 817.0
-offset_bottom = 115.0
+offset_bottom = 144.0
 theme_override_fonts/font = ExtResource("4_dtobv")
 theme_override_font_sizes/font_size = 64
 text = "How to Play"
 
 [node name="play" type="Button" parent="."]
 layout_mode = 0
-offset_left = 558.0
+offset_left = 906.0
 offset_top = 619.0
-offset_right = 729.0448
+offset_right = 1077.0448
 offset_bottom = 679.0
 theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
 theme_override_colors/font_hover_color = Color(0.6313726, 0.3372549, 0, 1)
@@ -73,3 +76,28 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_r4jdh")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_r4jdh")
 theme_override_styles/hover = SubResource("StyleBoxTexture_r4jdh")
 text = "Next"
+
+[node name="back2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 710.0
+offset_top = 619.0
+offset_right = 881.0448
+offset_bottom = 679.0
+theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
+theme_override_colors/font_hover_color = Color(0.6313726, 0.3372549, 0, 1)
+theme_override_fonts/font = ExtResource("4_dtobv")
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxTexture_r4jdh")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_r4jdh")
+theme_override_styles/hover = SubResource("StyleBoxTexture_r4jdh")
+text = "back
+"
+
+[node name="Tutorial1" type="Sprite2D" parent="."]
+modulate = Color(0.70796657, 0.7079665, 0.7079665, 1)
+position = Vector2(639, 375)
+scale = Vector2(1.8081249, 1.8081249)
+texture = ExtResource("6_r4jdh")
+
+[connection signal="pressed" from="play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="back2" to="." method="_on_back_2_pressed"]

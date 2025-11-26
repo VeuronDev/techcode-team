@@ -1,4 +1,4 @@
-[gd_scene load_steps=93 format=3 uid="uid://ck6ko63f447e1"]
+[gd_scene load_steps=96 format=3 uid="uid://ck6ko63f447e1"]
 
 [ext_resource type="Script" uid="uid://d2bj0cfsfaagf" path="res://scripts/giant_goblin.gd" id="1_waptb"]
 [ext_resource type="Texture2D" uid="uid://bpxdhoq4c4t2s" path="res://assests/characters/goblin/goblin_attack.png" id="1_xha5n"]
@@ -12,6 +12,7 @@
 [ext_resource type="Script" uid="uid://ejc7g8xf87l5" path="res://scripts/idle.gd" id="7_ntflo"]
 [ext_resource type="Script" uid="uid://ce32ggtibfmde" path="res://scripts/follow.gd" id="8_ntflo"]
 [ext_resource type="Script" uid="uid://d2ebu3a7a28q3" path="res://scripts/attack_hitbox.gd" id="9_etokx"]
+[ext_resource type="Texture2D" uid="uid://n4hi6useqkvt" path="res://assests/characters/item/skull.png" id="10_da0fl"]
 [ext_resource type="Script" path="res://scripts/attack.gd" id="11_c28a0"]
 [ext_resource type="Script" uid="uid://iupkjxbarbco" path="res://scripts/chase.gd" id="11_tftqj"]
 [ext_resource type="Script" uid="uid://bm7newmen3yty" path="res://scripts/death.gd" id="14_jn7js"]
@@ -864,6 +865,30 @@ radius = 402.0796
 radius = 75.0
 height = 262.0
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xnsew"]
+bg_color = Color(0.483895, 0.009033486, 0.049686886, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_da0fl"]
+bg_color = Color(1.0107458e-06, 0.72308177, 0.268264, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_etokx"]
 radius = 87.0919
 
@@ -914,18 +939,22 @@ shape = SubResource("CapsuleShape2D_1xbtb")
 [node name="ProgressBar" type="ProgressBar" parent="UI"]
 custom_minimum_size = Vector2(500, 0)
 offset_left = 389.0
-offset_top = 557.0
+offset_top = 532.0
 offset_right = 889.0
-offset_bottom = 584.0
+offset_bottom = 559.0
 size_flags_horizontal = 8
 size_flags_vertical = 8
+theme_override_styles/background = SubResource("StyleBoxFlat_xnsew")
+theme_override_styles/fill = SubResource("StyleBoxFlat_da0fl")
 max_value = 1000.0
 value = 1000.0
 
 [node name="Label" type="Label" parent="UI/ProgressBar"]
 layout_mode = 0
-offset_top = -41.0
-offset_right = 170.0
+offset_left = 163.0
+offset_top = -44.0
+offset_right = 333.0
+offset_bottom = -3.0
 theme_override_font_sizes/font_size = 24
 text = "Giant Goblin"
 horizontal_alignment = 1
@@ -940,6 +969,11 @@ offset_bottom = 476.0
 theme_override_font_sizes/font_size = 107
 text = "Boss Defeated"
 horizontal_alignment = 1
+
+[node name="Skull" type="Sprite2D" parent="UI"]
+position = Vector2(391, 543)
+scale = Vector2(4.25, 4.25)
+texture = ExtResource("10_da0fl")
 
 [node name="debug" type="Label" parent="."]
 visible = false

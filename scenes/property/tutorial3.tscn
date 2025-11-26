@@ -1,0 +1,107 @@
+[gd_scene load_steps=10 format=3 uid="uid://cff3nl2xyolew"]
+
+[ext_resource type="Script" uid="uid://c72tnipjxde5t" path="res://scripts/tutorial_3.gd" id="1_ghsqv"]
+[ext_resource type="Texture2D" uid="uid://c30ncyciqfuab" path="res://assests/tileset/main_menu.png" id="1_hapsg"]
+[ext_resource type="AudioStream" uid="uid://bk4bv1ftka6xq" path="res://assests/music/Backsound game/BacksoundGame_1.mp3" id="2_ghsqv"]
+[ext_resource type="Texture2D" uid="uid://bwyvobw7gxdp2" path="res://assests/tileset/desain background tutorial.png" id="3_x3l1f"]
+[ext_resource type="FontFile" uid="uid://cgl8w7k8kdixk" path="res://assests/BoldPixels.ttf" id="4_qdvy5"]
+[ext_resource type="Texture2D" uid="uid://ck0562rvlxdiy" path="res://assests/tileset/button.png" id="5_d5lg4"]
+[ext_resource type="Texture2D" uid="uid://0rjpap528sc6" path="res://assests/tileset/tutorial/tutorial3.png" id="6_hapsg"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r4jdh"]
+texture = ExtResource("5_d5lg4")
+region_rect = Rect2(13.856617, 25.832815, 36.156376, 15.270929)
+modulate_color = Color(0.93333334, 1, 1, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ghsqv"]
+texture = ExtResource("5_d5lg4")
+region_rect = Rect2(13.856617, 25.832815, 36.156376, 15.270929)
+modulate_color = Color(0.93333334, 1, 1, 1)
+
+[node name="tutorial" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ghsqv")
+
+[node name="bg_menu" type="Sprite2D" parent="."]
+modulate = Color(0.48178947, 0.48178947, 0.48178947, 1)
+z_index = -2
+position = Vector2(641.49066, 360.2034)
+scale = Vector2(1.1695167, 1.1695169)
+texture = ExtResource("1_hapsg")
+
+[node name="music_bg" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(308.4907, 328.2034)
+stream = ExtResource("2_ghsqv")
+autoplay = true
+
+[node name="back" type="Sprite2D" parent="."]
+modulate = Color(0.74, 0.4995, 0.185, 1)
+position = Vector2(637, 318)
+scale = Vector2(0.7986111, 0.87152773)
+texture = ExtResource("3_x3l1f")
+region_enabled = true
+region_rect = Rect2(0, 0, 1280, 679.5879)
+
+[node name="back_down" type="Sprite2D" parent="back"]
+modulate = Color(0.9559385, 0.8481103, 0.7501635, 1)
+position = Vector2(0, 386.1036)
+scale = Vector2(1, 1.2607355)
+texture = ExtResource("3_x3l1f")
+flip_v = true
+region_enabled = true
+region_rect = Rect2(0, 0, 1280, 81.21541)
+
+[node name="htp" type="Label" parent="."]
+modulate = Color(1, 1, 1, 0.4862745)
+layout_mode = 0
+offset_left = 472.0
+offset_top = 64.0
+offset_right = 817.0
+offset_bottom = 144.0
+theme_override_fonts/font = ExtResource("4_qdvy5")
+theme_override_font_sizes/font_size = 64
+text = "How to Play"
+
+[node name="play" type="Button" parent="."]
+layout_mode = 0
+offset_left = 919.0
+offset_top = 619.0
+offset_right = 1090.0448
+offset_bottom = 679.0
+theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
+theme_override_colors/font_hover_color = Color(0.6313726, 0.3372549, 0, 1)
+theme_override_fonts/font = ExtResource("4_qdvy5")
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxTexture_r4jdh")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_r4jdh")
+theme_override_styles/hover = SubResource("StyleBoxTexture_r4jdh")
+text = "Next"
+
+[node name="Tutorial3" type="Sprite2D" parent="."]
+position = Vector2(639, 371.99997)
+scale = Vector2(1.7474996, 1.7475)
+texture = ExtResource("6_hapsg")
+
+[node name="back2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 710.0
+offset_top = 619.0
+offset_right = 881.0448
+offset_bottom = 679.0
+theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
+theme_override_colors/font_hover_color = Color(0.6313726, 0.3372549, 0, 1)
+theme_override_fonts/font = ExtResource("4_qdvy5")
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxTexture_ghsqv")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ghsqv")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ghsqv")
+text = "back
+"
+
+[connection signal="pressed" from="play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="back2" to="." method="_on_back_2_pressed"]

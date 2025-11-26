@@ -8,6 +8,7 @@ signal wave_timer_updated(value)
 @onready var spawn_boss = preload("res://scenes/characters/giant_goblin.tscn")
 @onready var WinUI = preload("res://scenes/property/win.tscn")
 @onready var LoseUI = preload("res://scenes/property/lose.tscn")
+@onready var menu_jeda = preload("res://scenes/property/menu_jeda.tscn")
 
 # VAR
 # Tambahkan timer di sini
@@ -27,6 +28,9 @@ var is_loading = false
 var is_dead = false
 var start_new_timir = true
 var is_lose = false
+var tutor_step = true
+var music = true
+var menu_on = false
 
 const ENEMIES_PER_WAVE = 4
 var TIMER_CHANGE_WAVES = 0.0

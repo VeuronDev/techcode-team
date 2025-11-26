@@ -86,4 +86,24 @@ func _on_log_added(text: String):
 
 #BUTTON MENU DI TEKAN
 func _on_menu_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/property/main_game.tscn")
+	if GlobalVar.menu_on:
+		GlobalVar.menu_on = false
+	else:
+		GlobalVar.menu_on = true
+		
+
+func _on_health_item_pressed() -> void:
+	if GlobalVar.health_count == 0: return
+	GlobalVar.health_count -= 1
+	GlobalVar.healthPlayer += 40
+
+
+func _on_apple_item_pressed() -> void:
+	if GlobalVar.apple == 0: return
+	GlobalVar.apple -= 1
+	GlobalVar.healthPlayer += 30
+
+func _on_skull_item_pressed() -> void:
+	if GlobalVar.skull == 0: return
+	#player.position = Vector2(656, -490)
+	GlobalVar.skull -= 1

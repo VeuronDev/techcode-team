@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=4 uid="uid://ckivd0h6dbnef"]
+[gd_scene load_steps=36 format=4 uid="uid://ckivd0h6dbnef"]
 
 [ext_resource type="Script" uid="uid://sjohm55mte08" path="res://scripts/island.gd" id="1_xv7xy"]
 [ext_resource type="Texture2D" uid="uid://dk4co5h086gx5" path="res://assests/tileset/spr_tileset_sunnysideworld_16px.png" id="2_bu7y3"]
@@ -13,11 +13,12 @@
 [ext_resource type="PackedScene" uid="uid://ct35hyx6rdcgl" path="res://scenes/enemy/waves_3.tscn" id="11_lqk0u"]
 [ext_resource type="PackedScene" uid="uid://by7o27kx7cr17" path="res://scenes/collectible/waves_1.tscn" id="12_1vhk8"]
 [ext_resource type="PackedScene" uid="uid://c3y0tqsttesco" path="res://scenes/enemy/waves_4.tscn" id="12_xm64g"]
-[ext_resource type="PackedScene" uid="uid://cvujhl32hhcv0" path="res://scenes/collectible/boss_location.tscn" id="13_81sbc"]
 [ext_resource type="PackedScene" uid="uid://ck5uptrbq0cv3" path="res://scenes/collectible/waves_2.tscn" id="13_dckny"]
 [ext_resource type="PackedScene" uid="uid://dk0b0dboasas0" path="res://scenes/collectible/waves_3.tscn" id="14_wfyo8"]
 [ext_resource type="PackedScene" uid="uid://ckcoxumv6y42x" path="res://scenes/collectible/waves_4.tscn" id="17_uvnj2"]
 [ext_resource type="PackedScene" uid="uid://yu68w0vn2cok" path="res://scenes/collectible/boss_defeated.tscn" id="18_ptvm0"]
+[ext_resource type="PackedScene" uid="uid://c2te05wdv7aqm" path="res://scenes/property/menu_jeda.tscn" id="19_81sbc"]
+[ext_resource type="PackedScene" uid="uid://ck6ko63f447e1" path="res://scenes/characters/giant_goblin.tscn" id="19_uvnj2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xm64g"]
 texture = ExtResource("2_bu7y3")
@@ -12492,7 +12493,7 @@ polygon = PackedVector2Array(-396.6667, -260, -321.6667, -445.6667, -338.33334, 
 
 [node name="Player" parent="." instance=ExtResource("6_81sbc")]
 z_index = 2
-position = Vector2(664, -485)
+position = Vector2(674, -490)
 
 [node name="HUD_Fight" parent="Player" instance=ExtResource("7_uvnj2")]
 
@@ -12512,8 +12513,6 @@ position = Vector2(73.33334, -50.666668)
 
 [node name="waves_4" parent="enemy" instance=ExtResource("12_xm64g")]
 
-[node name="boss_location" parent="enemy" instance=ExtResource("13_81sbc")]
-
 [node name="collectible" type="Node2D" parent="."]
 position = Vector2(73.33334, -50.666668)
 scale = Vector2(0.8, 0.8)
@@ -12527,3 +12526,10 @@ scale = Vector2(0.8, 0.8)
 [node name="waves_4" parent="collectible" instance=ExtResource("17_uvnj2")]
 
 [node name="boss_defeated" parent="collectible" instance=ExtResource("18_ptvm0")]
+
+[node name="menu" parent="." instance=ExtResource("19_81sbc")]
+offset = Vector2(0, 700)
+transform = Transform2D(1, 0, 0, 1, 0, 700)
+
+[node name="GiantGoblin" parent="." instance=ExtResource("19_uvnj2")]
+position = Vector2(-768, -1870)

@@ -1,0 +1,105 @@
+[gd_scene load_steps=10 format=3 uid="uid://c2te05wdv7aqm"]
+
+[ext_resource type="Script" uid="uid://dqfe26my8t86d" path="res://scripts/menu_jeda.gd" id="1_megp1"]
+[ext_resource type="Texture2D" uid="uid://cqvnx17n3j0m8" path="res://assests/tileset/Background UI.png" id="1_p8ikj"]
+[ext_resource type="FontFile" uid="uid://cgl8w7k8kdixk" path="res://assests/BoldPixels.ttf" id="2_megp1"]
+[ext_resource type="Texture2D" uid="uid://ck0562rvlxdiy" path="res://assests/tileset/button.png" id="3_6g6u6"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_o3w6v"]
+texture = ExtResource("3_6g6u6")
+region_rect = Rect2(13.856617, 25.832815, 36.156376, 15.270929)
+modulate_color = Color(0.93333334, 1, 1, 1)
+
+[sub_resource type="Animation" id="Animation_6g6u6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_megp1"]
+resource_name = "down"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -700)]
+}
+
+[sub_resource type="Animation" id="Animation_o3w6v"]
+resource_name = "up"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.36666667),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_o3w6v"]
+_data = {
+&"RESET": SubResource("Animation_6g6u6"),
+&"down": SubResource("Animation_megp1"),
+&"up": SubResource("Animation_o3w6v")
+}
+
+[node name="menu" type="CanvasLayer"]
+script = ExtResource("1_megp1")
+
+[node name="Node" type="Node2D" parent="."]
+
+[node name="ui" type="Sprite2D" parent="Node"]
+modulate = Color(0.33, 0.17600001, 0, 0.45490196)
+position = Vector2(628.00006, 342.00003)
+rotation = -1.5707964
+scale = Vector2(7.460937, 7.460937)
+texture = ExtResource("1_p8ikj")
+
+[node name="continue" type="Button" parent="Node"]
+offset_left = 541.0
+offset_top = 370.0
+offset_right = 732.0
+offset_bottom = 437.0
+theme_override_colors/font_hover_color = Color(0.4031157, 0.23137602, 4.813075e-08, 1)
+theme_override_fonts/font = ExtResource("2_megp1")
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxTexture_o3w6v")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_o3w6v")
+theme_override_styles/hover = SubResource("StyleBoxTexture_o3w6v")
+text = "Exit
+"
+
+[node name="sure" type="Label" parent="Node"]
+offset_left = 483.0
+offset_top = 267.0
+offset_right = 797.0
+offset_bottom = 301.0
+theme_override_font_sizes/font_size = 33
+text = "Are you sure wanna exit?"
+
+[node name="play" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_o3w6v")
+}
+autoplay = "down"
+
+[connection signal="pressed" from="Node/continue" to="." method="_on_continue_pressed"]

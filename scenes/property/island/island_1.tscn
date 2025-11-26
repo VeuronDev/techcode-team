@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=4 uid="uid://cqhjh3uinicu8"]
+[gd_scene load_steps=28 format=4 uid="uid://cqhjh3uinicu8"]
 
 [ext_resource type="Script" uid="uid://sjohm55mte08" path="res://scripts/island.gd" id="1_m4odw"]
 [ext_resource type="Texture2D" uid="uid://dk4co5h086gx5" path="res://assests/tileset/spr_tileset_sunnysideworld_16px.png" id="2_hljgd"]
@@ -10,6 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://bmi7ja4asekq2" path="res://assests/music/Backsound game/Backsound Game_fight.mp3" id="8_2vi3e"]
 [ext_resource type="PackedScene" uid="uid://sngvj4ophdgo" path="res://scenes/enemy/waves_1.tscn" id="9_hxxgb"]
 [ext_resource type="PackedScene" uid="uid://by7o27kx7cr17" path="res://scenes/collectible/waves_1.tscn" id="10_wubnr"]
+[ext_resource type="PackedScene" uid="uid://c2te05wdv7aqm" path="res://scenes/property/menu_jeda.tscn" id="11_hljgd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m4odw"]
 texture = ExtResource("2_hljgd")
@@ -12505,3 +12506,7 @@ position = Vector2(73.33334, -50.666668)
 scale = Vector2(0.8, 0.8)
 
 [node name="waves_1" parent="collectible" instance=ExtResource("10_wubnr")]
+
+[node name="menu" parent="." instance=ExtResource("11_hljgd")]
+offset = Vector2(0, 700)
+transform = Transform2D(1, 0, 0, 1, 0, 700)
