@@ -20,11 +20,6 @@ var is_rolling: bool = false
 var can_roll: bool = true
 var collectible_count:int = 0
 
-#ABILITY PLAYER
-var attack_ability = 0
-var defend_ability = 0
-var health_ability = GlobalVar.healthPlayer
-
 #READY SISTEM
 func _ready() -> void:
 	input_handle()
@@ -146,4 +141,7 @@ func healing() -> void:
 #MATI
 func die() -> void:
 	GlobalVar.current_waves = 1
-	get_tree().change_scene_to_file("res://scenes/levels/main_game.tscn")
+	GlobalVar.is_dead = true
+	if GlobalVar.is_dead:
+		var lose = GlobalVar.LoseUI.instantiate()
+		get_node("/root/Tilemap").add_child(lose)

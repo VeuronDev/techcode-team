@@ -1,0 +1,139 @@
+[gd_scene load_steps=12 format=3 uid="uid://dv0rkplf6snq3"]
+
+[ext_resource type="Script" uid="uid://dsijofqxd21ki" path="res://scripts/lose.gd" id="1_e5cqh"]
+[ext_resource type="Texture2D" uid="uid://c7oifoye82njp" path="res://assests/tileset/border ui.png" id="2_g1pbr"]
+[ext_resource type="FontFile" uid="uid://cgl8w7k8kdixk" path="res://assests/BoldPixels.ttf" id="3_88xuc"]
+[ext_resource type="Texture2D" uid="uid://ck0562rvlxdiy" path="res://assests/tileset/button.png" id="4_7rqfx"]
+[ext_resource type="Texture2D" uid="uid://dk4co5h086gx5" path="res://assests/tileset/spr_tileset_sunnysideworld_16px.png" id="5_davss"]
+[ext_resource type="Texture2D" uid="uid://na6jg2uct4rf" path="res://assests/characters/skeleton/skeleton_hurt_strip7.png" id="6_e5cqh"]
+[ext_resource type="Texture2D" uid="uid://cuh3ylkov1ugw" path="res://assests/characters/goblin/goblin_hurt.png" id="7_g1pbr"]
+
+[sub_resource type="Animation" id="Animation_j7ucx"]
+resource_name = "add"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("win:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.46666667),
+"transitions": PackedFloat32Array(1, 0.5358866),
+"update": 0,
+"values": [Vector2(0, -520), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_p1csy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("win:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_10piv"]
+_data = {
+&"RESET": SubResource("Animation_p1csy"),
+&"add": SubResource("Animation_j7ucx")
+}
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_10piv"]
+texture = ExtResource("4_7rqfx")
+region_rect = Rect2(13.856617, 25.832815, 36.156376, 15.270929)
+modulate_color = Color(0.93333334, 1, 1, 1)
+
+[node name="win" type="CanvasLayer"]
+script = ExtResource("1_e5cqh")
+
+[node name="fade in" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_10piv")
+}
+autoplay = "add"
+
+[node name="win" type="Sprite2D" parent="."]
+
+[node name="border" type="Sprite2D" parent="win"]
+position = Vector2(677, 355.875)
+scale = Vector2(3.727723, 3.8836627)
+texture = ExtResource("2_g1pbr")
+
+[node name="label" type="Label" parent="win"]
+offset_left = 489.0
+offset_top = 110.0
+offset_right = 881.0
+offset_bottom = 230.0
+theme_override_constants/outline_size = 13
+theme_override_fonts/font = ExtResource("3_88xuc")
+theme_override_font_sizes/font_size = 106
+text = "You Win!"
+
+[node name="exit" type="Button" parent="win/label"]
+layout_mode = 0
+offset_left = 92.0
+offset_top = 273.0
+offset_right = 283.0
+offset_bottom = 340.0
+theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
+theme_override_colors/font_hover_color = Color(0.6313726, 0.3372549, 0, 1)
+theme_override_fonts/font = ExtResource("3_88xuc")
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxTexture_10piv")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_10piv")
+theme_override_styles/hover = SubResource("StyleBoxTexture_10piv")
+text = " Exit"
+
+[node name="exit_icon" type="Sprite2D" parent="win/label"]
+self_modulate = Color(0.68152857, 0.63108444, 0.65611356, 1)
+position = Vector2(150, 308.00003)
+scale = Vector2(2.9004211, 2.6407712)
+texture = ExtResource("5_davss")
+region_enabled = true
+region_rect = Rect2(690.08093, 755.09283, 10.851013, 11.445557)
+
+[node name="skeleton_icon" type="Sprite2D" parent="win/label"]
+position = Vector2(5, 303)
+scale = Vector2(7.3750005, 7.375001)
+texture = ExtResource("6_e5cqh")
+region_enabled = true
+region_rect = Rect2(321.4037, 20.10739, 23.107391, 25.404612)
+
+[node name="sword_icon2" type="Sprite2D" parent="win/label"]
+position = Vector2(199.99998, 157.00002)
+rotation = -0.0014605524
+scale = Vector2(9.1335125, 8.6399355)
+texture = ExtResource("5_davss")
+region_enabled = true
+region_rect = Rect2(705.3227, 769.701, 13.089233, 12.6698)
+
+[node name="Label" type="Label" parent="win/label"]
+layout_mode = 0
+offset_left = 104.0
+offset_top = 212.0
+offset_right = 278.0
+offset_bottom = 246.0
+theme_override_font_sizes/font_size = 33
+text = "Great Job bro!"
+
+[node name="GoblinHurt" type="Sprite2D" parent="win"]
+position = Vector2(870, 406)
+scale = Vector2(7.9400005, 7.94)
+texture = ExtResource("7_g1pbr")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(415.6726, 18.409687, 30.019867, 25.806538)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color(0, 0, 0, 0.27058825)
+offset_left = -28.0
+offset_top = -23.0
+offset_right = 1302.0
+offset_bottom = 740.0

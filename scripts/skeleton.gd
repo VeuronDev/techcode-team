@@ -79,7 +79,7 @@ func _physics_process(delta) -> void:
 	elif velocity.length() > 0:
 		animated_sprite_2d.flip_h = velocity.x < 0
 	if in_sword_area and GlobalVar.attack_active and not is_hit and not is_dead:
-		take_damage(randi_range(10, 15))
+		take_damage(randi_range(10, 15)+(GlobalVar.attack_ability))
 
 #JALAN SECARA ACAK
 func _wander_behavior(delta) -> void:
@@ -143,7 +143,7 @@ func play_attack() -> void:
 	velocity = Vector2.ZERO
 	animated_sprite_2d.play("attack")
 	await get_tree().create_timer(0.6).timeout 
-	var damage_to_player = randi_range(1, 5)
+	var damage_to_player = randi_range(10*GlobalVar.current_waves, 20*GlobalVar.current_waves) - (GlobalVar.defend_ability + 5)
 	GlobalVar.hurt_active = true
 	GlobalVar.healthPlayer -= damage_to_player
 	is_attacking = false
@@ -174,6 +174,7 @@ func die() -> void:
 	GlobalVar.add_kill()
 	GlobalVar.enemy_died()
 	GlobalVar.logPlayer("💀 You killed the Tengkorak Enemy.")
+	GlobalVar.expPlayer += randi_range(5, 10)
 	animated_sprite_2d.play("death")
 	await get_tree().create_timer(1).timeout
 	queue_free()

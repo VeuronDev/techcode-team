@@ -1,0 +1,358 @@
+[gd_scene load_steps=20 format=3 uid="uid://cqksws33seys7"]
+
+[ext_resource type="Texture2D" uid="uid://c30ncyciqfuab" path="res://assests/tileset/main_menu.png" id="1_nnstk"]
+[ext_resource type="Script" uid="uid://btjem4wqvvsh4" path="res://scripts/rest_area.gd" id="1_oyjas"]
+[ext_resource type="Texture2D" uid="uid://c7oifoye82njp" path="res://assests/tileset/border ui.png" id="2_q3luw"]
+[ext_resource type="Texture2D" uid="uid://iyqe058nrlim" path="res://assests/tileset/border coklat.png" id="3_raudg"]
+[ext_resource type="Texture2D" uid="uid://dk4co5h086gx5" path="res://assests/tileset/spr_tileset_sunnysideworld_16px.png" id="4_2ta3o"]
+[ext_resource type="FontFile" uid="uid://cgl8w7k8kdixk" path="res://assests/BoldPixels.ttf" id="5_2ta3o"]
+[ext_resource type="FontFile" uid="uid://cpjhfhv4bnnns" path="res://assests/MedodicaRegular.otf" id="6_8xryf"]
+[ext_resource type="Texture2D" uid="uid://ck0562rvlxdiy" path="res://assests/tileset/button.png" id="6_sdy0k"]
+[ext_resource type="Texture2D" uid="uid://dy7anisy5edkf" path="res://assests/characters/player/sunnyside_world_chatacter_anim_v0.png" id="9_5v75v"]
+[ext_resource type="AudioStream" uid="uid://bmi7ja4asekq2" path="res://assests/music/Backsound game/Backsound Game_fight.mp3" id="10_sox40"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oyjas"]
+texture = ExtResource("6_sdy0k")
+region_rect = Rect2(13.856617, 25.832815, 36.156376, 15.270929)
+modulate_color = Color(0.93333334, 1, 1, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mma68"]
+atlas = ExtResource("9_5v75v")
+region = Rect2(0, 174, 124, 87)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3w86l"]
+atlas = ExtResource("9_5v75v")
+region = Rect2(124, 174, 124, 87)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uxghi"]
+atlas = ExtResource("9_5v75v")
+region = Rect2(248, 174, 124, 87)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gb5yi"]
+atlas = ExtResource("9_5v75v")
+region = Rect2(372, 174, 124, 87)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_duoc6"]
+atlas = ExtResource("9_5v75v")
+region = Rect2(496, 174, 124, 87)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a5371"]
+atlas = ExtResource("9_5v75v")
+region = Rect2(620, 174, 124, 87)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qjgsq"]
+atlas = ExtResource("9_5v75v")
+region = Rect2(744, 174, 124, 87)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sox40"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mma68")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3w86l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uxghi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gb5yi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_duoc6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a5371")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qjgsq")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 8.0
+}]
+
+[node name="rest_area" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_oyjas")
+
+[node name="main_menu" type="Sprite2D" parent="."]
+position = Vector2(697, 380.00003)
+scale = Vector2(1.2563527, 1.2563528)
+texture = ExtResource("1_nnstk")
+
+[node name="Border" type="Sprite2D" parent="."]
+position = Vector2(647, 408)
+scale = Vector2(6.7995043, 6.7995043)
+texture = ExtResource("2_q3luw")
+
+[node name="attack_ability" type="Button" parent="."]
+layout_mode = 0
+offset_left = 209.0
+offset_top = 206.0
+offset_right = 444.0
+offset_bottom = 531.0
+
+[node name="BorderCoklat" type="Sprite2D" parent="attack_ability"]
+position = Vector2(136, 141)
+scale = Vector2(4.6246963, 5.223077)
+texture = ExtResource("3_raudg")
+
+[node name="attack_icon" type="Sprite2D" parent="attack_ability"]
+position = Vector2(117.00002, 104.99999)
+scale = Vector2(10.452083, 10.452083)
+texture = ExtResource("4_2ta3o")
+region_enabled = true
+region_rect = Rect2(574.83923, 256.33105, 18.201782, 15.431885)
+
+[node name="attack_label" type="Label" parent="attack_ability"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 190.0
+offset_right = 215.0
+offset_bottom = 249.0
+theme_override_colors/font_color = Color(0.4, 0.22352941, 0.19215687, 1)
+theme_override_fonts/font = ExtResource("5_2ta3o")
+theme_override_font_sizes/font_size = 32
+text = "Attack Ability"
+
+[node name="attack_point" type="Label" parent="attack_ability"]
+layout_mode = 0
+offset_left = 51.0
+offset_top = 224.0
+offset_right = 155.0
+offset_bottom = 257.0
+theme_override_colors/font_color = Color(0.4, 0.22352941, 0.19215687, 1)
+theme_override_fonts/font = ExtResource("5_2ta3o")
+theme_override_font_sizes/font_size = 26
+text = "Point :"
+
+[node name="add_attack" type="Button" parent="attack_ability"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 252.0
+offset_right = 207.0
+offset_bottom = 319.0
+theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
+theme_override_colors/font_hover_color = Color(0.6313726, 0.3372549, 0, 1)
+theme_override_fonts/font = ExtResource("5_2ta3o")
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxTexture_oyjas")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_oyjas")
+theme_override_styles/hover = SubResource("StyleBoxTexture_oyjas")
+text = "add point"
+
+[node name="defend_ability" type="Button" parent="."]
+layout_mode = 0
+offset_left = 518.0
+offset_top = 212.0
+offset_right = 753.0
+offset_bottom = 530.0
+
+[node name="BorderCoklat" type="Sprite2D" parent="defend_ability"]
+position = Vector2(136, 141)
+scale = Vector2(4.6246963, 5.223077)
+texture = ExtResource("3_raudg")
+
+[node name="defend_icon" type="Sprite2D" parent="defend_ability"]
+position = Vector2(119.00003, 111.00001)
+scale = Vector2(5.84271, 5.842711)
+texture = ExtResource("4_2ta3o")
+region_enabled = true
+region_rect = Rect2(593.4347, 307.97757, 30.032898, 32.209137)
+
+[node name="defend_ability" type="Label" parent="defend_ability"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 184.0
+offset_right = 219.0
+offset_bottom = 243.0
+theme_override_colors/font_color = Color(0.4, 0.22352941, 0.19215687, 1)
+theme_override_fonts/font = ExtResource("5_2ta3o")
+theme_override_font_sizes/font_size = 32
+text = "Defend Ability"
+
+[node name="defend_point" type="Label" parent="defend_ability"]
+layout_mode = 0
+offset_left = 63.0
+offset_top = 218.0
+offset_right = 167.0
+offset_bottom = 251.0
+theme_override_colors/font_color = Color(0.4, 0.22352941, 0.19215687, 1)
+theme_override_fonts/font = ExtResource("5_2ta3o")
+theme_override_font_sizes/font_size = 26
+text = "Point :"
+
+[node name="add_defend" type="Button" parent="defend_ability"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 246.0
+offset_right = 202.0
+offset_bottom = 313.0
+theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
+theme_override_colors/font_hover_color = Color(0.6313726, 0.3372549, 0, 1)
+theme_override_fonts/font = ExtResource("5_2ta3o")
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxTexture_oyjas")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_oyjas")
+theme_override_styles/hover = SubResource("StyleBoxTexture_oyjas")
+text = "add point"
+
+[node name="health_ability" type="Button" parent="."]
+layout_mode = 0
+offset_left = 827.0
+offset_top = 212.0
+offset_right = 1062.0
+offset_bottom = 529.0
+
+[node name="BorderCoklat" type="Sprite2D" parent="health_ability"]
+position = Vector2(136, 141)
+scale = Vector2(4.6246963, 5.223077)
+texture = ExtResource("3_raudg")
+
+[node name="health" type="Sprite2D" parent="health_ability"]
+modulate = Color(0, 0, 0, 0.49803922)
+position = Vector2(110, 106)
+scale = Vector2(13.680587, 13.680588)
+texture = ExtResource("4_2ta3o")
+region_enabled = true
+region_rect = Rect2(705.02405, 753.7012, 12.432007, 11.486084)
+
+[node name="health2" type="Sprite2D" parent="health_ability"]
+position = Vector2(110.00002, 95)
+scale = Vector2(13.680587, 13.680588)
+texture = ExtResource("4_2ta3o")
+region_enabled = true
+region_rect = Rect2(705.02405, 753.7012, 12.432007, 11.486084)
+
+[node name="health_ability" type="Label" parent="health_ability"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 185.0
+offset_right = 218.0
+offset_bottom = 244.0
+theme_override_colors/font_color = Color(0.4, 0.22352941, 0.19215687, 1)
+theme_override_fonts/font = ExtResource("5_2ta3o")
+theme_override_font_sizes/font_size = 32
+text = "Health Ability"
+
+[node name="health_point" type="Label" parent="health_ability"]
+layout_mode = 0
+offset_left = 55.0
+offset_top = 218.0
+offset_right = 159.0
+offset_bottom = 251.0
+theme_override_colors/font_color = Color(0.4, 0.22352941, 0.19215687, 1)
+theme_override_fonts/font = ExtResource("5_2ta3o")
+theme_override_font_sizes/font_size = 26
+text = "Point :"
+
+[node name="add_health" type="Button" parent="health_ability"]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 244.0
+offset_right = 210.0
+offset_bottom = 311.0
+theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
+theme_override_colors/font_hover_color = Color(0.6313726, 0.3372549, 0, 1)
+theme_override_fonts/font = ExtResource("5_2ta3o")
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxTexture_oyjas")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_oyjas")
+theme_override_styles/hover = SubResource("StyleBoxTexture_oyjas")
+text = "add point"
+
+[node name="point_player" type="Label" parent="."]
+layout_mode = 0
+offset_left = 174.0
+offset_top = 100.0
+offset_right = 278.0
+offset_bottom = 133.0
+theme_override_fonts/font = ExtResource("5_2ta3o")
+theme_override_font_sizes/font_size = 32
+text = "Point :"
+
+[node name="attack_icon2" type="Sprite2D" parent="point_player"]
+position = Vector2(-27.000004, 15.999996)
+scale = Vector2(2.323178, 2.3231776)
+texture = ExtResource("4_2ta3o")
+region_enabled = true
+region_rect = Rect2(640.372, 478.48242, 16.863403, 10.944458)
+
+[node name="level_player" type="Label" parent="."]
+layout_mode = 0
+offset_left = 389.0
+offset_top = 101.0
+offset_right = 529.0
+offset_bottom = 134.0
+theme_override_fonts/font = ExtResource("5_2ta3o")
+theme_override_font_sizes/font_size = 32
+text = "My level :"
+
+[node name="attack_icon2" type="Sprite2D" parent="level_player"]
+position = Vector2(-16.000004, 15.999996)
+scale = Vector2(2.323178, 2.3231776)
+texture = ExtResource("4_2ta3o")
+region_enabled = true
+region_rect = Rect2(706.56464, 723.2691, 10.107788, 11.594238)
+
+[node name="note" type="Label" parent="."]
+layout_mode = 0
+offset_left = 350.0
+offset_top = 597.0
+offset_right = 913.0
+offset_bottom = 629.0
+theme_override_fonts/font = ExtResource("6_8xryf")
+theme_override_font_sizes/font_size = 26
+text = "Note : point in the game will be converted to ability (3:1)"
+
+[node name="current_wave" type="Label" parent="."]
+layout_mode = 0
+offset_left = 536.0
+offset_top = 170.0
+offset_right = 696.0
+offset_bottom = 202.0
+theme_override_fonts/font = ExtResource("6_8xryf")
+theme_override_font_sizes/font_size = 26
+text = "Wave current :"
+
+[node name="skeleton_icon" type="AnimatedSprite2D" parent="."]
+z_index = 1
+position = Vector2(215.99994, 546)
+scale = Vector2(4.1369233, 4.1369233)
+sprite_frames = SubResource("SpriteFrames_sox40")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="next_wave" type="Button" parent="."]
+layout_mode = 0
+offset_left = 953.0
+offset_top = 542.0
+offset_right = 1108.0
+offset_bottom = 594.0
+theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
+theme_override_colors/font_hover_color = Color(0.6313726, 0.3372549, 0, 1)
+theme_override_fonts/font = ExtResource("5_2ta3o")
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxTexture_oyjas")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_oyjas")
+theme_override_styles/hover = SubResource("StyleBoxTexture_oyjas")
+text = "Next wave!"
+
+[node name="music_bg" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_sox40")
+autoplay = true
+
+[connection signal="pressed" from="attack_ability" to="." method="_on_attack_ability_pressed"]
+[connection signal="pressed" from="attack_ability/add_attack" to="." method="_on_add_attack_pressed"]
+[connection signal="pressed" from="defend_ability" to="." method="_on_defend_ability_pressed"]
+[connection signal="pressed" from="defend_ability/add_defend" to="." method="_on_add_defend_pressed"]
+[connection signal="pressed" from="health_ability" to="." method="_on_health_ability_pressed"]
+[connection signal="pressed" from="health_ability/add_health" to="." method="_on_add_health_pressed"]
+[connection signal="pressed" from="next_wave" to="." method="_on_next_wave_pressed"]

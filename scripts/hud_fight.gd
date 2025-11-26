@@ -11,7 +11,8 @@ extends CanvasLayer
 @onready var log_input = $log_input
 @onready var point_player = $count_point
 @onready var timer = $timer_waves
-
+@onready var level = $lvl_info
+@onready var expbar = $ExpPlayer
 @onready var player = get_tree().get_first_node_in_group("Player")
 
 
@@ -24,16 +25,24 @@ func _ready() -> void:
 
 
 func _on_timer_update(value):
-	timer.text = "Next Wave: %ds" % value
+	timer.text = "Times : %ds" % value
 	
 #LOOP MENGECEK INFORMASI PLAYER
 func _process(_delta: float) -> void:
+	var needed_point = GlobalVar.get_required_point(GlobalVar.current_waves)
+	var lvl = GlobalVar.expPlayer / 100
+	level.text = "Lv.%d" % lvl
+	expbar.value = GlobalVar.expPlayer % 100
 	ExpPlayer.value = GlobalVar.expPlayer
+	HealthPlayer.max_value = 100 * GlobalVar.health_ability
 	HealthPlayer.value = GlobalVar.healthPlayer
 	apple.text = "%d"%GlobalVar.apple
 	health.text = "%d"%GlobalVar.health_count
 	skull.text = "%d"%GlobalVar.skull
-	point_player.text = " Point : %d"%GlobalVar.point_player
+	if needed_point >= GlobalVar.point_player:
+		point_player.text = "Point : %d/%d" % [GlobalVar.point_player, needed_point]
+	else:
+		point_player.text = "Point : MAX! "
 	if GlobalVar.current_waves > 5:
 		waves_info.text = "Wave Ended!"
 	else:

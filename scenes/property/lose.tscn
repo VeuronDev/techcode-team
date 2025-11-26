@@ -1,0 +1,159 @@
+[gd_scene load_steps=12 format=3 uid="uid://l7q744q4ql6n"]
+
+[ext_resource type="Texture2D" uid="uid://c7oifoye82njp" path="res://assests/tileset/border ui.png" id="1_7utjf"]
+[ext_resource type="Script" uid="uid://dsijofqxd21ki" path="res://scripts/lose.gd" id="1_p1csy"]
+[ext_resource type="FontFile" uid="uid://cgl8w7k8kdixk" path="res://assests/BoldPixels.ttf" id="2_3ud5d"]
+[ext_resource type="Texture2D" uid="uid://ck0562rvlxdiy" path="res://assests/tileset/button.png" id="3_j7ucx"]
+[ext_resource type="Texture2D" uid="uid://dk4co5h086gx5" path="res://assests/tileset/spr_tileset_sunnysideworld_16px.png" id="4_p1csy"]
+[ext_resource type="Texture2D" uid="uid://boq2wcrl4mx8s" path="res://assests/characters/goblin/goblin_idle.png" id="5_j7ucx"]
+[ext_resource type="Texture2D" uid="uid://dp75vpyikm7bw" path="res://assests/characters/skeleton/skeleton_idle.png" id="6_p1csy"]
+
+[sub_resource type="Animation" id="Animation_p1csy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("lose:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_j7ucx"]
+resource_name = "add"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("lose:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.46666667),
+"transitions": PackedFloat32Array(1, 0.5358866),
+"update": 0,
+"values": [Vector2(0, -520), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_10piv"]
+_data = {
+&"RESET": SubResource("Animation_p1csy"),
+&"add": SubResource("Animation_j7ucx")
+}
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_10piv"]
+texture = ExtResource("3_j7ucx")
+region_rect = Rect2(13.856617, 25.832815, 36.156376, 15.270929)
+modulate_color = Color(0.93333334, 1, 1, 1)
+
+[node name="lose" type="CanvasLayer"]
+script = ExtResource("1_p1csy")
+
+[node name="b" type="ColorRect" parent="."]
+modulate = Color(0, 0, 0, 0.27058825)
+offset_left = -28.0
+offset_top = -23.0
+offset_right = 1302.0
+offset_bottom = 740.0
+
+[node name="fade in" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_10piv")
+}
+
+[node name="lose" type="Sprite2D" parent="."]
+
+[node name="border" type="Sprite2D" parent="lose"]
+position = Vector2(677, 355.875)
+scale = Vector2(3.727723, 3.8836627)
+texture = ExtResource("1_7utjf")
+
+[node name="label" type="Label" parent="lose"]
+offset_left = 474.0
+offset_top = 111.0
+offset_right = 962.0
+offset_bottom = 231.0
+theme_override_constants/outline_size = 13
+theme_override_fonts/font = ExtResource("2_3ud5d")
+theme_override_font_sizes/font_size = 106
+text = "You Lose!"
+
+[node name="play" type="Button" parent="lose/label"]
+layout_mode = 0
+offset_left = 104.0
+offset_top = 191.0
+offset_right = 295.0
+offset_bottom = 258.0
+theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
+theme_override_colors/font_hover_color = Color(0.6313726, 0.3372549, 0, 1)
+theme_override_fonts/font = ExtResource("2_3ud5d")
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxTexture_10piv")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_10piv")
+theme_override_styles/hover = SubResource("StyleBoxTexture_10piv")
+text = "  Retry"
+
+[node name="exit" type="Button" parent="lose/label"]
+layout_mode = 0
+offset_left = 106.0
+offset_top = 275.0
+offset_right = 297.0
+offset_bottom = 342.0
+theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
+theme_override_colors/font_hover_color = Color(0.6313726, 0.3372549, 0, 1)
+theme_override_fonts/font = ExtResource("2_3ud5d")
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxTexture_10piv")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_10piv")
+theme_override_styles/hover = SubResource("StyleBoxTexture_10piv")
+text = " Exit"
+
+[node name="sword_icon" type="Sprite2D" parent="lose/label"]
+self_modulate = Color(0.68152857, 0.63108444, 0.65611356, 1)
+position = Vector2(160, 224)
+scale = Vector2(2.6250017, 2.4773827)
+texture = ExtResource("4_p1csy")
+region_enabled = true
+region_rect = Rect2(576.70593, 256.22882, 14.61969, 15.837982)
+
+[node name="exit_icon" type="Sprite2D" parent="lose/label"]
+self_modulate = Color(0.68152857, 0.63108444, 0.65611356, 1)
+position = Vector2(164, 310.00003)
+scale = Vector2(2.9004211, 2.6407712)
+texture = ExtResource("4_p1csy")
+region_enabled = true
+region_rect = Rect2(690.08093, 755.09283, 10.851013, 11.445557)
+
+[node name="goblin_icon" type="Sprite2D" parent="lose/label"]
+z_index = 2
+position = Vector2(395.99994, 315)
+rotation = -0.0014605522
+scale = Vector2(6.7207136, 6.667975)
+texture = ExtResource("5_j7ucx")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(35.54045, 20.665915, 28.489624, 24.137041)
+
+[node name="skeleton_icon" type="Sprite2D" parent="lose/label"]
+position = Vector2(5, 303)
+scale = Vector2(7.3750005, 7.375001)
+texture = ExtResource("6_p1csy")
+region_enabled = true
+region_rect = Rect2(37.574085, 19.591759, 21.730625, 26.28704)
+
+[node name="sword_icon2" type="Sprite2D" parent="lose/label"]
+position = Vector2(202.99994, 150)
+rotation = -0.0014605524
+scale = Vector2(7.1484084, 6.7621064)
+texture = ExtResource("4_p1csy")
+region_enabled = true
+region_rect = Rect2(689.13617, 767.50024, 14.618713, 17.198486)
+
+[node name="lose_sfx" type="AudioStreamPlayer2D" parent="."]
+
+[connection signal="pressed" from="lose/label/play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="lose/label/exit" to="." method="_on_exit_pressed"]

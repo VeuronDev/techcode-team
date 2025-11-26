@@ -1,0 +1,69 @@
+[gd_scene load_steps=8 format=3 uid="uid://c4hu0emywbd30"]
+
+[ext_resource type="Script" uid="uid://efjia3chjiv0" path="res://scenes/property/laoding.gd" id="1_c2y3t"]
+[ext_resource type="Texture2D" uid="uid://ctx32w2mkv55a" path="res://assests/tileset/menu game.png" id="1_c6yk4"]
+[ext_resource type="Texture2D" uid="uid://c30ncyciqfuab" path="res://assests/tileset/main_menu.png" id="1_p3uqf"]
+[ext_resource type="Texture2D" uid="uid://bbumslwl7o4cw" path="res://assests/tileset/main_menu_02.png" id="2_p3uqf"]
+[ext_resource type="FontFile" uid="uid://cpjhfhv4bnnns" path="res://assests/MedodicaRegular.otf" id="4_5txsk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p3uqf"]
+bg_color = Color(0.3254902, 0.16862746, 0.039215688, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5txsk"]
+bg_color = Color(0.6666667, 0.34509805, 0.09411765, 1)
+
+[node name="laoding" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_c2y3t")
+
+[node name="bg_menu" type="Sprite2D" parent="."]
+modulate = Color(0.12591085, 0.12591085, 0.12591082, 1)
+z_index = -2
+position = Vector2(652, 374)
+scale = Vector2(1.1695167, 1.1695169)
+texture = ExtResource("1_p3uqf")
+
+[node name="logo" type="Sprite2D" parent="."]
+modulate = Color(0.86898494, 0.8689849, 0.8689849, 1)
+position = Vector2(635, 461)
+scale = Vector2(1.6648552, 1.6648552)
+texture = ExtResource("1_c6yk4")
+region_enabled = true
+region_rect = Rect2(2.9883041, 463.22733, 276.85736, 138.50388)
+
+[node name="player" type="Sprite2D" parent="logo"]
+z_index = -1
+position = Vector2(4.950654, -123.76682)
+scale = Vector2(0.5840495, 0.5840495)
+texture = ExtResource("2_p3uqf")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+layout_mode = 0
+offset_left = 297.99997
+offset_top = 640.0
+offset_right = 973.0
+offset_bottom = 689.0
+theme_override_styles/background = SubResource("StyleBoxFlat_p3uqf")
+theme_override_styles/fill = SubResource("StyleBoxFlat_5txsk")
+rounded = true
+indeterminate = true
+editor_preview_indeterminate = false
+
+[node name="note" type="Label" parent="."]
+layout_mode = 0
+offset_left = 588.0
+offset_top = 605.0
+offset_right = 697.0
+offset_bottom = 637.0
+theme_override_fonts/font = ExtResource("4_5txsk")
+theme_override_font_sizes/font_size = 26
+text = "Loading..."

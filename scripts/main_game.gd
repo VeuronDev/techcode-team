@@ -5,7 +5,8 @@ extends Control
 
 #BUTTON PLAY DI TEKAN
 func _on_play_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/property/dungeon.tscn")
+	GlobalVar.is_loading = true
+	get_tree().change_scene_to_file("res://scenes/property/laoding.tscn")
 
 
 #BUTTON CREDIT DI TEKAN
