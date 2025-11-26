@@ -40,7 +40,7 @@ region_enabled = true
 region_rect = Rect2(0, 0, 1280, 679.5879)
 
 [node name="back_down" type="Sprite2D" parent="back"]
-modulate = Color(0.81114215, 0.74403614, 0.52809125, 1)
+modulate = Color(0.9559385, 0.8481103, 0.7501635, 1)
 position = Vector2(0, 384.78586)
 scale = Vector2(1, 1.2932724)
 texture = ExtResource("3_v8lki")

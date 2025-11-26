@@ -1,7 +1,7 @@
-[gd_scene load_steps=42 format=4 uid="uid://4o0tp3p2m87h"]
+[gd_scene load_steps=42 format=4 uid="uid://brqhomsbjhgqf"]
 
 [ext_resource type="Texture2D" uid="uid://cwpc3dm5c3spp" path="res://assests/tileset/tenda.png" id="4_qpmu4"]
-[ext_resource type="Texture2D" uid="uid://cacyvddipp5he" path="res://assests/characters/Skeleton/skeleton_death.png" id="6_dkstd"]
+[ext_resource type="Texture2D" uid="uid://cacyvddipp5he" path="res://assests/characters/skeleton/skeleton_death.png" id="6_dkstd"]
 [ext_resource type="Texture2D" uid="uid://dk4co5h086gx5" path="res://assests/tileset/spr_tileset_sunnysideworld_16px.png" id="7_dkstd"]
 [ext_resource type="Texture2D" uid="uid://d3a45o2jv4v0p" path="res://assests/tileset/spr_tileset_sunnysideworld_forest_32px.png" id="8_dkstd"]
 
@@ -4654,6 +4654,7 @@ texture = ExtResource("7_dkstd")
 31:26/0 = 0
 32:26/0 = 0
 33:26/0 = 0
+33:26/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 5.215904, -1.7086582, 3.2374573, 8, 4.4964695, 8, 8, -8, 8)
 34:26/0 = 0
 36:26/0 = 0
 37:26/0 = 0
@@ -4779,7 +4780,9 @@ texture = ExtResource("7_dkstd")
 33:29/0 = 0
 34:29/0 = 0
 37:29/0 = 0
+37:29/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 5.215904, -1.7086582, 3.2374573, 8, 4.4964695, 8, 8, -8, 8)
 39:29/0 = 0
+39:29/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 5.215904, -1.7086582, 3.2374573, 8, 4.4964695, 8, 8, -8, 8)
 40:29/0 = 0
 49:29/0 = 0
 50:29/0 = 0
@@ -4816,9 +4819,13 @@ texture = ExtResource("7_dkstd")
 28:30/0 = 0
 30:30/0 = 0
 36:30/0 = 0
+36:30/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -0.26978874, -5.755479, 8, -8, 8, 8, -8, 8)
 37:30/0 = 0
+37:30/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -0.26978874, -5.755479, 8, -8, 8, 8, -8, 8)
 38:30/0 = 0
+38:30/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -0.26978874, -5.755479, 8, -8, 8, 8, -8, 8)
 39:30/0 = 0
+39:30/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -0.26978874, -5.755479, 8, -8, 8, 8, -8, 8)
 40:30/0 = 0
 41:30/0 = 0
 49:30/0 = 0
