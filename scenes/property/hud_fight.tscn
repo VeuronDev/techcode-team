@@ -180,21 +180,6 @@ offset_right = 78.0
 offset_bottom = 76.0
 color = Color(0, 0, 0, 0.5294118)
 
-[node name="CountDown" type="Label" parent="."]
-offset_left = 557.0
-offset_top = 57.0
-offset_right = 771.0
-offset_bottom = 92.0
-theme_override_font_sizes/font_size = 34
-text = "Waves timer.."
-
-[node name="time_icon" type="Sprite2D" parent="CountDown"]
-position = Vector2(-15.000027, 19.000002)
-scale = Vector2(1.9461226, 2.1160553)
-texture = ExtResource("6_kambu")
-region_enabled = true
-region_rect = Rect2(642.01086, 784.3523, 12.507935, 15.523254)
-
 [node name="apple" type="Label" parent="."]
 z_index = 2
 offset_left = 565.0
@@ -296,7 +281,7 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 2
 theme_override_fonts/font = ExtResource("3_17f16")
 theme_override_font_sizes/font_size = 30
-text = "0 Point"
+text = "Point : "
 
 [node name="time" type="Sprite2D" parent="count_point"]
 position = Vector2(-27.000011, 14.000026)

@@ -4,5 +4,6 @@ extends Area2D
 
 func _on_body_entered(_body):
 	player.collectible_count = player.collectible_count + 1
+	GlobalVar.point_player += 1
 	print(player.collectible_count)
 	queue_free()
